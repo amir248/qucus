@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animation on web page</title>
+      <link rel='icon' href='public/images/js.svg'>
+      <link rel="canonical" href="https://qucu.ru/animation-on-a-web-page.html">
+    <meta name="description" content="Анимация лендинг пейджа с момощью джейэс с методом через интерсекшин обсервер">
+    <style media="screen">
+      *{
+        margin:0;
+      }
+      body{
+        background:linear-gradient(rgba(255,255,0,0.3),rgba(0,0,255,0.3));
+        min-height:100vh;
+        font-size:20px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      main{
+        display:flex;
+        text-align:center;
+        max-width:100%;
+        justify-content: center;
+        /* border:1px solid red; */
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      article{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:900px;
+        max-width:100%;
+        flex-direction:column;
+        flex-direction: column;
+      }
+
+      header{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+
+        max-width: 100%;
+        width:900px;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      header img{
+        width:300px;
+        max-width:100%;
+      }
+      .hidden{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:900px;
+        max-width:100%;
+        overflow-x:hidden;
+        flex-direction: column;
+      }
+      .hidden p{
+        margin:1%;
+      }
+      .hidden #one{
+        opacity:0.0;
+        margin-right:-100%;
+        max-width:100%;
+        border-radius: 10px;
+        overflow-y:hidden;
+      }
+      .hidden #two{
+        opacity:0.1;
+        margin-left:-100%;
+        max-width:100%;
+        border-radius: 10px;
+        overflow-y:hidden;
+      }
+      .hidden #three{
+        opacity:0.0;
+        margin-right:-100%;
+        max-width:100%;
+        border-radius: 10px;
+        overflow-y:hidden;
+      }
+      .hidden #four{
+        opacity:0.0;
+        margin-left:-100%;
+        max-width:100%;
+        border-radius: 10px;
+        overflow-y:hidden;
+      }
+      .hidden #five{
+        opacity:0.0;
+        margin-right:-100%;
+        max-width:100%;
+        border-radius: 10px;
+        overflow-y:hidden;
+      }
+      .hidden #six{
+        opacity:0.0;
+        margin-left:-100%;
+        max-width:100%;
+        border-radius: 10px;
+        overflow-y:hidden;
+      }
+      .hidden #seven{
+        opacity:0.0;
+        margin-right:-100%;
+        max-width:100%;
+        border-radius: 10px;
+        overflow-y:hidden;
+      }
+      .hidden #seveN{
+        opacity:0.0;
+        margin-left:-100%;
+        max-width:100%;
+        border-radius: 10px;
+        overflow-y:hidden;
+      }
+      #comments{
+        text-align: left;
+      }
+    </style>
+    <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Article",
+  "name" : "Анимация на веб странице",
+  "headline": "Анимация на js с помощью intersectionObserver",
+  "author" : {
+    "@type" : "Person",
+    "name" : "Amir Navrutdinov",
+    "alternateName": ["Amir Shikarno", "Амир Наврутдинов"]
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://qucu.ru/animation-on-a-web-page.html"
+ },
+  "datePublished" : "2021-04-19",
+  "dateModified" : "2024-02-27",
+  "image" : "http://qucu.ru/public/images/alf.jpg",
+  "articleSection" : "Крутая реализация интерсекшнин обсервер с домКонтент лоадером, гениально работает полностью взаимодействует со всеми элементами. ОднакО! Для обычного персонажа: все выглядит убого, не вдаваться в подробности. По быстренькому сверстать лендинг за один день или “десять часов, тридцать три минуты и сорок семь секунд",
+  "url" : "https://qucu.ru/animation-on-a-web-page.html",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "веб мастерская имени Барона Сайтоверстаузена",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://qucu.ru/images/lol/spa.webp"
+    }
+  }
+}
+</script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Animation</h1>
+        <img src="public/images/DSC_6920.JPG" alt="html coder">
+        <p>Hi friends! My name is Amir <span style="color:red;font-size:37px;">*</span>. And I'm professional<br>
+  HTML Coder {O_o}</p>
+        <div style="max-width:100%;">
+          <span style="font-size:37px; float:right;">🤓</span>
+          <p>using Intersection Observer</p>
+          <i><span style="color:red;font-size:37px;">*</span>ChikChiki SpaceHands ForsMazhorovich</i>
+        </div>
+      </header>
+       <p></p>
+      <article>
+        <h1>Animation</h1>
+
+        <div class="hidden">
+          <p id="one"><span style="color:brown;">гуте убен</span><br>
+          Как то суровой зимой прошлым годом, “экзистенцанизировалось” собеседование! И один из вопросов: “а что это на тысяча тристо девятой строчке кода … для чего вообще?”. После вразумительных объяснений. Послушайте персонаж: “Существует же модульная система, компоненты и все распределяется по логическим местам для быстрой модификации. Простоты и скорейшего определения другими персонажами самых понятных задач.</p>
+        </div>
+        <div class="hidden">
+          <p id="two"><span style="color:brown;">Ну ничё, успех близко!</span><br>Как говорится в поговорке: “за любой кипишь, кроме голодовки”. Но закон призван пресекать любые супер геройства. Поэтому растет острая необходимость срочно искать способы для супергеройской депортации. Туда где героизм заслуживает почет и уважение. </p>
+        </div>
+        <div class="hidden">
+          <p id="three"><img src="public/images/pes-kommunist.jpeg" alt="коммунистический пёс" style="float:right;width:300px;">'Крутая реализация интерсекшнин обсервер с домКонтент лоадером, гениально работает полностью взаимодействует со всеми элементами. ОднакО! Для обычного персонажа: все выглядит убого, не вдаваться в подробности. По быстренькому сверстать лендинг за один день или “десять часов, тридцать три минуты и сорок семь секунд'. Эпически пронаблюдая целый отрезок солнечного цикла, феерически видимую часть со стороны обитателя Земли. Дотянувшись до смысла. Космический штепсель разорвет связь невидимого канала, развитой расы.(Гениальный порыв вдохновения, с подпиткой блистательными, сверх технологическими идеями, супер отважного героизма). Опустившись в темноту, где каменный век, коммунизменность и бешенный пес в шапке ушанки с красной звездой, безумно гавкает свои коммунизменные угрозы.</p>
+        </div>
+        <div class="hidden">
+          <p id="four">Поэтому мАсквичи в силу своей Великой по Российским размахам феерически непостижомой мАсковской немощи. Устанавливают закон с не менее чмошным как и сама мАсква “прожиточным минимумом”. Чтобы кричать из своего укрепленного бункера: “прожить, минимум, штрафы, налоги, прожиточный минимум, нарушения, коммунизменность…”. В реальной жизни мАсковская коммунизменность нарушает свои же законы, которые написали. Вот мАсквичи, установили законы, сами и нарушили.</p>
+        </div>
+        <div class="hidden">
+          <p id="five">О_о майГарабл оболтус, это же настоящая мАсковская немощь, великая и непоколебимая.</p>
+        </div>
+        <div class="hidden">
+          <p id="six">А как же титаническая стабильность? Это самый загадочный фактор, который не смогут объяснить даже ученые с ренТв. Коммунизменность продолжает разрушаться и все разрушать. Стабильно! Ну сколько можно то? Где конец, а нет: коммунизменность она без дна. Это вечный разгром, воровство, обман - коммунизменность...</p>
+        </div>
+        <div class="hidden">
+          <p id="seven">И у настоящего суперГероя есть защита - космический оберег, сверх успешный, геройский, посланный инопланетянами. Ведь куда страшнее быть инопланетянином среди людей, чем человеком среди инопланетян.</p>
+        </div>
+        <div class="hidden">
+          <p id="seveN">Непобидимому супер герою неведан страх... only hardcore, only <a href="https://github.com/amir248/animation/blob/master/index.html">github</a></p>
+        </div>
+      </article>
+      <footer>
+            </footer>
+      <section>
+        <!--
+         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                Here commentsBlock!
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        -->
+        <div id="comments"></div>
+        <a href="https://qucu.ru/comments/" style="font-size: 17px;">https://qucu.ru/comments/</a>
+        <script type="text/javascript">
+          const site={
+            origin: 'https://qucu.ru/',
+            referrer: "https://qucu.ru/"
+          }
+          const importantBag={id:"nasoberu",site:window.location};
+            // const id='nasoberu';// important!!!
+            const script =document.createElement('script');
+            const url ='https://comments.qucu.ru/allow-cors/';
+            async function goComments(){
+              await fetch(url,{
+                headers: {
+                              'Content-Type': 'application/json'
+                             
+                          },
+                origin:site.origin,
+                method: "POST",
+                referrer: site.referrer,
+                referrerPolicy: "origin-when-cross-origin",
+                mode:"cors",
+                credentials: "include",
+                cache: "no-store",
+              }).then(response=>response.text()).then(result=>{
+                document.querySelector('#comments').append(script);
+                let oK = document.querySelector('#comments > script');
+                oK.innerHTML=result;
+              });
+            };
+            setTimeout(()=>goComments(),300);
+        </script>
+        <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        Тут sigCommentsBlock!
+        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+        <!-- <div id="sigCommentsBlock"></div>
+        <a href="http://sigcomments.com" style="font-size: 0.6em;"></a>
+        <script type="text/javascript">
+          setTimeout(()=>(function(){
+            var host_id = '7033';
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true;
+            script.src = '//sigcomments.com/chat/?host_id='+host_id;
+            var ss = document.getElementsByTagName('script')[0];
+            ss.parentNode.insertBefore(script, ss);
+          })(),3000);
+        </script> -->
+     </section>
+     <div id="menu"></div>
+    </main>
+  </body>
+  <script type="text/javascript">
+
+    class Animation{
+     constructor(ChikChicly, properties){
+        this.ChikChicly=ChikChicly;
+        this.properties=properties;
+      }
+
+      top(){
+        console.log('top');
+        // document.querySelector(`${this.ChikChicly}`).addEventListener('click',()=>{
+          document.querySelector(`${this.ChikChicly}`).style.cssText=`
+          opacity:1;
+          transition: all 3s ease-out;
+          margin:0;
+          background:${this.properties};
+          `;
+          document.querySelector(`${this.ChikChicly}`).addEventListener('transitionend',()=>{
+            document.querySelector(`${this.ChikChicly}`).style.cssText=`
+            opacity:1;
+            transition: all 19s ease-out;
+            marign-left:0;
+            margin:0;
+            margin-right:0;
+            `
+          })
+        // })
+      }
+      left(){
+        console.log("left");
+      }
+      right(){
+        console.log('right');
+      }
+      bottom(){
+        console.log('bottom');
+      }
+    }
+
+      // console.log(design.two.bgColor);
+
+
+
+
+    const design ={
+      one: {
+        bgColor: "green",
+        time: "9"
+      },
+      two: {
+        bgColor:`yellow`,
+        time: "9"
+      },
+      three: {
+        bgColor: "cyan",
+        time: "1"
+      },
+      four: {
+        bgColor: "red",
+        time: "9"
+      },
+      five: {
+        bgColor: "violet",
+        time: "9"
+      },
+      six: {
+        bgColor: "blue",
+        time: "9"
+      },
+      seven: {
+        bgColor: "coral",
+        time: "9"
+      },
+      seveN: {
+        bgColor: "green",
+        time: "9"
+      }
+    }
+
+    document.querySelector('#seven').addEventListener('click',()=>{
+      console.log('Loaded new items');
+      let ok = new Animation("#seven",design.seven.bgColor);
+      seven.top();
+    })
+
+
+const options={
+  root:null,
+  rootMargin:0,
+  threshold:0.3
+};
+    let intersectionObserver = new IntersectionObserver(function(entries) {
+  // Если intersectionRatio равен 0, цель вне зоны видимости
+  // и нам не нужно ничего делать
+  if (entries[0].intersectionRatio <= 0) return;
+
+  // loadItems(10);
+  console.log('Loaded new items');
+  let ok = new Animation("#one", design.one.bgColor);
+  ok.top();
+
+});
+// начать наблюдение
+intersectionObserver.observe(document.querySelector('#one'));
+
+
+    let int2 = new IntersectionObserver(function(entries) {
+  // Если intersectionRatio равен 0, цель вне зоны видимости
+  // и нам не нужно ничего делать
+  if (entries[0].intersectionRatio <= 0) return;
+
+  let two =new Animation('#two', design.two.bgColor);
+  two.top();
+
+
+});
+int2.observe(document.querySelector('#two'));
+// intersectionObserver.observe(document.querySelector('#three'));
+
+let int3 = new IntersectionObserver(function(entries) {
+if (entries[0].intersectionRatio <= 0) return;
+
+let three =new Animation('#three', design.three.bgColor);
+three.top();
+
+});
+int3.observe(document.querySelector('#three'));
+
+
+let int4 = new IntersectionObserver(function(entries) {
+if (entries[0].intersectionRatio <= 0) return;
+let four =new Animation('#four', design.four.bgColor);
+four.top();
+});
+int4.observe(document.querySelector('#four'));
+
+let int5 = new IntersectionObserver(function(entries) {
+if (entries[0].intersectionRatio <= 0) return;
+let five =new Animation('#five', design.five.bgColor);
+five.top();
+});
+int5.observe(document.querySelector('#five'));
+
+let int6 = new IntersectionObserver(function(entries) {
+if (entries[0].intersectionRatio <= 0) return;
+let six =new Animation('#six', design.six.bgColor);
+six.top();
+});
+int6.observe(document.querySelector('#six'));
+
+let int777 = new IntersectionObserver(function(entries) {
+if (entries[0].intersectionRatio <= 0) return;
+let seven =new Animation('#seven', design.seven.bgColor);
+seven.top();
+});
+int777.observe(document.querySelector('#seven'));
+
+let int7 = new IntersectionObserver(function(entries) {
+if (entries[0].intersectionRatio <= 0) return;
+let seveN =new Animation('#seveN', design.seveN.bgColor);
+seveN.top();
+});
+int7.observe(document.querySelector('#seveN'));
+
+
+//--------------------------------------------------------------
+//--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+//--------------------------------------------------------------
+function run(){
+var xhr = new XMLHttpRequest();
+xhr.open("GET", 'public_old/menu/menu.html', true);
+xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+document.getElementById("menu").innerHTML = this.responseText;
+    }
+}
+xhr.send();
+}
+/*--------------------------------------------------------------------------
+----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+--------------------------------------------------------------------------*/
+                //setTimeout(run, 700);
+            setTimeout(run, 1000);
+  </script>
+
+    <link rel="stylesheet" href="public_old/menu/style-menu.css">
+    <script src="public_old/menu/script-menu.js"></script>
+
+    <!-- Счетчики -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CTRLNMFNGY');
+    </script>
+<span class='burg' style="font-size:35px;">👽</burg>
+
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Web developer Amir Navrutdinov</title>
+  <meta name="description" content="Amir Navrutdinov's resume is a Fullstack web developer with experience in Linux administration, SEO and photo processing. Creates adaptive, modern and fast websites. Skills: HTML, CSS, JavaScript, Node.js, Express.js, Debian, NGINX, Docker. Diploma from TUSUR.">
+  <link rel="shortcut icon" href="https://qucu.ru/public_old/resume/img-resume/nodejs.svg" type="image/x-icon">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> -->
+  <style>
+    @font-face {
+      font-family: Inter;
+      src: url('https://qucu.ru/public_old/resume/Inter/Inter-Italic-VariableFont_opsz,wght.ttf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    :root {
+      --max-width: 1000px;
+      --color-bg: #f9fafb;
+      --color-accent: #16a34a;
+      --color-dark: #111827;
+      --color-light: #ffffff;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--color-bg);
+      font-family: "Inter", sans-serif;
+      font-size: 18px;
+      color: var(--color-dark);
+      line-height: 1.6;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--color-light);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--color-dark);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Header */
+    header {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--color-dark);
+      margin-bottom: 20px;
+    }
+    header div h1{
+      font-size: 2.5rem;
+      color: var(--color-dark);
+      margin-bottom: 20px;
+    }
+    #about > div > p{
+      width:100%;
+      max-width:500px;
+      margin-bottom:17px;
+    }
+    header img {
+      border-radius: 50%;
+      max-width: 200px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    header picture img {
+      border-radius: 50%;
+      max-width: 200px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+    header .contacts a {
+      margin: 0 10px;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: var(--color-light);
+      background: var(--color-accent);
+      border-radius: var(--radius);
+      transition: background 0.3s;
+    }
+
+    header .contacts a:hover {
+      background: #15803d;
+    }
+
+    /* Cards */
+    section {
+      background: var(--color-light);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin: 20px 0;
+      width: 100%;
+    }
+
+    section h2 {
+      margin-bottom: 15px;
+      color: var(--color-accent);
+      border-bottom: 2px solid var(--color-accent);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Skills bars */
+    .skill {
+      margin: 15px 0;
+    }
+    .skill span {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .skill .bar {
+      background: #e5e7eb;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 10px;
+    }
+    .skill .bar div {
+      height: 100%;
+      background: var(--color-accent);
+      width: 80%;
+      transition: width 0.5s;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    /* Responsive */
+    @media(max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 20px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+    .cert img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .cert img:hover {
+      transform: scale(1.05);
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: start;
+      margin-top: 20px;
+    }
+
+    .cert {
+      text-align: center;
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .twoSection{
+      margin:3%;
+    }
+    .fullscreen{
+      width:100%;
+      max-width:calc(100% - 37px) !important;
+      position:absolute;
+      left:0;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Амир Наврутдинов",
+    "alternateName": ["Amir Navrutdinov","Amir Shikarno","Амир Шикарно"],
+    "url": "https://qucu.ru/resume/Amir",
+    "image": "https://qucu.ru/public_old/resume/img-resume/Amir.jpg",
+    "jobTitle": "Web Developer / DevOps & Sysadmin",
+    "description": "Fullstack web developer (HTML, CSS, JavaScript, Node.js) с навыками администрирования (Debian, NGINX, SSH, SFTP), SEO и обработкой фотографий (RAW/NEF, Lightroom/GIMP).",
+    "telephone": "+7-952-888-56-56",
+    "email": "chikchicly@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/chik-chicly/",
+      "https://github.com/amir248",
+      "https://qucu.ru"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Tomsk State University of Control Systems and Radioelectronics (TUSUR)"
+    },
+    "knowsLanguage": ["Russian", "English"],
+    "knowsAbout": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "ES6",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "Git",
+      "Debian",
+      "NGINX",
+      "Docker",
+      "Bash",
+      "C (basic)",
+      "SSH",
+      "SFTP",
+      "Port forwarding",
+      "Router configuration",
+      "Local network setup",
+      "SEO",
+      "Photography",
+      "Photo editing",
+      "Image formats: JPG, PNG, WebP, AVIF, SVG, RAW, NEF"
+    ],
+
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Frontend Developer (TUSUR)",
+        "description": "Frontend developer course certificate, TUSUR",
+        "url": "https://qucu.ru/public_old/resume/img-resume/tusur.png",
+        "credentialCategory": "course"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "PHP Course Certificate",
+        "url": "https://qucu.ru/public_old/resume/img-resume/php.jpg",
+        "credentialCategory": "course"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "HTML Course Certificate",
+        "url": "https://qucu.ru/public_old/resume/img-resume/html.jpg",
+        "credentialCategory": "course"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "JavaScript Course Certificate",
+        "url": "https://qucu.ru/public_old/resume/img-resume/js.jpg",
+        "credentialCategory": "course"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "CSS Course Certificate",
+        "url": "https://qucu.ru/public_old/resume/img-resume/css.jpg",
+        "credentialCategory": "course"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Angular Course Certificate",
+        "url": "https://qucu.ru/public_old/resume/img-resume/angular.jpg",
+        "credentialCategory": "course"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Python Course Certificate",
+        "url": "https://qucu.ru/public_old/resume/img-resume/d8fe6572-a632-4ef3-8bd4-8d3a204d8b88.jpg",
+        "credentialCategory": "course"
+      }
+    ],
+
+    "hasOccupation": [
+      {
+        "@type": "Occupation",
+        "name": "Operator category 5",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Yandex (Moscow)",
+          "url": "https://www.yandex.ru"
+        },
+        "startDate": "2021-08",
+        "endDate": "2021-10",
+        "description": "Короткий временный контракт, операторская работа.",
+        "estimatedSalary": [
+        {
+          "@type": "MonetaryAmountDistribution",
+          "name": "base",
+          "currency": "RUB",
+          "duration": "P1Y",
+          "percentile10": 1000.5,
+          "percentile25": 11500,
+          "median": 1200.28,
+          "percentile75": 13000,
+          "percentile90": 15000
+        }
+      ],
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Moscow"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://qucu.ru/resume/Amir#experience"
+        }
+      }
+      ,
+      {
+        "@type": "Occupation",
+        "name": "Operator category 5",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Yandex (Moscow)",
+          "url": "https://www.yandex.ru"
+        },
+        "startDate": "2021-08",
+        "endDate": "2021-10",
+        "description": "Короткий временный контракт, операторская работа.",
+        "estimatedSalary": [
+        {
+          "@type": "MonetaryAmountDistribution",
+          "name": "base",
+          "currency": "RUB",
+          "duration": "P1Y",
+          "percentile10": 1000.5,
+          "percentile25": 11500,
+          "median": 1200.28,
+          "percentile75": 13000,
+          "percentile90": 15000
+        }
+        ],
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Moscow"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://qucu.ru/resume/Amir#experience"
+        }
+      },
+      {
+        "@type": "Occupation",
+        "name": "SEO specialist",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Biliton",
+          "url": "https://biliton.ru"
+        },
+        "startDate": "2020-02",
+        "endDate": "2020-06",
+        "description": "Семантическая адаптивная верстка, структурированные данные, meta-теги, SEO оптимизация.",
+        "estimatedSalary": [
+        {
+          "@type": "MonetaryAmountDistribution",
+          "name": "base",
+          "currency": "RUB",
+          "duration": "P1Y",
+          "percentile10": 1000.5,
+          "percentile25": 11500,
+          "median": 1200.28,
+          "percentile75": 13000,
+          "percentile90": 15000
+        }
+      ],
+      
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Kazan"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://qucu.ru/resume/Amir#experience"
+        }
+      
+      },
+      {
+        "@type": "Occupation",
+        "name": "Self-employed / Freelance Web Developer",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Self-employed",
+          "url": "https://qucu.ru"
+        },
+        "startDate": "2020-01",
+        "description": "Разработка сайтов, интеграция системы комментариев, сопровождение, SEO и настройка серверов.",
+        "estimatedSalary": [
+        {
+          "@type": "MonetaryAmountDistribution",
+          "name": "base",
+          "currency": "RUB",
+          "duration": "P1Y",
+          "percentile10": 1000.5,
+          "percentile25": 11500,
+          "median": 1200.28,
+          "percentile75": 13000,
+          "percentile90": 15000
+        }
+      ],
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Moscow"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://qucu.ru/resume/Amir#experience"
+        }
+      }
+    ],
+
+    "hasPart": [
+      {
+        "@type": "CreativeWork",
+        "name": "Web Workshop named after Baron Sajtoverstaushen",
+        "description": "Основной проект: система комментирования с возможностью интеграции на сторонние сайты и регистрацией.",
+        "url": "https://qucu.ru"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Comments System (qucu.ru/comments)",
+        "description": "Тестовая интеграция comment-system с возможностью идентификации по ID.",
+        "url": "https://qucu.ru/comments"
+      }
+    ],
+
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://qucu.ru/resume/Amir#about"
+    }
+  }
+
+  </script>
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Header -->
+    <header id="about">
+      <picture>
+          <source type="image/avif" srcset="https://qucu.ru/public_old/resume/img-resume/Amir.avif">
+          <img src="https://qucu.ru/public_old/resume/img-resume/Amir.jpg" alt="Portrait">
+      </picture>
+      
+      <div>
+        <h1>Amir Navrutdinov</h1>
+        <p>Web Developer with a diploma from TUSUR. Building modern, adaptive, and beautiful websites.</p>
+        <div class="contacts">
+          <a href="mailto:lucky@qucu.ru">Email</a>
+          <a href="https://www.linkedin.com/in/chik-chicly/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/amir248" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </header>
+<p class="subtitle">Fullstack Web Developer | Linux Admin | SEO Specialist</p>
+
+    <!-- Skills -->
+   <section id="skills">
+    <h2>Skills</h2>
+      <div class="skill">
+        <span>HTML & CSS</span>
+        <div class="bar"><div style="width: 95%"></div></div>
+      </div>
+      <div class="skill">
+        <span>JavaScript</span>
+        <div class="bar"><div style="width: 85%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Node.js</span>
+        <div class="bar"><div style="width: 75%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Debian Linux</span>
+        <div class="bar"><div style="width: 90%"></div></div>
+      </div>
+      <div class="skill">
+        <span>NGINX</span>
+        <div class="bar"><div style="width: 80%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Express.js</span>
+        <div class="bar"><div style="width: 70%"></div></div>
+      </div>
+      <div class="skill">
+        <span>SEO Optimization</span>
+        <div class="bar"><div style="width: 90%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Git & Version Control</span>
+        <div class="bar"><div style="width: 85%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Docker (basic)</span>
+        <div class="bar"><div style="width: 60%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Bash (basic)</span>
+        <div class="bar"><div style="width: 50%"></div></div>
+      </div>
+      <div class="skill">
+        <span>C (basic)</span>
+        <div class="bar"><div style="width: 40%"></div></div>
+      </div>
+        <div class="skill">
+        <span>Photography & Photo Editing</span>
+        <div class="bar"><div style="width: 70%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Image Formats (JPG, PNG, WebP, AVIF, SVG)</span>
+        <div class="bar"><div style="width: 80%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Photography (RAW, NEF, DSLR basics)</span>
+        <div class="bar"><div style="width: 60%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Photo Editing & Processing (Lightroom, Photoshop, GIMP)</span>
+        <div class="bar"><div style="width: 65%"></div></div>
+      </div>
+      <div class="skill">
+        <span>SSH & Secure Shell Access</span>
+        <div class="bar"><div style="width: 85%"></div></div>
+      </div>
+      <div class="skill">
+        <span>SFTP & File Transfer over Network</span>
+        <div class="bar"><div style="width: 80%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Port Forwarding & Router Configuration</span>
+        <div class="bar"><div style="width: 75%"></div></div>
+      </div>
+      <div class="skill">
+        <span>Local & Internal Network Setup</span>
+        <div class="bar"><div style="width: 70%"></div></div>
+      </div>
+
+    </section>
+     <!-- Languages -->
+    <section id="languages">
+      <h2>Languages</h2>
+      <p>Russian – Native</p>
+      <p>English – B2 (Upper Intermediate)</p>
+    </section>
+    <!-- Education -->
+    <section id="education">
+      <h2>Education</h2>
+      <p>Tomsk State University of Control Systems and Radioelectronics (TUSUR)</p>
+      <p>Diploma in Web Development & Software Engineering</p>
+    </section>
+    <!-- Certifications -->
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul>
+        <li>TUSUR frontend-developer (2022)</li>
+        <li>Google SEO Fundamentals (2023)</li>
+        <li>Node.js & Express.js – Udemy (2024)</li>
+      </ul>
+    </section>
+    <!-- Certifications -->
+    <section id="certifications">
+      <h2>Courses & Certifications</h2>
+      <div class="cert-grid">
+
+        <div class="cert">
+          <p>PHP</p>
+          <picture>
+            <source srcset="/public_old/resume/img-resume/php.webp" type="image/webp">
+            <img src="/public_old/resume/img-resume/php.jpg" alt="PHP Certificate">
+          </picture>
+        </div>
+
+        <div class="cert">
+          <p>HTML</p>
+          <picture>
+            <source srcset="/public_old/resume/img-resume/html.webp" type="image/webp">
+            <img src="/public_old/resume/img-resume/html.jpg" alt="HTML Certificate">
+          </picture>
+        </div>
+
+        <div class="cert">
+          <p>JavaScript</p>
+          <picture>
+            <source srcset="/public_old/resume/img-resume/js.webp" type="image/webp">
+            <img src="/public_old/resume/img-resume/js.jpg" alt="JavaScript Certificate">
+          </picture>
+        </div>
+
+        <div class="cert">
+          <p>CSS</p>
+          <picture>
+            <source srcset="/public_old/resume/img-resume/css.webp" type="image/webp">
+            <img src="/public_old/resume/img-resume/css.jpg" alt="CSS Certificate">
+          </picture>
+        </div>
+
+        <div class="cert">
+          <p>Angular</p>
+          <picture>
+            <source srcset="/public_old/resume/img-resume/angular.webp" type="image/webp">
+            <img src="/public_old/resume/img-resume/angular.jpg" alt="Angular Certificate">
+          </picture>
+        </div>
+
+        <div class="cert">
+          <p>Frontend Developer (TUSUR)</p>
+          <picture>
+            <source srcset="/public_old/resume/img-resume/tusur.webp" type="image/webp">
+            <img src="/public_old/resume/img-resume/tusur.png" alt="Frontend Developer TUSUR">
+          </picture>
+        </div>
+
+        <div class="cert">
+          <p>Python</p>
+          <picture>
+            <source srcset="/public_old/resume/img-resume/d8fe6572-a632-4ef3-8bd4-8d3a204d8b88.webp" type="image/webp" />
+            <img src="/public_old/resume/img-resume/d8fe6572-a632-4ef3-8bd4-8d3a204d8b88.jpg" alt="Python Certificate">
+          </picture>
+        </div>
+
+
+        <div class="cert">
+          <p>C</p>
+          <picture>
+            <source srcset="/public_old/resume/img-resume/dedbc3e9-40d8-4980-9813-1deefe4a69b5.avif" type="image/webp" />
+            <img src="/public_old/resume/img-resume/dedbc3e9-40d8-4980-9813-1deefe4a69b5.jpg" alt="Python Certificate">
+          </picture>
+        </div>
+        <div class="cert">
+          <p>JS Intermediate</p>
+          <picture>
+            <source srcset="/public_old/resume/img-resume/6126b2f3-dd76-4f7a-b5b8-8c8eda71fa51.avif" type="image/webp" />
+            <img src="/public_old/resume/img-resume/6126b2f3-dd76-4f7a-b5b8-8c8eda71fa51.jpg" alt="Python Certificate">
+          </picture>
+        </div>
+        
+      </div>
+    </section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const certImages = document.querySelectorAll("div.cert > picture > img");
+
+  certImages.forEach(img => {
+    img.addEventListener("click", () => {
+      if (img.classList.contains("fullscreen")) {
+        img.classList.remove("fullscreen");
+      } else {
+        // убрать полноэкран с других картинок, если открыт
+        document.querySelectorAll(".fullscreen").forEach(openImg => {
+          openImg.classList.remove("fullscreen");
+        });
+        img.classList.add("fullscreen");
+      }
+    });
+  });
+});
+</script>
+
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Business Landing Page</h3>
+        <p>Developed a responsive landing page with SEO optimization, deployed on NGINX + Debian.</p>
+        <a href="https://debian-nginx-nodejs.qucu.ru/" target="_blank">View project</a>
+      </div>
+      <div class="project">
+        <h3>Personal Blog</h3>
+        <p>Fullstack app with Node.js, Express.js, and MongoDB. Integrated admin panel and comments system.</p>
+        <a href="https://qucu.ru/blozhik/" target="_blank">View project</a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2>Services</h2>
+      <ul>
+        <li>Web development (HTML, CSS, JS, Node.js, Express.js)</li>
+        <li>Server setup (Debian, NGINX, Docker)</li>
+        <li>SEO optimization & site speed improvements</li>
+        <li>Website maintenance & support</li>
+      </ul>
+    </section>
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <p>Freelance Web Developer – Developed responsive websites, optimized SEO, and improved performance for clients worldwide.</p>
+      <hr>
+      <div class="twoSection">
+          <div class="blockList">
+            <span> November 2021 —
+            March 2022</span>
+            <span>5-months</span>
+          </div>
+          <div class="blockList">
+            <strong>Яндекс
+          www.yandex.ru</strong>
+          Information technology, system integration, Internet • Internet company (search engines, payment systems, social networks, information, educational and entertainment resources, website promotion, etc.)
+          <span>5th category assessor</span>
+          <p>I was doing useless and completely unpaid nonsense!</p>
+          </div>
+        </div>
+        <div class="twoSection">
+          <div class="blockList">
+            <span> August 2021 —
+  October 2021</span>
+  <span>3-months</span>
+          </div>
+          <div class="blockList">
+            <strong>Яндекс
+Москва, www.yandex.ru</strong>
+Information technology, system integration, Internet
+• Internet company (search engines, payment systems, social networks,
+informational, educational and entertainment resources, website promotion and
+other)
+<span>Operator category 5</span>
+<p>I tried to get a job. But not results. 😅</p>
+          </div>
+        </div>
+        <div class="twoSection">
+          <div class="blockList">
+            <span>February 2020 —
+  June 2020</span>
+<span>5-months</span>
+          </div>
+          <div class="blockList">
+            <strong>Biliton</strong>
+  <span>SEO specialist</span>
+<p>semantic adaptive layout, structured data, semantic tags, title,
+   description.</p>
+          </div>
+        </div>
+        <!-- <div class="twoSection">
+          <div class="blockList">
+          <span>2020 - until today</span>
+          </div>
+          <div class="blockList">
+            <strong>self-employed</strong>
+            I am writing a website "web workshop named after Baron Sajtoverstauzen", a comment system that can be tested on the site <a href="https://qucu.ru/comments">here</a>
+            and <a href="https://qucu.ru">full site</a>
+          </div>
+        </div> -->
+    </section>
+    
+    <!-- Contacts -->
+    <section id="contacts">
+      <h2>Contacts</h2>
+  
+      
+      <p>Phone: <a href="tel:+79528885656">+7 (952) 888-56-56</a></p>
+      <p>Mail: <a href="mailto:lucky@qucu.ru">Email</a></p>
+       <p>WhatsApp: <a href="https://wa.me/+79528885656/">WhatsApp</a></p>
+      
+    </section>
+    <a href="https://qucu.ru/public_old/resume/Resume Web developer Amir Navrutdinov.pdf" download class="btn">Download Resume (PDF)</a>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Web workshop named after Baron von Saytoverstaushen
+  </footer>
+</body>
+</html>

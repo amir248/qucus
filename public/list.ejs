@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BlozHIk веб мастерской имени барона сайтоверстаузена</title>
+    <meta charset="utf-8" />
+    <link href="https://nasobe.ru/blozhik/style.css" rel="stylesheet">
+    <meta name='description' content='<%= description %>'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://nasobe.ru/images/js.svg">
+    <link rel="canonical" href=https://nasobe.ru/new/>
+</head>
+<body>
+  <main>
+    <article>
+      <h1> BlozHik<br> веб мастерской имени барона сайто<wbr>верстаузена.)</h1>
+        <!-- title.length -->
+      <% for(var i=95;i>0;i--) {%>
+        <div style='background:rgba(0,255,0,0.1);border-radius:7px; margin-bottom:1%;'>
+          <h2><%- title[i] %></h2>
+          <p><%- description[i] %></p>
+          <a href=<%- url[i] %> ><%- url[i] %></a>
+
+        </div>
+      <%} %>
+
+    </article>
+    <aside>
+      <a href="https://fozzy.com/aff.php?aff=16418">
+        <picture>
+          <img src="https://nasobe.ru/images/fozzy/ssd-480x320.png" alt="фози быстрее быстрого">
+        </picture>
+      </a>
+      <ul>
+        <li><a href='/new/'>Team</a></li>
+        <li><a href='/new/about'>about</a></li>
+        <li><a href='/new/contact'>contact</a></li>
+      </ul>
+    </aside>
+  </main>
+</body>
+<html>
+

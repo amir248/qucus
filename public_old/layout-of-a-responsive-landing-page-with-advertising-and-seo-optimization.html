@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Адаптивный лендинг с рекламой и сео оптимизацией</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html">
+    <meta name="robots" content="all">
+    <meta name="autor" content="Amir Navrutdinov">
+    <meta name='description' cotnent="Рекламная страница с сео оптимизацией и продвижением в контекстной рекламе.">
+    <link rel="icon" href="public/images/icon9.svg">
+    <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+    <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Article",
+      "name" : "Верстка адаптивного лендинга с рекламой и сео оптимизацией",
+        "headline": "Адаптивная верстка лендинга с рекламой",
+      "author" : {
+        "@type" : "Person",
+        "name" : "Amir Navrutdinov",
+        "alternateName": ["Amir Shikarno", "Амир Наврутдинов"]
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://qucu.ru/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html"
+     },
+      "datePublished" : "2021-05-06",
+      "dateModified" : "2024-02-27",
+      "image" : "https://qucu.ru/public/images/layout/DSC_4946.JPG",
+      "articleSection" : "Лучший способ разместить информацию на лендинге сверстанный под все устройства с оптимизацией, с рекламой и отображением в расширенном поиске.",
+      "articleBody" : "К основным преимуществам можно отнести: семантическую верстку в современном стиле с расширенным дополнением структурированной разметкой данных для поисковой оптимизации. Такой способ помогает заменить нагромождения с забугорных передовых технологиях, на близкие сердцу повседневные способы первой необходимости. Что можно сравнить со скорой помощью для веба. Где вместо врачей, на космическом аппарате прилетает команда компьютерных Шерлоков Холмсов. Чтобы разведать на еще одну загадочную тайну: “что тут такое происходит”. Да, и что теперь со всем этим можно сделать. Сделать фотографии, если надо, то и записать интервью на видео чтобы залить на ютуб со встроенной ссылкой в лендинг. Такая технология поможет донести информацию до любого персонажа способного воспользоваться интернетом, дабы удовлетворить свое любопытное желание - информироваться! О предстоящих и происходящих событиях.",
+      "url" : "https://qucu.ru/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "веб мастерская имени Барона Сайтоверстаузена",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://qucu.ru/public/images/lol/spa.webp"
+        }
+      }
+    }
+    </script>
+    <style>
+      *{
+        margin:0;
+      }
+      body{
+        background: linear-gradient(rgb(212, 255, 145),rgb(61, 163, 247));
+        font-size:20px;
+        min-Height:100vh;
+      }
+      h1{
+        background: coral;
+        color:rgb(212, 255, 145);
+        text-align: center;
+        text-shadow:black 1px 1px 1px;
+      }
+      main{
+        display:flex;
+        justify-content:center;
+        /* align-items:center; */
+        max-width:100%;
+        /* color:white; */
+        /* text-shadow: black 1px 1px 3px; */
+      }
+      article{
+        display:flex;
+        justify-content:center;
+        max-width:100%;
+        width:800px;
+        flex-direction:column;
+      }
+      p{
+        margin:1%;
+      }
+      .first{
+        display:flex;
+        justify-content:center;
+        /* align-items:center; */
+        max-width:100%;
+        /* width:800px; */
+        text-align: center;
+      }
+      footer{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        max-width: 100%;
+        width:800px;
+        flex-direction: column;
+      }
+      .boxi{
+        display:none;
+      }
+      .bk{
+        display: none;
+      }
+      @media(min-width:20500px){
+          aside{
+          display:flex;
+          position:sticky;
+          top:0px;
+          height: 400px;
+          width:100px;
+
+        }
+        .boxi{
+          display:flex;
+          width:100px;
+          height: 800px;
+          /* background: green; */
+          flex-direction:column;
+          justify-content: space-around;
+          align-items:center;
+          font-size:50px;
+        }
+        .bk{
+          display:flex;
+          width:150px;
+          min-width: 100px;
+          background: green;
+        }
+      }
+      .one{
+        display:flex;
+        max-width: 100%;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      h2{
+        background: rgba(255, 255, 145,0.5);
+        text-align: center;
+        color: rgb(255, 231, 96);
+        text-shadow: black 1px 1px 1px;
+      }
+      #sigCommentsBlock{
+        width: 500px;
+        max-width: 100%;
+        z-index: 1;
+      }
+      .toggle{
+        display:block;
+      }
+      * button */
+      .buttony{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      margin:1%;
+      }
+      #leftButton{
+      background: orange;
+      /* border: rgb(160, 56, 56) solid 2px; */
+      /* border-radius: 10px; */
+      padding: 1%;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      }
+      #leftButton:hover{
+      text-shadow: black 2px 2px 2px;
+      }
+      #leftButton:active{
+      text-shadow: green -2px -2px 3px;
+      }
+      #rightButton{
+      background: orange;
+      /* border: rgb(160, 56, 56) solid 2px; */
+      /* border-radius: 10px; */
+      padding: 1%;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      }
+      #rightButton:hover{
+      text-shadow: black 2px 2px 2px;
+      }
+      #rightButton:active{
+      text-shadow: green -2px -2px 3px;
+      }
+      a:hover{
+        color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+    <main>
+      <article>
+        <h1 id='top'>Верстка адаптивного лендинга с рекламой и сео оптимизацией</h1>
+        <p><span style="float:right; font-size:75px;"id="cat">😺</span>Если вдруг, возникла острая необходимость в огласке. Необходимо разрекламироваться и рассказать окружающим о себе. Так чтобы все узнали и начали обращать внимание. Лучший способ разместить информацию на лендинге сверстанный под все устройства с оптимизацией, с рекламой и отображением в расширенном поиске.</p>
+        <p><span style="float:left; font-size:150px;" id='prog'>‍💻</span>К основным преимуществам можно отнести: семантическую верстку в современном стиле с расширенным дополнением структурированной разметкой данных для поисковой оптимизации. Такой способ помогает заменить нагромождения с забугорных передовых технологиях, на близкие сердцу повседневные способы первой необходимости. Что можно сравнить со скорой помощью для веба. Где вместо врачей, на космическом аппарате прилетает команда компьютерных Шерлоков Холмсов. Чтобы разведать на еще одну загадочную тайну: “что тут такое происходит”. Да, и что теперь со всем этим можно сделать.</p>
+        <p><span style="float:right; font-size:75px;"id='magic'>👍</span>Сделать фотографии, если надо, то и записать интервью на видео чтобы залить на ютуб со встроенной ссылкой в лендинг. Такая технология поможет донести информацию до любого персонажа способного воспользоваться интернетом, дабы удовлетворить свое любопытное желание - информироваться! О предстоящих и происходящих событиях.</p>
+        <p><span style="float:left; font-size:150px;"id='girl'>💃</span>И может быть, даже стать известным и знаменитым. Прямо как СуперМен из-за бугра. Только об этом надо сначало рассказть. Ведь как говорит история: никто даже и не знал о СуперМене, что он тот самый “СуперМен”, пока он сам не начал рассказывать о своём "суперменстве".</p>
+        <h2>Дальше белая полоса, без препятствий по скоростной дороге, без ограничения скорости с одними преимуществами!</h2>
+        <p><span style="float:right; font-size:150px;"id="sup">🤖</span>Невероятная возможность “подгружать” фотографии в самом что ни на есть ЖИРНЕЙШЕМ формате. Это фантастическая технология с красноречивым названием: собственно ручный "запил" по зарубежной технологии сингл пейдж апликейшн.</p>
+          <div class='imagesWindow'>
+            <div id="news"></div>
+          </div>
+          <div style="display:flex; justify-content:center; z-index:1;">
+              <div id="leftButton"><span style="font-size:75px;">⏪</span></div>
+              <div id="rightButton"><span style="font-size:75px;">⏩</span></div>
+          </div>
+        <p><span style="float:left; font-size:150px;"id='prog2'>‍💻‍</span>Сингл пейдж апликейшн хоть и известен во всем мире абсолютно всем, но для того чтобы замарать руки в кропотливой верстке форсМажорных блоков на всеми известных флексах, дополненными гридами. Надо еще и иметь отчаянность проявить себя как полноценный трутень “борец рабочего фронта”. На самом фронтенде.</p>
+        <p><span style="float:right; font-size:150px;"id="shir">🕵</span>И решить изощренную загадку сибирской глуши, которая звучит как: “а кто кому будет платить?”. Потому что очень часто все мероприятие заканчивается дракой, полицией, судами и полным комплектом загадочных обстоятельств из сценария телепередачи: Необъяснимо но факт. Потеребили друг-дружку и деньги в кружку.</p>
+        <p><span style="float:left; font-size:150px;"id='poezd'>🚇</span>И следующим днем скоростной локомотив привезет на это поле брани следующую партию новобранцев с горящими глазами и закатанными рукавами. Полной уверенностью что на этот раз за работу точно будут платить. Деньгами, а не чем нибудь еще...</p>
+        <h2>И напоследок, о сложностях</h2>
+          <p>В тот момент когда под порывом вдохновения. Хочется, разогнаться на всю мощь, что только можно было-бы выжать, из своего зверского воображариума. Нашлись палки в колеса.</p>
+          <p>Осторожно, они могут и прилететь! Первая страшная: индекс слоя: z-index:1; Без этого чуда комментарии и кнопки слетают под самый низ, поэтому перестают работать. И ради полного функционала, кликабельные слои необходимо поднять на уровень выше.</p>
+          <p>Исчо неимоверная Смехадзилическая фишка: что же будет если в адаптивную галерею, залить фотки прямо без сжатия, подключив зеркальную камеру к “компутеру” и залив фотографии прямо на сервер. Практически десяти метровым размером.</p>
+          <p>О_о без шуток и прибауток. В мобильной, адаптивной галереи находятся фотографии десятиметровой толщины. А самым безумным фактом в этой форс мажорной ситуации, будет, тот “необъяснимый, но факт”(по версии ученых с ренТв): пейдж спид от гугла, решил все равно показывать грин зону…</p><span style="font-size:25px; display:flex; justify-content:center; align-items:center; z-index:1;"><a href="https://qucu.ru/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html#3">❌</a></span>
+      </article>
+      <div class="min">
+        <div class="toggle"></div>
+        <div class="box2"></div>
+      </div>
+      <aside>
+        <div class="boxi">
+          <a href="/">🌏</a>
+          <a href="#top">🏣</a>
+          <a href="#cat">😺</a>
+          <a href="#prog">👨</a>
+          <a href="#magic">👍</a>
+          <a href="#girl">💃</a>
+          <a href="#sup">😆</a>
+          <a href="#prog2">‍💻‍</a>
+          <a href="#sher">🕵</a>
+          <a href="#poezd">🚇</a>
+          <a href="#sigCommentsBlock">📑</a>
+        </div>
+      </aside>
+    </main>
+
+    <div class="first">
+      <footer>
+        <section style="display:flex; max-width:100%; width:500px;">
+
+        </section>
+
+        <div id="comments"></div>
+        <a href="https://qucu.ru/comments/" style="font-size: 17px;">https://qucu.ru/comments/</a>
+        <script type="text/javascript">
+          const site={
+            origin: 'https://qucu.ru/',
+            referrer: "https://qucu.ru/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html"
+          }
+          const importantBag={id:"nasoberu",site:window.location};
+            // const id='nasoberu';// important!!!
+            const script =document.createElement('script');
+            const url ='https://comments.qucu.ru/allow-cors/';
+            async function goComments(){
+              await fetch(url,{
+                headers: {
+                              'Content-Type': 'application/json',
+                              'Access-Control-Allow-Origin': '*'
+                          },
+                origin:site.origin,
+                method: "POST",
+                referrer: site.referrer,
+                referrerPolicy: "origin-when-cross-origin",
+                mode:"cors",
+                credentials: "omit",
+                cache: "no-store",
+              }).then(response=>response.text()).then(result=>{
+                document.querySelector('#comments').append(script);
+                let oK = document.querySelector('#comments > script');
+                oK.innerHTML=result;
+              });
+            };
+            setTimeout(()=>goComments(),300);
+        </script>
+
+
+      </footer>
+        <div class="bk"></div>
+    </div>
+
+  </div>
+<script>
+console.log(window.navigator.userAgentData);
+// if(window.navigator.userAgentData['mobile']==false){
+console.log('ckick3');
+document.querySelector('.min').style.cssText=`
+display:flex;
+position:fixed;
+width:100%;
+height: 100%;
+justify-content:flex-end;
+align-items: center;
+transition: all 3s ease-out;
+`;
+document.querySelector('.box2').style.cssText=`
+display:flex;
+position:fixed;
+width:100px;
+height: 100%;
+// background: green;
+justify-content:flex-start;
+align-items: center;
+font-size:50px;
+flex-direction:column;
+owerflow:scroll;
+transition: all 1s ease-out;
+`;
+document.querySelector('.toggle').style.cssText=`
+display:flex;
+justify-content:flex-start;
+align-items: left;
+float:right;
+margin-top:25%;
+background-color: coral;
+width: 40px;
+height: 100px;
+border-top-left-radius: 900px;
+border-bottom-left-radius: 900px;
+transition: all 2s ease-out;
+z-index:1;
+`;
+
+
+let number= +0;
+document.querySelector('.toggle').addEventListener('click',()=>{
+  number++;
+  console.log(number);
+  if(number==1){
+    console.log('ckick2');
+    document.querySelector('.box2').style.cssText=`
+    display:flex;
+    position:fixed;
+    width:100px;
+    height: 100%;
+    background: green;
+    justify-content:flex-start;
+    align-items: center;
+    font-size:50px;
+    flex-direction:column;
+    owerflow:scroll;
+    transition: all 1s ease-out;
+    `;
+    document.querySelector('.toggle').style.cssText=`
+    display:flex;
+    justify-content:flex-start;
+    align-items: left;
+       float:right;
+       margin-top:25%;
+       background-color: coral;
+      width: 150px;
+      height: 100px;
+      border-top-left-radius: 900px;
+      border-bottom-left-radius: 900px;
+      transition: all 1s ease-out;
+      `;
+      document.querySelector('.box2').innerHTML=`<a href="/">🌏</a>
+          <a href="#top">🏣</a>
+          <a href="#cat">😺</a>
+          <a href="#prog">👨</a>
+          <a href="#magic">👍</a>
+          <a href="#girl">💃</a>
+          <a href="#sup">😆</a>
+          <a href="#prog2">‍💻‍</a>
+          <a href="#sher">🕵</a>
+          <a href="#poezd">🚇</a>
+          <a href="#sigCommentsBlock">📑</a>`;
+ }else{
+
+
+
+
+
+         console.log('ckick');
+         document.querySelector('.box2').style.cssText=`
+         display:flex;
+         position:fixed;
+         width:100px;
+         height: 100%;
+         // background: green;
+         justify-content:flex-end;
+         align-items: center;
+         font-size:50px;
+         flex-direction:column;
+         owerflow:scroll;
+         transition: all 1s ease-out;
+         `;
+         document.querySelector('.toggle').style.cssText=`
+         display:flex;
+         ustify-content:flex-start;
+         align-items: left;
+          float:right;
+          margin-top:25%;
+          background-color: coral;
+         width: 40px;
+         height: 100px;
+         border-top-left-radius: 900px;
+         border-bottom-left-radius: 900px;
+         z-index:1;
+         transition: all 1s ease-out;
+           `;
+           document.querySelector('.box2').innerHTML=``;
+
+     number=0;
+ }
+});
+// дальше идет галерея!
+    console.log(window.location.hash +'_ '+'proverka');
+let imgPod = ['/public/images/layout/image.html','/public/images/layout/image1.html','public/images/layout/image2.html','public/images/layout/image3.html','public/images/layout/image4.html'];
+let i= +0;
+if(window.location.hash=="#1"){
+i=1;
+nextImages();
+}else if(window.location.hash=="#2"){
+i=2;
+nextImages();
+}else if(window.location.hash=="#3"){
+i=3;
+nextImages();
+}else if(window.location.hash=="#4"){
+i=4;
+//  nextImages();
+// }else if(window.location.hash=="#5"){
+// i=5;
+//  nextImages();
+// }else if(window.location.hash=="#6"){
+// i=6;
+//  nextImages();
+// }else if(window.location.hash=="#7"){
+// i=7;
+//  nextImages();
+// }else if(window.location.hash=="#8"){
+// i=8;
+//  nextImages();
+// }else if(window.location.hash=="#9"){
+// i=9;
+//  nextImages();
+// }else if(window.location.hash=="#10"){
+//  i=10;
+//    nextImages();
+//  }else if(window.location.hash=="#11"){
+//    i=11;
+//      nextImages();
+//    }else if(window.location.hash=="#12"){
+//      i=12;
+//        nextImages();
+//      }else if(window.location.hash=="#13"){
+//        i=13;
+//          nextImages();
+//        }else if(window.location.hash=="#14"){
+//          i=14;
+//            nextImages();
+//          }else if(window.location.hash=="#15"){
+//            i=15;
+//              nextImages();
+}else if(window.location.hash=="#0"){
+i=0;
+ nextImages();
+}
+else{
+// i=2;
+nextImages();
+}
+
+
+
+// прослушка ширины изображения
+
+console.log(window.innerWidth+" _"+window.innerHeight); // не прокатило! :-D
+if(window.innerWidth<=800){
+
+let rpoZh=800-window.innerWidth;
+ let andE =(800*100)/window.innerWidth;
+ console.log(rpoZh+"____"+andE+'_Prosto andE');
+ let height = (550*100)/(andE);
+ console.log(height+'_proverka height');
+ document.querySelector('.imagesWindow').style.cssText=`
+display:flex;
+height: ${height}px;
+`;
+console.log(`${andE}`+'Туту написано из оттдуа');
+}else{
+document.querySelector('.imagesWindow').style.cssText=`
+display:flex;
+height:550px;
+width:800px;
+z-index:0;
+`;
+}
+
+
+ function nextImages(){
+     let podimgl = new XMLHttpRequest();
+     podimgl.open('GET', `${imgPod[i]}`);
+     podimgl.send();
+     podimgl.onload = function(){
+         if(podimgl.status ==200){
+             responseType ="Text";
+             document.querySelector('#news').innerHTML = this.response;
+         }
+     }
+ }
+
+    nextImages();
+     leftButton.addEventListener('click',function(){
+         if(i>0){
+             i--;
+             window.location= '/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log(imgPod);
+             console.log(i);
+         }else if(i==3){
+             i=3;
+               window.location= '/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html#'+[i];
+             console.log(imgPod);
+             console.log(i);
+         }else{
+             i=3;
+               window.location= '/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log('ну незнаю!');
+         }
+     });
+     rightButton.addEventListener('click',function(){
+         if(i<3){
+             i++;
+               window.location= '/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log(imgPod);
+             console.log(i);
+         }else if(i==3){
+             i=0;
+               window.location= '/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log(imgPod);
+             console.log(i);
+           }else if(i==3){
+             i=0;
+               window.location= '/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log(imgPod);
+             console.log(i);
+         }else{
+           i=0;
+             window.location= '/layout-of-a-responsive-landing-page-with-advertising-and-seo-optimization.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log('ну незнаю2!');
+             console.log(imgPod);
+             console.log(i);
+         }
+     });
+
+
+</script>
+<!-- Счетчики -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CTRLNMFNGY');
+</script>
+  </body>
+</html>

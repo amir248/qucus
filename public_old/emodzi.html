@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="robots" content="all">
+        <meta name="autor" content="Amir Navrutdinov">
+        <title>Эмодзи вместо картинки</title>
+        <link rel="canonical" href="https://qucu.ru/emodzi.html">
+        <meta name='description' cotnent="Вставка эмодзи картинкой, вместо картинки. Если увеличить шрифт font-size: до большого размера и примеить его к эмодзи, то все будет похоже на большое изображение.">
+        <style>
+            *{
+                margin:0;
+            }
+            body{
+                max-width: 100%;
+                font-size: 20px;
+                background: linear-gradient(rgba(255, 166, 0, 0.158), rgba(0, 0, 255, 0.151));
+            }
+            main{
+                display:flex;
+                max-width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            article{
+                display:flex;
+                max-width: 100%;
+                width: 700px;
+                justify-content: center;
+                flex-direction: column;
+                background-color: rgba(255, 0, 51, 0.021);
+            }
+            .rowBox{
+                display: flex;
+                max-width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .BoxBlock{
+                display: flex;
+                max-width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+            .margin{
+                margin:1%;
+            }
+            .first{
+                display: flex;
+                max-width: 100%;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+            }
+            .stFir{
+                display:flex;
+                max-width: 100%;
+                width: 700px;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(rgba(240, 224, 255, 0.253), rgba(255, 255, 255, 0.164));
+                flex-direction: column;
+            }
+            footer{
+                display:flex;
+                max-width: 100%;
+                width: 700px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            h1,h2{
+                color:white;
+                background-color: rgb(0, 179, 9);
+                text-align: center;
+            }
+            section{
+
+                max-width: 100%;
+                width: 700px;
+                /* justify-content: center;
+                align-items: center;
+
+                flex-direction: column; */
+                text-align: center;
+            }
+            #comments{
+              text-align: left;
+            }
+        </style>
+        <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Article",
+      "name" : "Эмодзи на сайт вместо картинки",
+      "headline": "сверхбыстрые изображения - эмодзи вместо картинок",
+      "author" : {
+        "@type" : "Person",
+        "name" : "Amir Navrutdinov",
+        "alternateName": ["Amir Shikarno", "Амир Наврутдинов"]
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://qucu.ru/emodzi.html"
+     },
+      "datePublished" : "2021-02-11",
+      "dateModified" : "2025-08-08",
+      "image" : "https://qucu.ru/emodzi.html",
+      "articleSection" : "� Отнестись к эмодзи как к картинке, посчитать эмодзи изображением",
+      "articleBody" : "Еще одно преимущество эмодзи, её можно использовать как изображение, со сверхбыстрой скоростью. Такая легкость для нынешнего постапокалиптического обитания, даёт расчистить место для еще одного шага вперед. Эмодзи можно использовать как изобржение если проставить теги с размером шрифта больше чем сам тот шрифт которым все написано",
+      "url" : "https://qucu.ru/images/DSC_4858.JPG",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "веб мастреская имени Барона Сайтоверстаузена",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://qucu.ru/public/images/logo.png"
+             }
+      }
+    }
+    </script>
+    </head>
+    <body>
+        <main>
+            <article>
+                <h1>Эмодзи на сайт вместо картинки.</h1>
+                <p class="margin">Еще одно преимущество <a href="https://ru.piliapp.com/emoji/list/">эмодзи</a>, её можно использовать как изображение, со сверхбыстрой скоростью. Такая легкость для нынешнего постапокалиптического обитания, даёт расчистить место для еще одного шага вперед.</p>
+                <div class="rowBox">
+                    <p style="font-size: 22px; max-width: 550px;">Эмодзи можно использовать как изобржение если проставить теги с размером шрифта больше чем сам тот шрифт которым все написано</p>
+                    <span style="font-size:100px">🧑‍💻</span>
+                </div>
+                <p class="margin">Первая мысль была модифицировать размер с помощью медиа запросов, чтобы можно было подстраивать под размеры. Как и первая попытка запустить эмодзи в качестве картинки. С простым способом адаптации на флексах. Если посмотреть на эмодзи как на текст, а не как на картинку. То проще и легче установить для блоков width: Vpix; то есть в пикселях. Добавить flex-wrap: wrap; Это позволит блокам прыгать при необходимости, но в смысле “перфекциониста”, придется продумывать макс и мин значения допустимой ширины. Что сразу несет в себе смысловую нагрузку, в последствии задействует мыслительный процесс. Вынуждая расходовать питательные вещества на посыл импульсов во внутричерепной коробки. Суля невероятным тратам и ранжировании средств на вынужденное подкрепление. Для столь мелочных задач с тратой драгоценного времени.</p>
+
+                <h2>Способ созревший в процессе поста.</h2>
+                <div>
+                    <p style="float:left; font-size:100px;">🤔</p>
+                    <p style="color: green;">Отнестись к эмодзи как к картинке, посчитать эмодзи изображением, модифицировать эмодзи картинкой. Посчитать эмодзи картинкой и все таки эмодзи - это и есть изображение! P.S “ЭМОДЗИ Картинка”.😮💡</p>
+                </div>
+                <div>
+                    <p style="float:right; font-size:100px;"> 🎯</p>
+                    <p class="margin">Эмодзи вместо картинки уже говорит за себя почему бы не попробовать устроить обтекание, как это происходило для изображений с помощью тега float: ? И у способа с тегами float: есть больше преимуществ. Основной это то что нет пустого пространства т.к. текст обтекает как картинку и не дает эффект пустоты, как это происходит с флексовыми блоками flex-wrap: </p>
+                </div>
+                <h2>Что получилось?</h2>
+                <div>
+                    <p style="float:left; font-size:100px;"> 👽</p>
+                    <p class="margin">Если обернуть эмодзи и кекст дивом и применять теги как для фото, получится хороший вариант вставлять изображения в текст инсценировав картинку.</p>
+                </div>
+                <span style="background-color: rgb(255, 209, 149); margin:1%">
+                    &nbsp;&ltdiv><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&ltp style="float:left; font-size:100px;"> 👽&lt/p><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&ltp>текст и все такое Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, placeat? Odit harum accusamus dolores ut hic quia impedit eius rem nihil voluptates maxime nisi cumque optio, blanditiis nesciunt. Minus, est..&lt/p><br>
+                    &nbsp;&lt/div><br>
+                </span>
+                <div>
+                    <p style="float:right; font-size:100px;">🧙‍♂️</p>
+                    <p class="margin">Без комментариев! Все уже и так ясно, вставлять сверхбыстрые картинки в веб документ со сверхбыстрой скоростью, можно назвать волшебством! Вероятно только поэтому при устройстве на работу через ёнтернет, стало принятым намекать на путь нетрадиционных специальностей. Таких как: волшебников, целителей и экстрасенсов. Вото оно что! Раз уж тема докатилась до таких неприятных задач, то можно сказать что обладая подобными способностями и проинтуичить пути. Скорее всего для многих. Выбор выпадает на более легкие и приближенные к адекватному смыслу решения задачи связанной с выбором специальности для работы в реальном мире. Программирование и веб разработка!</p> <p style="float:left; font-size:100px;">🦀</p><p class='margin'>Конечно же это не говорит о том что нужно совсем не верить в волшебство. нО. В данном случае лучше промолчать. Потому что в этой теме вопросов, как говорится: “молчание - Золото”. А для персонажей с нестандартными способностями, открыта целая дорога в мир сказочного волшебства с безграничными возможностями и незабываемыми приключениями. Главное найти способ проявить себя. Ведь такая дорога не имеет скоростных ограничений! </p>
+                </div>
+            </article>
+        </main>
+
+        <div class="first">
+            <footer>
+                </footer>
+            <section>
+              <!--
+               XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                      Here commentsBlock!
+              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+              -->
+              <div id="comments"></div>
+              <a href="https://qucu.ru/comments/" style="font-size: 17px;">https://qucu.ru/comments/</a>
+              <script type="text/javascript">
+                const site={
+                  origin: 'https://qucu.ru/',
+                  referrer: "https://qucu.ru/emodzi.html"
+                }
+                const importantBag={id:"nasoberu",site:window.location};
+                  // const id='nasoberu';// important!!!
+                  const script =document.createElement('script');
+                  const url ='https://comments.qucu.ru/allow-cors/';
+                  async function goComments(){
+                    await fetch(url,{
+                        headers: {
+                              'Content-Type': 'application/json',
+                          },
+                      origin:site.origin,
+                      method: "POST",
+                      referrer: site.referrer,
+                      referrerPolicy: "origin-when-cross-origin",
+                      mode:"cors",
+                      credentials: "include",
+                      cache: "no-store",
+                    }).then(response=>response.text()).then(result=>{
+                      document.querySelector('#comments').append(script);
+                      let oK = document.querySelector('#comments > script');
+                      oK.innerHTML=result;
+                    });
+                  };
+                  setTimeout(()=>goComments(),300);
+              </script>
+
+            </section>
+            </div>
+
+            <!-- Счетчики -->
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-CTRLNMFNGY');
+            </script>
+            </body>
+                <!-- ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
+                                Начало меню!
+                ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ-->
+                <div id="menu"></div>
+
+                <button class="burg">
+                  <span style="font-size:47px;">🍔</span>
+                </button>
+                <!--Зря ты стиль кнопки изменил, теперь все кнопки после этого стилая пропадают.-->
+                <script>
+
+                    //--------------------------------------------------------------
+                    //--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+                    //--------------------------------------------------------------
+                function run(){
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("GET", 'public_old/menu/menu.html', true);
+                    xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+                    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                    document.getElementById("menu").innerHTML = this.responseText;
+                        }
+                    }
+                    xhr.send();
+                }
+                /*--------------------------------------------------------------------------
+                ----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+                --------------------------------------------------------------------------*/
+                                    //setInterval(run, 700);
+                                    run();
+                </script>
+                <link rel="stylesheet" href="public_old/menu/style-menu.css">
+                <script src="public_old/menu/script-menu.js"></script>
+</html>

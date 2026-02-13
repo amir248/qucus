@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/good-deal.html">
+    <meta name="robots" content="all">
+    <meta name="autor" content="Amir Navrutdinov">
+    <meta name='description' cotnent="Хорошая сделка, с опалтой материальными средствами имеющими ценность.">
+    <link rel="icon" href="public/images/icon9.svg">
+    <meta name="theme-color" content="#a0ffed">
+    <style>
+      *{
+        margin:0;
+      }
+      body{
+        background:linear-gradient(rgb(255,255,100),rgb(100,255,255));
+        min-height:100vh;
+        max-width: 100%;
+        font-size:20px;
+      }
+      main{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        max-width:100%;
+      }
+      article{
+        display:flex;
+        justify-content:space-between;
+        align-items:space-around;
+        max-width:100%;
+        min-height: 100vh;
+        width:700px;
+        flex-wrap: wrap;
+      }
+      #main{
+        display:flex;
+        justify-content:space-between;
+        align-items:space-around;
+        max-width:100%;
+
+        width:700px;
+        flex-wrap: wrap;
+      }
+      .liverArm{
+        background:linear-gradient(rgba(255,255,0,0.5),rgba(0,255,255,0.5));
+        border:2px solid green;
+        border-radius: 25px;
+        height:90px;
+        width:90px;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        font-size:55px;
+        margin:1%;
+        flex-direction: column;
+      }
+      .liverArm:hover{
+        background:green;
+        border:2px solid red;
+        font-size:75px;
+        color:white;
+        transition:all 1s ease-out;
+      }
+      .vertical-Line{
+        flex-direction: row;
+      }
+      section{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        width:700px;;
+      }
+      p{
+        margin:1%;
+      }
+      #sigBlock{
+        display:none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+          <h1 style="display: flex; align-items: center; justify-content: center; background:green;color:white; width:100%; max-height:75px;"><p id='hederH1'></p></h1>
+          <p id="textTarget"></p>
+          <div id="main">
+            <p class="liverArm" id='target'>🎯<span style="font-size:15px;">няша Миссия</span></p>
+            <p class="liverArm" id="otzov">🚀<span style="font-size:15px;">Скорость</span></p>
+            <p class="liverArm">💻<span style="font-size:15px;">Компутер</span></p>
+            <a href="https://qucu.ru/resume/Amir.html"><p class="liverArm">⭐<span style="font-size:15px;">Резюме</span></p></a>
+            <p class="liverArm">🍿<span style="font-size:15px;">Интерсекшен обсервер</span></p>
+            <p class="liverArm">🗝<span style="font-size:15px;">Ыыы</span></p>
+            <p class="liverArm">⌨<span style="font-size:15px;">Писательство</span></p>
+            <p class="liverArm" id="maps">🌏<span style="font-size:15px;">Наш Адрес:</span></p>
+            <p class="liverArm" id="otzovY">😆<span style="font-size:15px;">Отзовы</span></p>
+          <!-- <div class="vertical-Line">
+            <p style="margin:5%; padding:2px; width:40px; height:1px; background:red;"></p>
+            <p style="margin:5%; padding:2px; width:40px; height:1px; background:red;"></p>
+            <p style="margin:5%; padding:2px; width:40px; height:1px; background:red;"></p>
+          </div> -->
+        </div>
+          <section>
+
+          <div id="ono"></div>
+        </section>
+          <div id="sigBlock">
+            <!--
+             XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                    Here commentsBlock!
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            -->
+            <div id="comments"></div>
+            <a href="https://qucu.ru/comments/" style="font-size: 17px;">https://qucu.ru/comments/</a>
+            <script type="text/javascript">
+              const site={
+                origin: 'https://qucu.ru/',
+                referrer: "https://qucu.ru/marketing-experiment.html"
+              }
+              const importantBag={id:"nasoberu",site:window.location};
+                // const id='nasoberu';// important!!!
+                const script =document.createElement('script');
+                const url ='https://comments.qucu.ru/allow-cors/';
+                async function goComments(){
+                  await fetch(url,{
+                    headers: {
+                              'Content-Type': 'application/json'
+                          },
+                    origin:site.origin,
+                    method: "POST",
+                    referrer: site.referrer,
+                    referrerPolicy: "origin-when-cross-origin",
+                    mode:"cors",
+                    credentials: "include",
+                    cache: "no-store",
+                  }).then(response=>response.text()).then(result=>{
+                    document.querySelector('#comments').append(script);
+                    let oK = document.querySelector('#comments > script');
+                    oK.innerHTML=result;
+                  });
+                };
+                setTimeout(()=>goComments(),300);
+            </script>
+        </div>
+      </article>
+    </main>
+    <script>
+      let hederH1 = 'Mobile Site';
+      document.querySelector('#hederH1').innerHTML= hederH1;
+      document.querySelector('#target').addEventListener('click',()=>{
+        document.querySelector('#main').style.display='none';
+          // document.getElementsByTagName('h1')[0].style.cssText="none";
+          document.getElementsByTagName('h1')[0].style.cssText=`
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          width:100%;
+          background:blue;
+          max-height:75px;
+          `;
+          document.querySelector('#hederH1').innerHTML=`<a href="/mobile-site.html"><span style="font-size:55px;">👈</span></a>`;
+          document.querySelector('#textTarget').innerHTML=`
+          <h2>Веб мастерская</h2>
+          <p>Наша миссия: писать “программировать” сайты и лендинги на JS +(версткой) с помощью флексов, временами дополненных гридами. Обязательно современными тегами из области html5.</p>
+          <p>И обязательно с продвижением в контекстной рекламе(если есть средства на что).</p>
+          <p>Из всех возможных технологий “по программированию лендинга” в веб мастерской имени Барона Сайтоверстаузена, наибольшему предпочтению отадется яваскрипту(“джейэсу” JS). Из-за простоты, многофункциональности и удобстве применения. Да. И стоит откровенно признаться в большей степени потому что это единственный язык программирования работающий в браузере, доступный любому персонажу, независимо от разнообразных факторов(...и даже самых форсМажорных). Сколько бы не было желаний программировать на чем либо еще. В силу вышеизложенных “непреодолимых” факторов, приходится возвращаться к яваскрипту. Пусть даже все сопоставления можно сравнить как “спиди гонщик” психанув, случайно, заехал в кювет. И осознавая всю плачевность ситуации, продолжает дальше её осознавать. Недоумевая в трезвонящей паники. Для любой форсМажорной авиакатастрофы, необходимы только эти три фактора: кювет, браузер и яваскрипт!</p>
+          <p>Даже когда ученые с ренТв, пытались прокомментировать происходящее. Все изложенные факты из телепередачи: “необъяснимо но факт”. Фрактально констатируют: “кювет, браузер и яваскрипт!”...</p>
+          `;
+      });
+
+
+      document.querySelector('#otzov').addEventListener('click',()=>{
+          function next(){
+              let podimgl = new XMLHttpRequest();
+              podimgl.open('GET', '/mobile-site/one.html');
+              podimgl.send();
+              podimgl.onload = function(){
+                  if(podimgl.status==200){
+                      responseType ="Text";
+                      document.querySelector('#ono').innerHTML = this.response;
+                  }
+              }
+          }
+             next();
+             console.log('est');
+             document.getElementsByTagName('h1')[0].style.cssText=`
+             display:flex;
+             align-items:center;
+             justify-content:center;
+             width:100%;
+             background:purple;
+             max-height:75px;
+             `;
+            document.querySelector('#hederH1').innerHTML=`<a href="/mobile-site.html"><span style="font-size:55px;">👈</span></a>`;
+            document.querySelector('#main').style.display='none';
+      });
+            document.querySelector('#otzovY').addEventListener('click',()=>{
+            document.querySelector('#hederH1').innerHTML=`<a href="/mobile-site.html"><span style="font-size:55px;">👈</span></a>`;
+            document.querySelector('#main').style.display='none';
+            document.querySelector('#sigBlock').style.cssText=`
+            display:block;
+            max-width:100%;
+            width:700px;
+            `;
+              document.querySelector('#textTarget').innerHTML=`
+               <div><span style='font-size:99px; float:right;'>🤓</span><p>Комментарии которые оставляют настоящие люди - это те люди которых можно охарактеризовать: 'человеком' независимо от пола и возраста, либо каких либо еще классификаций, сегментирующие индивидуума по отличительным чертам, свойственных дозволенной уникальности в рамках одного вида.</p><span style='font-size:99px; float:left;'>👽</span><p>Криво-косо-Сошибками, как полагается интерпретировать порыв вдохновения из тонкой глубины искренних чувств. И совсем не идеально.</p></div>
+              `;
+      });
+
+
+      document.querySelector('#maps').addEventListener('click',()=>{
+      document.querySelector('#hederH1').innerHTML=`<a href="/mobile-site.html"><span style="font-size:55px;">👈</span></a>`;
+      document.querySelector('#main').style.display='none';
+        document.querySelector('#textTarget').innerHTML=`
+        <h2>Наш адрес: ни дом, и не улица, наш адрес: планета Земля.</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d22747994.150976256!2d98.44147231296388!3d69.63541544147061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1621817792922!5m2!1sru!2sru" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        `;
+      });
+
+    </script>
+
+    <!-- Счетчики -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CTRLNMFNGY');
+    </script>
+  </body>
+</html>

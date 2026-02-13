@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Веб мастерская имени Барона Сайтоверстаузена</title>
+    <meta name='description' content='разработка и модификация сайтов на JS, редактирование, внесение изменений, сайтов лендингов, одностраничников, веб страниц, доработка исправление, SEO оптимизация продвижение с помощью контекстной рекламы.'>
+    <link rel='canonical' href="https://qucu.ru">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' href='images/js.svg'>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+    <style>
+      *{
+        margin:0;
+      }
+      body{
+        background:#f5f79c;
+        font-size:20px;
+      }
+      main{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        max-width:100%;
+      }
+      article{
+        display:flex;
+        background:#f6f990;
+        justify-content:center;
+        align-items:center;
+        max-width:100%;
+        width:900px;
+        flex-direction:column;
+      }
+      header{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        min-height:100vh;
+        flex-direction:column;
+        max-width:100%;
+        vertical-align: middle;
+      }
+      .boxMenu{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        flex-direction:column;
+        max-width:100%;
+        vertical-align: middle;
+      }
+      .boxMenu nav{
+        display:flex;
+        justify-content:space-around;
+        background: white;
+        align-items: center;
+        width:calc(900px - 6px);
+        max-width: calc(100% - 6px);
+        border: 1px solid black;
+        height:25px;
+        font-size: 15px;
+      }
+      header .boxMenu h1{
+        /* display:flex;
+        justify-content: center;
+        align-items: center; */
+        margin-top:15px;
+        background:black;
+        max-width:100%;
+        width:900px;
+        color:yellow;
+        text-align:center;
+        vertical-align: middle;
+        min-height:75px;
+        flex-direction:column;
+      }
+      .ButtonBox{
+        display:flex;
+        background: #ffeb39;
+        justify-content: center;
+        align-items: center;
+        width:100px;
+        height:35px;
+        max-width:100%;
+      }
+      .ButtonBox a{
+        text-decoration: none;
+        color:black;
+      }
+      .ButtonBox:hover{
+        background: violet;
+      }
+      @media(max-width:300px){
+        header h1{
+          vertical-align: middle;
+        }
+        .font-sizeH1{
+        font-size:17px;
+        }
+      }
+      .boxi{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        max-width:100%;
+        width:900px;
+        flex-direction:column;
+      }
+      .boxi h2{
+        background: black;
+        width:900px;
+        max-width: 100%;
+        color:yellow;
+        text-align: center;
+      }
+      .anotation{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color:black;
+        /* text-shadow:black 1px 1px 1px, yellow -1px -1px 2px, black 2px 2px 2px; */
+        font-size:28px;
+        width:900px;
+        max-width:100%;
+        min-height:75px;
+        background: #ffeb39;
+        flex-direction:column;
+      }
+      .wrapper {
+        display: grid;
+        max-width: 100%;
+        width:900px;
+        grid-template-columns: repeat(9, 1fr);
+        grid-gap: 0px;
+        grid-auto-rows: 190px;
+        grid-template-areas:
+          "a a b b b c c c c"
+          "d d d e e e e f f"
+          "g g k k k k m m m";
+      }
+        .wrapper a{
+          text-decoration: none;
+        }
+
+      .item1 {
+        grid-area: a;
+        background: #ffa6ff;
+        border: 3px solid #ffa6ff;
+      }
+      .item1:hover{
+        background: green;
+        border: 3px solid red;
+      }
+      .item2 {
+        grid-area: b;
+      text-align: center;
+        background: violet;
+        /* border-radius: 10px; */
+        border: 3px solid violet;
+      }
+      .item2:hover{
+        background: coral;
+        border: 3px solid green;
+      }
+      .item3 {
+        grid-area: c;
+      text-align: center;
+        background: #ffa6ff;
+        /* width:300px; */
+        max-width: 100%;
+        /* border-radius: 10px; */
+        border: 3px solid  #ffa6ff;
+      }
+      .item3:hover{
+        background: lime;
+        border: 3px solid coral;
+      }
+      .item4 {
+        grid-area: d;
+        align-items: center;
+        background: #db9bdb;
+        /* border-radius: 10px; */
+        border: 3px solid #db9bdb;
+      }
+      .item4:hover{
+        background: lightgreen;
+        border: 3px solid coral;
+      }
+      .item5{
+        grid-area:e;
+        align-items:center;
+        background: #ff7bff;
+        /* border-radius: 10px; */
+        border: 3px solid #ff7bff;
+      }
+      .item5:hover{
+        background: lightgreen;
+        border: 3px solid green;
+      }
+      .item6{
+        grid-area:f;
+        align-items: center;
+        background:#db9bdb;
+        /* border-radius: 10px; */
+        border: 3px solid #db9bd;
+      }
+      .item6:hover{
+        background: darkorange;
+        border: 3px solid yellow;
+      }
+      .item7{
+        grid-area:g;
+        align-items: center;
+        background:#ff7bff;
+        /* border-radius: 10px; */
+        border: 3px solid #ff7bff;
+      }
+      .item7:hover{
+        background: red;
+        border: 3px solid green;
+      }
+      .item8{
+        grid-area:k;
+        align-items:center;
+        background:#db9bdb;
+        /* border-radius: 10px; */
+        border: 3px solid #db9bdb;
+      }
+      .item8:hover{
+        background: blue;
+        border: 3px solid green;
+      }
+      .item9{
+        grid-area:m;
+        align-items:center;
+        background:#ff7bff;
+        /* border-radius: 10px; */
+        border: 3px solid #ff7bff;
+      }
+      .item9:hover{
+        background: cyan;
+        border: 3px solid green;
+      }
+      img{
+        max-width: 100%;
+      }
+      .social_network_buttons{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        height: 50px;
+        width:900px;
+        max-width:100%;
+      }
+      .social_network_buttons img{
+        height:45px;
+        width:45px;
+        opacity:0.3;
+      }
+      .social_network_buttons img:hover{
+          width:75px;
+          transition:3s;
+          opacity:1;
+      }
+      </style>
+      <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "LocalBusiness",
+  "name" : "Веб мастерская имени Барона Сайтоверстаузена",
+  "telephone" : "+79528885656",
+  "email" : "chikchicly@gmail.com",
+  "image" : "http://qucu.ru/images/4974.JPG",
+  "priceRange" : "6999RUB",
+  "address" : {
+    "@type" : "PostalAddress",
+    "streetAddress" : "Lazareva",
+    "addressLocality" : "Sibiria",
+    "addressRegion" : "Сибирь",
+    "addressCountry" : "Россия",
+    "postalCode" : "634040"
+  },
+  "url" : "https://qucu.ru",
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "ratingCount" : "2",
+    "ratingValue" : "5"
+  },
+  "review" : {
+    "@type" : "Review",
+    "author" : {
+      "@type" : "Person",
+      "name" : "Amir Navrutdinov"
+    },
+    "reviewRating" : {
+      "@type" : "Rating",
+      "ratingValue" : "5"
+    }
+  }
+}
+
+          {
+          "@context": "https://schema.org",
+          "@type": "person",
+          "url": "http://qucu.ru",
+          "name": "Amir Navrutdinov",
+          "alternateName": ["Amir", "Амир Наврутдинов","Amir Shikarno", "ChikChicly SpaceHands ForsmazHorowich"],
+          "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+7-952-888-5656",
+              "contactType": "Веб программирование JS, дизайн и верстка Лендинга",
+              "url": "https://qucu.ru/resume/Amir.html"
+              }
+          }
+
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Web workshop named after Baron Siteverstauzen",
+  "headline": "order an adaptive landing page with advertising",
+  "author" : {
+     "@type" : "Person",
+     "name" : "Amir Navrutdinov",
+     "alternateName": ["Amir Shikarno", "Амир Наврутдинов","Amir Shikarno"],
+     "url" : "https://qucu.ru/resume/Amir.html",
+     "telephone": "+7-952-888-5656",
+     "contactType": "web developer html,css,js,nodejs,mysql"
+   },
+  "datePublished": "2022-07-17",
+  "dateModified" : "2023-12-17",
+  "image": "https://qucu.ru/images/logo.png",
+  "articleSection": "Order a landing page, a multi-landing page based on a figma layout! Sites on JS",
+  "articleBody": "One of the most effective ways to attract customers to the site is to increase sales. Increase site traffic. The advantage of context is showing ads only to the part of the audience that is really interested. This method is called: an exact hit in the target audience. And it lies in the correct setting of the advertising company. Successful setting of contextual advertising. It can be compared to fishing, in which to catch: a fat, hefty river monster. It is necessary to immerse yourself in the process with the maximum possible immersion. And don't be afraid to get your hands dirty in code...",
+  "url": "https://qucu.ru/",
+  "publisher" : {
+      "@type" : "Organization",
+      "name" : "Web workshop named after Baron Siteverstauzen",
+      "logo": {
+          "@type": "ImageObject",
+          "url": "https://qucu.ru/images/lol/spa.webp"
+      }
+    }
+}
+</script>
+
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'G-CTRLNMFNGY');
+</script>
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6824659625881284"
+     crossorigin="anonymous"></script> -->
+  </head>
+  <body>
+    <script src="https://qucu.ru/images/json/fotoos.json"></script>
+    <main>
+      <article>
+        <header>
+          <div class='boxMenu'>
+            <nav><span class="ButtonBox"><a href="#contextka">Контекстка</a></span><span class="ButtonBox"><a href="#prim">Примеры</a></span><span class="ButtonBox"><a href="#JSgallery">html coder</a></span></nav>
+          <h1>
+            <img itemprop="logo" src="https://qucu.ru/images/logo.png" alt="веб мастерская имени Барона Сайтоверстаузена" style="max-width:75px; float:right;margin-right:5%;" width="75px" height="75px">
+          <p id='headers'></p>
+          </h1>
+          <fieldset>
+            <legend>Language</legend>
+            <label>
+              <input type="checkbox" name="language" value="enable English language" id="english">
+              <span>Eng</span>
+            </label>
+          </fieldset>
+        </div>
+          <p class='anotation'><span style='width:500px;max-width:100%;'><span id='annotation'></span></span></p>
+
+
+          <!-- Большой скрпт мультилендинговой основы с локейшин сёрч -->
+                <script>
+
+                let figmaTitle;
+                // ~!!!! что это выше нужно проверить
+                let header;
+                let annotatio;
+                let figmaText;
+                let undText;
+                let siteLanguage =true;
+                if(window.location.search=='?utm_metka'){
+                    header = 'Заголовок! Специально для утем метки /?utm_metka';
+                    annotatio = 'Анотация к этому заголовку. Тут объяснени что это мультилендя на яваскрипте без серверного языка.';
+                    // console.log(window.location.search);
+                    document.querySelector('meta[name="description"]').setAttribute("content", "Заказать мультилендинг с кучей ютм меток которые открывают то что нужно.");
+                    // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                    document.title="Еще один мультилендинг.";
+                    undText=" ";
+                    siteLanguage=false;
+                  }else if(window.location.search=='?multi_lending'){
+                      header = 'Мультилендинг! Ютем метки подменяют заголовок и контент.';
+                      annotatio = 'Анотация к этому заголовку. Тут объяснени что это мультилендинг успешно действует на яваскрипте без серверного языка.';
+                      console.log(`${header} ${annotatio}`);
+                      document.querySelector('meta[name="description"]').setAttribute("content", "Заказать мультилендинг с продвижением и SEO оптимизацией. Под тот контент что нужно показать широкому кругу.");
+                      // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                      undText=" ";
+                      siteLanguage=false;
+                }else if(window.location.search=='?UTM'){
+                      header = 'Не бояться замарать руки по локоть в коде';
+                      annotatio = '<h3>🖥 Технология запиливать страницы на голом html/css/js под тот контент что нужно показать, обеспечивает высокую скорость, широкий охват и 🖥👩‍💻 SEO оптимизацию для показа в расширенных критериях поиска.</h3>';
+                      document.querySelector('meta[name="description"]').setAttribute("content", "Сайт на древней технологии html css JS. Доработка, исправление ,модификация. Или написать свой сайт с нуля.");
+                      // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                      undText=" ";
+                      siteLanguage=false;
+
+                }else if(window.location.search=='?UTM2'){
+                      header = 'Заказать мультилендинг';
+                      annotatio = `<h3>Мультилендинг с адаптивной версткой и настройкой директа по ЦА <a href="https://qucu.ru/feedback-form.html"><span class='ok'>👌Заказать!👍</span></a></h3>`;
+                      document.querySelector('meta[name="description"]').setAttribute("content", "Зказать Лендинг! Быстрые мобильные страницы, сайт с рекламой и SEO оптимизацией.");
+                      // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                      undText=" ";
+                      siteLanguage=false;
+
+                }else if(window.location.search=='?top1'){
+                      header = '🎯Хочу в ТОП!? Значит Вы на правильном пути!';
+                      annotatio = '<strong>Стать заметным, легко! И веб мастерская имени Барона Сайтоверстаузена спешит на помощь ко всем! Все это выглядит как призвать супермена со своей супер силой! (...ну вот опять этот супермен.)</strong>';
+                      document.querySelector('meta[name="description"]').setAttribute("content", "Адаптивная верстка страниц с продвижением, поможет рассказать о себе всему миру!");
+                      // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                      undText=" ";
+                      siteLanguage=false;
+
+                }else if(window.location.search=='?seo'){
+                      header = '<h1 style="font-size:4vh;">Лендинг с СЕО прибамбахами и турбо приводом в топ1.</h1>';
+                      annotatio = '<p>Тут делают адаптивную верстку с CEO прибамбахами и турбо приводом в топ 1 на планетарном уровне, по всей Земле и готовы пойти на контакс с любым предствителем Земной рассы, не смотря на его вероисповедание, социальный статус и материальное положение. (последнее под вопросом))) А так мы даже очень всем рады!</p>';
+                      // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                      undText=" ";
+                      siteLanguage=false;
+
+                }else if(window.location.search=='?utm_metka_dlja_site'){
+                      header = '<h1>Heder</h1>';
+                      annotatio = '<h3>Annotation</h3>';
+                      siteLanguage=false;
+
+                }else if(window.location.search=='?UTM3'){
+                      header = `сайт с ютеэм метками называется мультилендинг!`;
+                      annotatio = '<h3>Адаптивная верстка мобильной страницы.</h3>';
+                      undText=" ";
+                      siteLanguage=false;
+
+                }else if(window.location.search=='?spa'){
+                      header = `<h1 style="text-align:center; font-size:3vh;"><img src="images/spanch.jpg" width='200px' alt='😃'>  <br> &nbsp Верстаю сайты с СЕО прибамбахами и турбо приводом в ТОП1 :-)!</h1>`;
+                      annotatio = '<h3>На планетарном уровне!</h3>';
+                      document.querySelector('meta[name="description"]').setAttribute("content", "Да поможет тебе сила адаптивной верстки");
+
+                      // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                      undText=" ";
+                      siteLanguage=false;
+
+                }else if(window.location.search=='?frends'){
+                      header = `Добро пожаловать в наш дивный мир вебразработки!`;
+                      annotatio = '<h3>Мы запиливаем: сайты, лендинги, мультилендинги, сайты визитки и все в этом духе. На планетарном уровне!</h3>';
+                      document.querySelector('meta[name="description"]').setAttribute("content", "Сообщество веб разработчиков, делающих мир лушче и еще адаптивнее.");
+
+                      // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                      document.title="сообщество веб мастеров.";
+                      undText=" ";
+                      siteLanguage=false;
+
+                }else if(window.location.search=='?figma'){
+                    header = '<h1>Лендинг по макету из фигмы</h1>';
+                    annotatio = '<h3>Лендинг, мультилендинг с SEO оптимизацией и продвижением в контекстной рекламе.</h3>';
+                    figmaTitle = '<h2>Фигма</h2>';
+                    figmaText ="<p style='margin:3%;'>Когда нужно &quot;запилить&quot; сайт по быстренькому внести изменения в существующий проект, по технологии &quot;HTML CODER&quot;, с использованием великой троицы веб разработки &quot;html,css,js&quot;.</p><p style='margin:3%;'>Пример сайта по макету из фигмы: &quot;<a href=https://www.figma.com/file/8T4byFDAV5REmnVyQlsFO1/clean_and_simple_website_freebie_work_file?node-id=3%3A2 style='overflow-wrap: breack-word;word-wrap: break-word;'>clean_and_simple_website_freebie_work_file</a>&quot; – Figma и данный сайт запиливается за один день, но! Стоит учесть что этот макет усовершенствован тегом вьюпорт и подходит для всех мобильных устройств. Что делает верстку приспособленной ко всем ситуациям. Даже необъяснимо &quot;форсмажорных&quot;. И на самом деле на одну только верстку ушли два дня. И пара консультационных вопросов со специалистами сообщества &quot;<a href=https://ru.stackoverflow.com/>стековерфлоу</a>&quot;. Все это даёт свои преимущества с возможностью лицезреть адаптивный вариант по макету из фигмы &quot;<a href=https://qucu.ru/figma-simple-website.html>Примеры лендингом с веб мастерской имени барона сайтоверстаузена</a>&quot;</p><p style='margin:3%;'>Во времена постапокалипсиса, экономических штормов, сказочных абстракций. Существует проверенная техника: запиливать лендинг и мультилендинг по словесно устному, примерному описанию, по рисунку, по картинке, а лучше по макету из фигмы. С дополнительной SEO оптимизацией, семантическими тегами дающим современный подход. И будет всем счастье! И финансовая благополучность!</p>";
+                    document.querySelector('meta[name="description"]').setAttribute("content", "Лендинг по макету из фигмы! Качественно с системой SEO оптимизации, аналитикой и продвижением в контекстной рекламе.");
+                    document.title="Лендинг по макету из фигмы.";
+                    // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                    undText=" ";
+                    siteLanguage=false;
+
+                  }else if(window.location.search=="?Amirs_web_workshop"){
+                    header = 'Веб мастерская Амира';
+                    annotatio = '<img src="images/Amir.jpg" style="width:300px; border-radius:50%;"><h3>Верстка Лендингов, мультилендингов по технологии html,css,js &quotHTML CODER!&quot</h3>';
+
+                    document.querySelector('meta[name="description"]').setAttribute("content", "Лендинг по макету из фигмы! Качественно с системой SEO оптимизации, аналитикой и продвижением в контекстной рекламе.");
+                    document.title="Мультилендинг лучше чему у всех остальных! Будьте уверены!";
+                    // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                    undText="<span style='color:white; font-size:25px;text-shadow: 1px 1px 3px black;'>Когда О_очень надо! Редатировать, модифицировать, внести изминения. Запустить контекстную рекламу и продвинуть свой товар или услуги. </span>";
+                    siteLanguage=false;
+
+                  }else if(window.location.search=="?multilanding"){
+                    header="Мультилендинг";
+                    annotatio=`<strong style="font-size:28px; color:rgb(255,200,100);text-shadow:1px 1px 2px black; text-align:center;">Заказать мультилендинг</strong><br> На старых, добрых, древних технологиях великой троицы: <br><strong><span style="color:blue; font-size:30px;">html</span>, <span style="color:green; font-size:30px;">CSS</span>, <span style="color:yellow; font-size:30px; text-shadow:1px 1px 2px black;">JS</span>.</strong><br> ... &➕ <span style="font-size:15px;">Редактирование, исправление, модификация.</span>`;
+                    document.querySelector('meta[name="description"]').setAttribute("content", "Пример работающего мультилендинга.");
+                    document.title="Мультилендинг";
+                    // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                    siteLanguage=false;
+
+                  }else if(window.location.search=='?order-a-landing-page'){
+                        header = 'Заказать лендинг пейдж.';
+                        annotatio = 'Langing page по макету из фигмы с SEO оптимизацией и продвижением в контекстной рекламе.';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Заказать Лендинг пейдж с продвижением и SEO оптимизацией. По макету из фигмы или по любому другому макету.");
+                        // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                        undText=" ";
+                        siteLanguage=false;
+
+                  }else if(window.location.search=='?web-workshop'){
+                        header = 'web workshop named after baron siteverstauzen';
+                        annotatio = 'Это веб мастерская имени барона сайтоверстаузена.';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Заказать Лендинг пейдж с продвижением и SEO оптимизацией. По макету из фигмы или по любому другому макету.");
+                        // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                        undText=" ";
+                        siteLanguage=false;
+
+                  }else if(window.location.search=='?landing-page'){
+                        header = 'Заказать лендинг';
+                        annotatio = 'Заказать лендинг по макету из фигмы с SEO оптимизацией и продвижением в контекстной рекламе';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Заказать Лендинг пейдж с продвижением и SEO оптимизацией. По макету из фигмы или по любому другому макету.");
+                        // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                        undText=" ";
+                        siteLanguage=false;
+                  }else if(window.location.search=='?order-a-landing-site'){
+                        header = 'Заказать сайт лендинг';
+                        annotatio = 'Заказать сайт лендинг по макету из фигмы с SEO оптимизацией и продвижением в контекстной рекламе';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Заказать сайт Лендинг пейдж с продвижением и SEO оптимизацией. По макету из фигмы или по любому другому макету.");
+                        // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                        undText=" ";
+                        siteLanguage=false;
+                  }else if(window.location.search=='?order-a-turnkey-landing-page'){
+                        header = 'Заказать лендинг лендинг под ключ';
+                        annotatio = 'Заказать лендинг под ключ по макету из фигмы с SEO оптимизацией и продвижением в контекстной рекламе';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Заказать лендинг пейдж под ключ с продвижением и SEO оптимизацией. По макету из фигмы.");
+                        // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                        undText=" ";
+                        siteLanguage=false;
+                  }else if(window.location.search=='?order-the-creation-of-a-landing-page'){
+                        header = 'Заказать создание лендинга';
+                        annotatio = 'Создание лендинга по макету из фигмы с SEO оптимизацией и продвижением в контекстной рекламе';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Создание лендинга с продвижением и SEO оптимизацией. По макету из фигмы.");
+                        // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                        undText=" ";
+                        siteLanguage=false;
+                  }else if(window.location.search=='?one-page-website-order'){
+                        header = 'Сайт одностраничник заказать';
+                        annotatio = 'Заказать сайт одностраничник по макету из фигмы с SEO оптимизацией и продвижением в контекстной рекламе';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Сайт одностраничник заказать с продвижением и SEO оптимизацией. По макету из фигмы.");
+                        // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                        undText=" ";
+                        siteLanguage=false;
+                  }else if(window.location.search=='?order-one-page'){
+                        header = 'Заказать одностраничник';
+                        annotatio = 'Одностраничник по макету из фигмы с SEO оптимизацией и продвижением в контекстной рекламе';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Одностраничник с продвижением и SEO оптимизацией. По макету из фигмы.");
+                        // document.querySelector("link[rel=canonical]").setAttribute("href", window.location);
+                        undText=" ";
+                        siteLanguage=false;
+                  }else if(window.location.search=='?yandex'){
+                        header = 'web workshop after named baron sajtoverstausen';
+                        annotatio = 'Заказать лендинг по макету из фигмы с SEO оптимизацией и продвижением в контекстной рекламе';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Заказать лендинг с продвижением и SEO оптимизацией. По макету из фигмы.");
+
+                        undText=" ";
+                        siteLanguage=false;
+                  }else if(window.location.search=='?digital-marketing'){
+                        header = 'digital marketing with web workshop after named baron sajtoverstausen';
+                        annotatio = 'Заказать лендинг по макету из фигмы с SEO оптимизацией и продвижением в контекстной рекламе';
+                        document.querySelector('meta[name="description"]').setAttribute("content", "Заказать лендинг по макету из figma с продвижением в контекстной рекламе и SEO оптимизацией.");
+
+                        undText=" ";
+                        siteLanguage=false;
+                  }else{
+                    // console.log(window.location.href);
+                    header=`<p style='display:flex;flex-direction:column;'><span class='font-sizeH1'>Веб мастерская</span><span style='font-size:18px;'>имени Барона Сайтоверстаузена</span></p>`;
+                    annotatio=`<span style="width:500px;max-width:100%;">Заказать лендинг, мультилендинг, landing page, доработка модификация, внесение изменений html,css,js,nodejs,css.<span style="color:black;text-shadow:white 1px 1px 2px;">&nbsp;(JavaScript)</span></span>`;
+                    headerEng=`<p style='display:flex;flex-direction:column;'><span class='font-sizeH1'>Web workshop</span><span style='font-size:18px;'>named after Baron Siterstauzen</span></p>`;
+                    annotatioEng=`<span style="width:500px;max-width:100%;">Order a landing page, a multi-landing page based on a figma layout! Sites on JS<span style="color:black;text-shadow:white 1px 1px 2px;">&nbsp;(JavaScript)</span></span>`;
+
+
+
+                  }
+                  headers.innerHTML=`${header}`;
+                  annotation.innerHTML=`${annotatio}`;
+
+
+                </script>
+                <script>
+              // textTitle.innerHTML=`${figmaTitle}`;
+              // textBig.innerHTML=`${figmaText}`;
+              </script>
+              <!-- <span id="undOld" style="max-width:100%;">^_^</span> -->
+              <script>
+              // undOld.innerHTML=`${undText}`;
+              </script>
+
+
+
+
+
+          <div class="social_network_buttons">
+                <span id="oki" style="height:0;width:0;"></span>
+                <!-- <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async="" defer=""></script> -->
+                <a href="tel:+79528885656" target="_blank"><img id="d" src="public_old/icon/tell.png" alt="Позовонить заказать одностраничник" title="web programmer"></a>
+                  <a href="https://github.com/amir248" target="_blank"><img id="d" src="/images/icon/github.png" alt="Github" title="Github" width="75px" height="75px"></a>
+                <a href="https://www.linkedin.com/in/amir-navrutdinov-76374a119" target="_blank"><img id="d" src="/images/icon/Linkedin.png" alt="linkedin" title="Linkedin" width="75px" height="75px"></a>
+                <a href="https://www.youtube.com/channel/UCMeXPpGT7YsxIVAGunFWCyw" target="_blank"><img id="d" src="/images/icon/youtube.png" alt="youtube" title="Youtube" width="75px" height="75px"></a>
+                <a href="https://vk.com/veb_verstalshiki" target="_blank"><img id="d" src="/images/icon/vk.png" alt="VK" title="vKontakte" width="75px" height="75px"></a>
+                <a href="https://ok.ru/group/57374956912777" target="_blank"><img id="d" src="/images/icon/ok.png" alt="одноклассники" title="одноклассники" width="75px" height="75px"></a>
+                <a href="https://www.facebook.com/groups/nasoberu" target="_blank"><img id="d" src="/images/icon/facebook.png" alt="facebook" title="facebook" width="75px" height="75px"></a>
+                <!-- <a href="https://chat.whatsapp.com/KrsudYJi5e1HXdFeLFgTYX" target="_blank"><img id="d" src="/images/icon/watsap.png" alt="whatsapp" title="whatsapp"></a> -->
+                <a href="https://wa.clck.bar/79528885656" target="_blank"><img id="d" src="/images/icon/watsap.png" alt="whatsapp" title="whatsapp" width="75px" height="75px"></a>
+
+                <!-- <a href="/feedback-form.html"><img id="d" src="/images/icon/mail.png"  alt="mail" title="Написать письмо" width="75px" height="75px"></a> -->
+                <a href="https://www.instagram.com/qucu.ru/" target="_blank"><img id="d" src="/images/icon/inst.png" alt="instagram" title="instagram" width="75px" height="75px"></a>
+                <!-- <a href="https://tlgg.ru/chikchicly" target="_blank"><img id="d" src="/images/icon/telegram.png" title="Телега!" alt="telegram" title="Телега! О_о" width="75px" height="75px"></a> -->
+                <a href="https://ru.stackoverflow.com/users/306561/amir-shikarno?tab=profile" target="_blank"><img id="d" src="/images/icon/stackoverflow3.png" title="Stackoverflow" alt="stackoverflow" title="Stackoverflow" width="75px" height="75px"></a>
+          </div>
+
+        </header>
+
+        <div class="boxi">
+          <h2 style='border-radius: 10px 10px 0 0;' id='prim'>Примеры сайтов</h2>
+          <div class="wrapper">
+            <div class="item1"><a href='https://qucu.ru/landing-page-development.html'><span style='display:grid; height:190px;font-size:43px; align-items:center; justify-content:center;'>💻<p style='font-size:20px;'>order landing page</p></span></a></div>
+            <div class="item2"><a href='https://qucu.ru/rockPaperScissors.html'><span style='display:grid; height:190px;font-size:54px; align-items:center; justify-content:center;'>✊<p style='font-size:18px;'>Камень, ножницы, бумага.</p></span></a></div>
+            <div class="item3"><a href='https://amir248.github.io/tic-tac-toe/'><span style='display:grid; height:190px;font-size:43px; align-items:center; justify-content:center;'>❌⭕<p style='font-size:18px;'>Крестики нолики.</p></span></a></div>
+            <div class="item4"><a href='https://qucu.ru/blozhik/JS-Gallery#foto'><span style='display:grid; height:190px;font-size:73px; align-items:center; justify-content:center;'>📷<p style='font-size:18px;'>Gallery JS</p></span></a></div>
+            <div class='item5'><a href='https://qucu.ru/order-one-page.html'><span style='display:grid; height:190px;font-size:84px; align-items:center; justify-content:center;'>👌<p style='font-size:18px;'>Цена лендинга</p></span></a></div>
+            <div class='item6'><a href='https://qucu.ru/frontend-developer.html'><span style='display:grid; height:190px;font-size:43px; align-items:center; justify-items:center;word-wrap: break-word;word-break: break-all;'>👽<p style='font-size:11px; text-align:center;'>Пример лендинга с "интерсекшин обсервер".</p></span></a></div>
+            <div class='item7'><a href='https://qucu.ru/SEO-web-site-layout.html'><span style='display:grid; height:190px;font-size:50px; align-items:center; justify-items:center;break-word;word-break: break-all;'>🗝<p style='font-size:18px;text-align:center;'>SEO основные принципы</p></span></a></div>
+            <div class='item8'><a href='https://qucu.ru/figma-landing-page.html'><span style='display:grid; height:190px;font-size:74px; align-items:center; justify-content:center;justify-items:center;'>📐‍<p style='font-size:18px;text-align:center;'>Лендинг по макету из фигмы</p></span></a></div>
+            <div class='item9'><a href='https://qucu.ru/good-deal.html'><span style='display:grid; height:190px;font-size:54px; align-items:center; justify-content:center;'>🛠<p style='font-size:18px;'>Good Geal</p></span></a></div>
+          </div>
+    <span style='background:black; color:yellow;border-bottom:1px solid red; border-right:1px solid red; border-left:1px solid red; border-radius:0 0 10px 10px;'><a href='https://qucu.ru/?multi_lending' style='color:yellow; text-decoration:none;'><p style='margin:15px;'><span style="color:red;">псс...P.S.</span> И ещё верстка адаптивного мульти лендинга 💻 с поисковой оптимизацией, ➕турбо прибамбасами и <span style="color:green;">СЕО</span>приводом!📲</p></a></span>
+          <br>
+          <h2 style="background:yellow;color:black;" id="contextka">Контекстная реклама.</h2>
+          <div><p style="margin:3%;"><strong>Один из наиболее эффективных способов привлечь на сайт клиентов, расширить продажи. Увеличить посещаемости сайта. Преимущество контекста в показе объявлений только той части аудитории, которая действительно заинтересована. Такой способ называется: точное попадание в целевую аудиторию. И заключается в правильной настройки рекламной компании.
+          Удачная настройка контекстной рекламы. Можно сравнить с рыбалкой, в которой чтобы поймать: жирного, здоровенного речного монстра. Необходимо погрузится в процесс с максимально возможным погружением. И не бояться замарать руки по локоть в коде...</strong></p></div>
+          <span style='margin:1%;'></span>
+          <h2 id='JSgallery'>JS Gallery</h2>
+          <picture>
+            <img src='https://qucu.ru/images/4974.JPG' alt='vermasterskaya' id='GalleryJS'>
+          </picture>
+
+            <style>
+            .boxFirst{
+              display:flex;
+              justify-content:space-around;
+              align-items:center;
+              width:900px;
+              max-width: 100%;
+            }
+            :root{
+              --heightButton:37px;
+              --widthButton:370px;
+            }
+            .boxFirst #buttonLeft{
+              display:flex;justify-content:center;align-items:center;background:black;border-radius:10px;width:var(--widthButton);max-width:100%;height:var(--heightButton);color:yellow;
+            }
+            .boxFirst #buttonLeft:hover{background:gray;}
+            #buttonRight{
+              display:flex;justify-content:center;align-items:center;background:black;border-radius:10px;width:var(--widthButton);max-width:100%;height:var(--heightButton);color:yellow;
+            }
+            #buttonRight:hover{background:gray;}
+            </style>
+            <div class='boxFirst'>
+              <p id='buttonLeft'><span style="font-size:35px;">👈</span></p>
+              <p id='buttonRight'><span style="font-size:35px">👉</span></p>
+            </div>
+
+          <strong>js gallery</strong>
+            <p>На простом js для динамической модификации тега пикчер и подстановки даже супер легкого формата WEBP если такое поддерживает браузер. Фотографии подгружаются по путям указанных в json который подключается к js gallery. Возможна динамическая генерация: alt, title. И практически бесконечное количество фотографий записанных в json.</p>
+            <br>
+          <p>И благодаря быстрому хостингу, скорость лендинга выше чем у конкурентов.</p>
+          <picture>
+///
+          </picture>
+
+        </div>
+
+        <script>
+        // yandexBot it's here
+        let yandexPut='/yandexMetrica.html';
+        function yandexBot(){
+        let yan = new XMLHttpRequest();
+        yan.open("GET", `${yandexPut}`, true);
+        yan.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+          if(yan.readyState == XMLHttpRequest.DONE && yan.status == 200) {
+            document.querySelector("head > #yandexBot").innerHTML = this.responseText;
+          }
+        }
+        yan.send();
+        }
+        if(window.location.search=='?yandex'){
+          let yandex=document.createElement('script');
+          yandex.setAttribute('id','yandexBot');
+          yandex.setAttribute('type',"text/javascript");
+          document.querySelector('head').append(yandex);
+          let noscript=document.createElement('noscript');
+          noscript.innerHTML=`<div><img src="https://mc.yandex.ru/watch/57628999" style="position:absolute; left:-9999px;" alt="" /></div>`;
+          document.querySelector('head').append(noscript);
+          yandexBot();
+        }
+        //YANDEX BOT
+
+        document.querySelector('.social_network_buttons').addEventListener("mousemove",()=>{
+          document.querySelector('#oki').style.cssText=`
+          position:absolute;
+          background:yellow;
+          height:25px;
+          width:100%;
+          transition:3s;
+          z-index:0;
+          `;
+        });
+        document.querySelector('.social_network_buttons').addEventListener("mouseout",()=>{
+          document.querySelector('#oki').style.cssText=`
+          position:absolute;
+          background:rgba(0,0,0,0);
+          height:0px;
+          width:0%;
+          transition:3s;
+          `;
+        });
+        // language
+        // document.querySelector('#eng').style.cssText=`display:none;`
+        function checkEng(){
+
+          if(document.querySelector('#english').checked==true){
+            document.querySelector('#chinese').checked=false;
+          }
+
+          document.querySelector('html head title').innerHTML=`Web workshop named after Baron Siteverstauzen`;
+          document.querySelector('head > meta:nth-child(3)').setAttribute('content',"development and modification of sites in JS, editing, making changes, landing sites, one-pagers, web pages, finalization, correction, SEO optimization promotion using contextual advertising.");
+
+          document.querySelector('#headers > p > span.font-sizeH1').innerHTML=`Web workshop `;
+          document.querySelector('#headers > p > span:nth-child(2)').innerHTML=`named after Baron Siteverstauzen`;
+          document.querySelector('#annotation > span').innerHTML=`Order: landing, multi-landing, landing page, one-page, finalization, modification, making changes: html, css, js, nodejs, mysql. SEO optimization, promotion in contextual advertising.`;
+
+          document.querySelector('#prim').innerHTML=`Site examples`;
+
+          document.querySelector('#contextka').innerHTML=`Contextual advertising.`;
+          document.querySelector('body > main > article > div.boxi > div:nth-child(6) > p > strong').innerHTML=`One of the most effective ways to attract customers to the site is to increase sales. Increase site traffic. The advantage of context is showing ads only to the part of the audience that is really interested. This method is called: an exact hit in the target audience. And it lies in the correct setting of the advertising company. Successful setting of contextual advertising. It can be compared to fishing, in which to catch: a fat, hefty river monster. It is necessary to immerse yourself in the process with the maximum possible immersion. And don't be afraid to get your hands dirty in code...`;
+
+          document.querySelector('body > main > article > div.boxi > span:nth-child(3) > a > p').innerHTML=`<a href='https://qucu.ru/?multi_lending' style='color:yellow; text-decoration:none;'><p style='margin:15px;'><span style="color:red;">pss...P.S.</span> ➕turbo bells and whistles and <span style="color:green;">SEO</span>driven!📲</p></a>`;
+
+          document.querySelector('body > main > article > div.boxi > strong').innerHTML=`js gallery`;
+          document.querySelector('body > main > article > div.boxi > p:nth-child(13)').innerHTML=`On simple js for dynamic modification of the picture tag and substitution of even the super light WEBP format if the browser supports it. Photos are loaded along the paths specified in the json that is connected to the js gallery. Dynamic generation is possible: alt, title. And an almost infinite number of photos recorded in json.`;
+          document.querySelector('body > main > article > div.boxi > p:nth-child(15)').innerHTML=`And thanks to fast hosting, the landing speed is higher than that of competitors.`;
+        };
+
+      window.addEventListener('DOMContentLoaded',()=>{
+        // console.log(window.location.hash);
+        if(localStorage.getItem('language')=='Chinese'){
+          chineseT();
+        }else{
+          russian();
+        }
+        if(window.location.hash=='#eng'){
+          // console.log(window.location.search);
+
+          document.querySelector('#english').checked==true;
+          checkEng();
+        }else if(window.location.search=='?utm_metka'){
+          // console.log(window.location.search);
+          document.querySelector('body > main > article > header > div.boxMenu > fieldset').style.display="none";
+        }else if(window.location.search=='?top1'){
+          // console.log(window.location.search);
+          document.querySelector('body > main > article > header > div.boxMenu > fieldset').style.display="none";
+        }else if(window.location.search=='?multi_lending'){
+          // console.log(window.location.search);
+          document.querySelector('body > main > article > header > div.boxMenu > fieldset').style.display="none";
+        }else if(window.location.search=='?spa'){
+          // console.log(window.location.search);
+          document.querySelector('body > main > article > header > div.boxMenu > fieldset').style.display="none";
+        }else if(window.location.hash=='#Chinese'){
+            chinese();
+        }else if(window.location.hash=='#eng'){
+          checkEng();
+        }else{
+          // console.log("no_hash");
+        }
+        // console.log("DOMContentLoaded");
+          if(localStorage.getItem('language')=='Eng'){
+            checkEng();
+            document.querySelector('#english').checked=true;
+            // console.log('eng LOCATION HASH');
+          }
+          if(localStorage.getItem('language')=="Chinese"){
+            // console.log('CHINESE!!!')
+            chinese();
+            document.querySelector('#chinese').checked=true;
+          }
+        });
+
+        document.querySelector('#english').addEventListener('click',()=>{
+          if(document.querySelector('#english').checked==true){
+            // console.log("English");
+            location.hash='#eng';
+// localStorage('language','Eng');
+localStorage.setItem('language','Eng');
+          checkEng();
+        }else if(document.querySelector('#english').checked==false){
+        russian();
+        }
+        });
+        function russian(){
+          // console.log("Rus");
+          if(document.querySelector('#english').checked==true){
+            // console.log('English TRUE');
+          }else{
+            location.hash='';
+          }
+          document.querySelector('html head title').innerHTML=`Веб мастерская имени Барона Сайтоверстаузена`;
+          document.querySelector('head > meta:nth-child(3)').setAttribute('content',"разработка и модификация сайтов на JS, редактирование, внесение изменений, сайтов лендингов, одностраничников, веб страниц, доработка исправление, SEO оптимизация продвижение с помощью контекстной рекламы.");
+
+          document.querySelector('#headers > p > span.font-sizeH1').innerHTML=`Веб мастерская`;
+          document.querySelector('#headers > p > span:nth-child(2)').innerHTML=`имени барона сайтоверстаузена`;
+          document.querySelector('#annotation > span').innerHTML=`Заказать: лендинг, мультилендинг, landing page, одностраничник, доработка модификация, внесение изменений: html,css,js,nodejs,mysql. SEO оптимизация, продвижение в контекстной рекламе.`;
+
+          document.querySelector('#prim').innerHTML=`Примеры сайтов`;
+
+          document.querySelector('#contextka').innerHTML=`Контекстная реклама.`;
+          document.querySelector('body > main > article > div.boxi > div:nth-child(6) > p > strong').innerHTML=`Один из наиболее эффективных способов привлечь на сайт клиентов, расширить продажи. Увеличить посещаемости сайта. Преимущество контекста в показе объявлений только той части аудитории, которая действительно заинтересована. Такой способ называется: точное попадание в целевую аудиторию. И заключается в правильной настройки рекламной компании. Удачная настройка контекстной рекламы. Можно сравнить с рыбалкой, в которой чтобы поймать: жирного, здоровенного речного монстра. Необходимо погрузится в процесс с максимально возможным погружением. И не бояться замарать руки по локоть в коде...`;
+
+          document.querySelector('body > main > article > div.boxi > span:nth-child(3) > a > p').innerHTML=`<a href='https://qucu.ru/?multi_lending' style='color:yellow; text-decoration:none;'><p style='margin:15px;'><span style="color:red;">псс...P.S.</span> И ещё верстка адаптивного мульти лендинга 💻 с поисковой оптимизацией, ➕турбо прибамбасами и <span style="color:green;">СЕО</span>приводом!📲</p></a>`;
+          document.querySelector('body > main > article > div.boxi > strong').innerHTML=`JS Галерея`;
+          document.querySelector('body > main > article > div.boxi > p:nth-child(13)').innerHTML=`На простом js для динамической модификации тега пикчер и подстановки даже супер легкого формата WEBP если такое поддерживает браузер. Фотографии подгружаются по путям указанных в json который подключается к js gallery. Возможна динамическая генерация: alt, title. И практически бесконечное количество фотографий записанных в json.`;
+          document.querySelector('body > main > article > div.boxi > p:nth-child(15)').innerHTML=`И благодаря быстрому хостингу, скорость лендинга выше чем у конкурентов.`;
+          localStorage.removeItem('language');
+          localStorage.clear();
+        }
+
+      window.addEventListener('scroll',()=>{
+        if(scrollY>=100){
+          if(document.querySelector('.burg')==undefined){
+            // console.log('document.querySelector(.burg)');
+            let bat=document.createElement('div');
+            document.body.append(bat);
+            bat.style.cssText=`
+            display:flex;
+            justify-content:center;
+            altign-items:center;
+            background:yellow !important;
+            position:fixed;
+            right:7%;
+            top:5%;
+            width:70px;
+            height:70px;
+            border-radius:50%;
+            border:3px solid black;
+            font-size:55px;
+            z-index:3;
+            `;
+            // console.log('scrollY>100');
+            bat.classList.add('burg');
+            bat.innerHTML="🍔";
+          }
+
+        }else if(scrollY<100){
+          if(typeof document.querySelector('.burg')!==undefined||typeof document.querySelector('.burg')!==null){
+            document.querySelector('.burg').remove();
+          }
+        }
+      });
+
+
+document.addEventListener("DOMContentLoaded",GoClick);
+window.addEventListener("hashchange",GoClick);
+document.querySelector('#GalleryJS').addEventListener('click',Plus);
+let CountClick=+0;
+function Plus(){
+
+  CountClick++;
+  if(CountClick>=IMG.length){
+    CountClick=0;
+    // window.location.hash='';
+    return GoClick;
+  }
+    // console.log("coutnClick"+'__'+CountClick);
+    for(let newi=0;newi<IMG.length;newi++){
+      if(IMG[newi].count==CountClick){
+        // console.log('nu vot'+IMG[newi].count+'__'+CountClick);
+        document.querySelector('#GalleryJS').src=IMG[newi].src;
+        document.querySelector('#GalleryJS').setAttribute('alt',IMG[newi].alt);
+        document.querySelector('#GalleryJS').setAttribute('title',IMG[newi].title);
+          window.location.hash='#'+IMG[newi].hash;
+      }
+    }
+}
+
+function GoClick(){
+  for(let aj=0;aj<IMG.length;aj++){
+    if(window.location.hash=='#'+IMG[aj].hash){
+    document.querySelector('#GalleryJS').src=IMG[aj].src;
+    document.querySelector('#GalleryJS').setAttribute('alt',IMG[aj].alt);
+    document.querySelector('#GalleryJS').setAttribute('title',IMG[aj].title);
+      // console.log(IMG[aj].count+"_"+IMG[aj].hash);
+      if(IMG[aj].srcset=={}){
+        // console.log('pusto');
+      }else{
+        document.querySelector('#GalleryJS').srcset=IMG[aj].srcset;
+        // console.log("nePusto");
+      }
+      // localStorage.setItem(CountClick,IMG[aj].count);
+    }
+  }
+}
+
+
+document.querySelector('#buttonLeft').addEventListener('click',()=>{
+  // console.log("buttonLeftClick");
+  CountClick--;
+  if(CountClick<=-1){
+    CountClick=IMG.length;
+    // console.log(CountClick<IMG.length);
+  }
+    // console.log("coutnClick"+'__'+CountClick);
+    for(let newi=0;newi<IMG.length;newi++){
+      if(IMG[newi].count==CountClick){
+        // console.log('nu vot'+IMG[newi].count+'__'+CountClick);
+        document.querySelector('#GalleryJS').src=IMG[newi].src;
+        document.querySelector('#GalleryJS').setAttribute('alt',IMG[newi].alt);
+          window.location.hash='#'+IMG[newi].hash;
+      }
+    }
+});
+document.querySelector('#buttonRight').addEventListener('click',()=>{
+  // console.log("buttonRightClick");
+  CountClick++;
+  if(CountClick>=IMG.length){
+    CountClick=0;
+  }
+    // console.log("coutnClick"+'__'+CountClick);
+    for(let newi=0;newi<IMG.length;newi++){
+      if(IMG[newi].count==CountClick){
+        // console.log('nu vot'+IMG[newi].count+'__'+CountClick);
+        document.querySelector('#GalleryJS').src=IMG[newi].src;
+        document.querySelector('#GalleryJS').setAttribute('alt',IMG[newi].alt);
+          window.location.hash='#'+IMG[newi].hash;
+      }
+    }
+});
+        </script>
+
+        <link rel="stylesheet" href="/menu/style-menu.css">
+        <script src="/menu/script-menu.js"></script>
+<script>
+
+//--------------------------------------------------------------
+//--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+//--------------------------------------------------------------
+let put= `/var/www/html/menu/menu.html`;
+let put1= `http://localhost:3700/menu/menu.html`;
+let put3;
+if(window.location.href=='http://localhost:3700/'||'localhost'||'http://qucu.ru/'){
+  put3=`/menu/menuG.html`;
+  // console.log("menuG"+window.location.href);
+}else{
+  put3=`/menu/menu.html`;
+}
+function run(){
+var xhr = new XMLHttpRequest();
+xhr.open("GET", `${put3}`, true);
+xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+document.getElementById("menu").innerHTML = this.responseText;
+}
+}
+xhr.send();
+}
+/*--------------------------------------------------------------------------
+----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+--------------------------------------------------------------------------*/
+            //setIntervalzzz(run, 700);
+            run();
+</script>
+<!--
+ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                        Here commentsBlock!
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-->
+<div id="comments" style="width:100%;max-width:100%"></div>
+<a href="https://qucu.ru/comments/" style="font-size: 17px;">https://qucu.ru/comments/</a>
+<script type="text/javascript">
+  const site={
+    origin: 'https://qucu.ru/',
+    referrer: "https://qucu.ru/"
+  }
+  const importantBag={id:"nasoberu",site:window.location};
+    // const id='nasoberu';// important!!!
+    const script =document.createElement('script');
+    const url ='https://qucu.ru/comments/script/allow-cors/';
+    async function goComments(){
+      await fetch(url,{
+        origin:site.origin,
+        method: "POST",
+        referrer: site.referrer,
+        referrerPolicy: "origin-when-cross-origin",
+        mode:"cors",
+        credentials: "omit",
+        cache: "no-store",
+      }).then(response=>response.text()).then(result=>{
+        document.querySelector('#comments').append(script);
+        let oK = document.querySelector('#comments > script');
+        oK.innerHTML=result;
+      });
+    };
+    setTimeout(()=>goComments(),300);
+</script>
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                Тут sigCommentsBlock!
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+<!-- <div id="sigCommentsBlock" style="width:100%;max-width:100%"></div>
+<a href="http://sigcomments.com" style="font-size: 0.6em;"></a>
+<script type="text/javascript">
+    setTimeout(()=>(function(){
+        var host_id = '5451';
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = '//sigcomments.com/chat/?host_id='+host_id;
+        var ss = document.getElementsByTagName('script')[0];
+        ss.parentNode.insertBefore(script, ss);
+    })(),4000);
+</script> -->
+
+
+      </article>
+      </main>
+      <div id="menu"></div>
+
+
+  </body>
+  <script type="text/javascript">
+
+    if(siteLanguage===false){
+      // console.log('LOL');
+      if(siteLanguage===false){
+        document.querySelector('body > main > article > header > div.boxMenu > fieldset').remove();
+      }//if page with location.search
+    }else if(siteLanguage===true){
+    // console.log('lol');
+    let fieldset=document.createElement('fieldset');
+    fieldset.className='chinese';
+    let ChineseLegend=document.createElement('legend');
+    ChineseLegend.innerHTML='中國人';
+    document.querySelector('.boxMenu').append(fieldset);
+    document.querySelector('.chinese').append(ChineseLegend);
+    let labelChinese=document.createElement('label');
+    document.querySelector('.chinese').append(labelChinese);
+
+    let checkbox = document.createElement('input');
+    checkbox.setAttribute('type','checkbox');
+    checkbox.setAttribute('value','enable Chinese language')
+    checkbox.setAttribute('id','chinese');
+    document.querySelector('.chinese > label').append(checkbox);
+    document.getElementsByClassName('chinese')[0].style.widht=`87px`;
+
+    let chineseSpan=document.createElement('span');
+    document.querySelector('.chinese > label').append(chineseSpan);
+    chineseSpan.innerHTML='打開';
+    chineseSpan.style.cssText=`margin-left:7%`;
+
+
+    function chineseT(){
+
+      document.querySelector('#chinese').checked=true;
+
+      chineseSpan.innerHTML='關掉';
+
+      //header
+      document.querySelector('html head title').innerHTML=`網絡研討會 姓名 斯特豪森男爵`;
+      document.querySelector('head > meta:nth-child(3)').setAttribute('content',"在 JS 中開發和修改網站，編輯，進行更改，登陸網站，一頁紙，網頁，定稿，更正，使用上下文廣告進行 SEO 優化推廣。");
+
+      document.querySelector('#english').checked=false;
+      document.querySelector('#headers > p > span.font-sizeH1').innerHTML=`網絡研討會`;
+      document.querySelector('#headers > p > span:nth-child(2)').innerHTML=`姓名
+      斯特豪森男爵`;
+      document.querySelector('#annotation > span').innerHTML=`順序：登陸、多登陸、登陸頁、一頁、定稿、修改、修改：html、css、js、nodejs、mysql。 SEO優化，上下文廣告推廣。`;
+      document.querySelector('#prim').innerHTML=`網站示例`;
+      document.querySelector('body > main > article > div.boxi > span:nth-child(3) > a > p').innerHTML=`<p style="margin:15px;"><span style="color:red;">pss...P.S.</span> 另一種自適應多著陸佈局💻具有搜索引擎優化功能，➕turbo 鈴聲和口哨聲以及<span style="color:green;">SEO</span>驅動！📲</p>`;
+
+      document.querySelector('#contextka').innerHTML=`上下文廣告。`;
+      document.querySelector('body > main > article > div.boxi > div:nth-child(6) > p > strong').innerHTML=`吸引客戶訪問網站的最有效方法之一是增加銷售額。 增加網站流量。 上下文的優勢是只向真正感興趣的部分受眾展示廣告。 這種方法稱為：準確命中目標受眾。 而在於廣告公司的正確設置。 上下文廣告的成功設置。 它可以比作釣魚，在其中捕獲：一隻肥大的河怪。 有必要最大限度地沉浸在這個過程中。 並且不要害怕在代碼中弄髒你的手......`;
+
+      document.querySelector('body > main > article > div.boxi > strong').innerHTML=`js畫廊`;
+      document.querySelector('body > main > article > div.boxi > p:nth-child(13)').innerHTML=`在簡單的 js 上動態修改圖片標籤，如果瀏覽器支持，甚至可以替換超輕 WEBP 格式。 照片沿著連接到 js 庫的 json 中指定的路徑加載。 可以動態生成：alt、title。 以及json中記錄的幾乎無限多的照片。`;
+      document.querySelector('body > main > article > div.boxi > p:nth-child(15)').innerHTML=`並且得益於快速託管，登陸速度高於競爭對手。`;
+      location.href='#Chinese';
+    }
+
+    function chinese(){
+      if(document.querySelector('#chinese').checked==true){
+
+        document.querySelector('#english').checked==false;
+
+        localStorage.setItem('language','Chinese');
+
+        if(localStorage.getItem('language')=='Chinese'){
+
+          chineseT();
+        }
+        chineseT();
+
+      }else if(document.querySelector('#chinese').checked==false){
+        russian();
+        // checkEng();
+        localStorage.removeItem('language');
+        location.hash='';
+      }else{
+        if(localStorage.getItem('language')=='Eng'){
+          // location.hash='eng';
+          localStorage.setItem('language','Eng');
+        }else{
+          localStorage.removeItem('language');
+        }
+        chineseSpan.innerHTML='打開';
+        localStorage.removeItem('language');
+        checkEng();
+      }
+    }
+    document.querySelector('.chinese').addEventListener('click',chinese);
+    if(window.location.hash=='#eng'){
+      // console.log(window.location.search);
+      document.querySelector('#english').checked=true;
+      checkEng();
+      // console.log('ooKKKK');
+    }else if(window.location.hash=='#Chinese'){
+      document.querySelector('#chinese').checked=true;
+      chinese();
+    }else{
+      // console.log('oK');
+    }
+  }else{
+      // console.log("ELSE!!!!!!!!");
+  }
+
+  </script>
+</html>

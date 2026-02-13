@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title><%=title %></title>
+    <meta charset="utf-8" />
+    <link href="/public/style/blozhikOldStyle.css" rel="stylesheet">
+    <meta name='description' content='<%= description %>'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- (json) %>
+    <link rel="icon" href="https://qucu.ru/public/images/js.svg">
+    <link rel="canonical" href=https://qucu.ru/blozhik/<%- url %>>
+    <link rel="stylesheet" href="/public/style/blozhikStyle.css">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-CTRLNMFNGY');
+	</script>
+	<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6824659625881284"
+     crossorigin="anonymous"></script> -->
+     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+</head>
+<body>
+  <main>
+    <article>
+      <h1><%- title %></h1>
+        <span id="date"></span>
+      <p><%- article %></p>
+      <p style="text-align:end;"><%= autor %></p>
+
+    <!-- <a href='#' target='_blank'><img src='https://nasobe.ru/images/fozzy-hosting-is-faster-234x30-white-ru-2x.png' style="max-width:100%; text-align:center;" alt="the best hosting"></a> -->
+</a>
+      <a href="https://qucu.ru/blozhik/" style='border:3px solid yellow;border-radius:3px;background:rgba(200,200,200,0.3);font-size:22px;'>to list</a>
+      <div id="comments"></div>
+      <!-- <div id="sigCommentsBlock"></div>
+  <a href="http://sigcomments.com" style="font-size: 0.6em;">Система комментирования SigComments</a>
+  <script type="text/javascript">
+    (function(){
+      var host_id = '7033';
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = '//sigcomments.com/chat/?host_id='+host_id;
+      var ss = document.getElementsByTagName('script')[0];
+      ss.parentNode.insertBefore(script, ss);
+    })();
+  </script> -->
+    </article>
+    <aside>
+      <div id="ww_926dd32b07410" v='1.3' loc='auto' a='{"t":"horizontal","lang":"ru","ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#F57C00","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#FFFFFF","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FFFFFF"}'><a href="https://weatherwidget.org/ru/" id="ww_926dd32b07410_u" target="_blank">Бесплатный HTML погодный информер для сайта</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_926dd32b07410"></script>
+    </aside>
+    <!--
+     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                            Here commentsBlock!
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    -->
+  </main>
+  
+  <a href="https://qucu.ru/comments/" style="font-size: 17px;">https://qucu.ru/comments/</a>
+  <!-- <script type="text/javascript">
+    // window.onerror = null;
+  const site={
+    origin: window.location.hostname,
+    referrer: window.location.href
+  }
+  const importantBag={id:"blozh",site:window.location};
+  // const id='nasoberu';// important!!!
+  const script =document.createElement('script');
+  const url ='https://comments.qucu.ru/allow-cors';
+  async function goComments(){
+    await fetch(url,{
+      headers: {
+                'Content-Type': 'application/json'
+            },
+      // origin:site.origin,
+      method: "POST",
+      // referrer: site.referrer,
+      referrerPolicy: "origin-when-cross-origin",
+      mode:"cors",
+      credentials: "include",
+      cache: "no-store",
+    }).then(response=>response.text()).then(result=>{
+      document.querySelector('#comments').append(script);
+      let oK = document.querySelector('#comments > script');
+      oK.innerHTML=result;
+    });
+  };
+  setTimeout(()=>goComments(),300);
+  </script> -->
+  <script type="text/javascript">
+  const site={
+    origin: window.location.origin,
+    referrer: window.location.href
+  }
+  console.log(site.origin);
+  console.log(site.referrer);
+  const importantBag={id:"blozhik",site:window.location};
+  // const id='nasoberu';// important!!!
+  const script =document.createElement('script');
+  const url ='https://comments.qucu.ru/allow-cors';
+  async function goComments(){
+    await fetch(url,{
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      method: "POST",
+      origin:site.origin,
+      referrer: site.referrer,
+      referrerPolicy: "origin-when-cross-origin",
+      mode:"cors",
+      credentials: "include",
+      cache: "no-store",
+    }).then(response=>response.text()).then(result=>{
+      document.querySelector('#comments').append(script);
+      let oK = document.querySelector('#comments > script');
+      oK.innerHTML=result;
+    });
+  };
+  setTimeout(()=>goComments(),300);
+  </script> 
+  <script type="text/javascript" src='/public/script/dateScript.js'></script>
+  <!-- <%- js %> -->
+  <!-- <picture>
+    <img src="https://nasobe.ru/images/fozzy/ssd-480x320.png" alt="фози быстрее быстрого">
+  </picture> -->
+</body>
+<html>

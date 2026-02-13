@@ -1,0 +1,288 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Камень, ножницы, бумага</title>
+    <link rel="icon" href="images/icon9.svg">
+    <link rel="canonical" href="https://qucu.ru/rockPaperScissors.html"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Играть бесплатно в игру: Камень, ножницы, бумага. Кинуть жребий или получить рандомно какое нибудь значение. Игра камень, ножницы, бумага лучший способ найти крайнего или решить спор о том кто будет козлом отпущения." />
+   <meta name="robots" content="all">
+   <meta name="author" content="Amir Navrutdinov">
+  </head>
+<style>
+  *{
+    border:0;
+    margin:0;
+  }
+  body{
+    background: linear-gradient(rgba(255,255,111,0.5),rgba(0,100,150,0.3));
+  }
+  .boxi{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    min-height: 100%;
+    max-width: 90%;
+    /* background-color: white; */
+    justify-content: center;
+    padding: 3%;
+    min-height: 100vh;
+  }
+  .pravila{
+      display: flex;
+      max-width: 90%;
+      width: 600px;
+      padding: 3%;
+      justify-content: center;
+        }
+    .colonka{
+    display: flex;
+    /* background-color: white; */
+    justify-content: center;
+
+    }
+    .imgee{
+      display: flex;
+      max-width: 100%;
+      width: 400px;
+      height: auto;
+      justify-content: center;
+    }
+    #rock{
+      border: red solid 1px;
+      padding: 10px;
+      color: white;
+      background-color: rgb(119, 21, 21);
+      font-size: 24px;
+    }
+    #button{
+      border: black solid 1px;
+      padding: 10px;
+      color: white;
+      background-color: green;
+      font-size: 24px;
+    }
+    #paper{
+      border: black solid 1px;
+      padding: 10px;
+      color: white;
+      background-color: rgb(15, 15, 104);
+      font-size: 24px;
+    }
+    .padding{
+        padding:3%;
+    }
+    .firstBox{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    footer{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      text-align: center;
+      width:900px;
+      flex-direction: column;
+    }
+    #sigCommentsBlock{
+      max-width: 100%;
+      width:900px;
+    }
+</style>
+  <body>
+    <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+  {
+    "@context" : "http://schema.org",
+    "@type" : "Article",
+    "headline" : "Игра: Камень, ножницы, бумага.",
+    "name" : "Камень, ножинцы, бумага!",
+    "author" : {
+      "@type" : "Person",
+      "name" : "Amir Shikarno"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://qucu.ru/path-to-site-creators.html"
+   },
+    "datePublished" : "2019-07-01",
+    "dateModified": "2024-02-27",
+    "image" : "https://qucu.ru/public/images/imgpr.png",
+    "articleSection" : "Камень побеждает ножницы, ножницы режут бумагу",
+    "url" : "https://qucu.ru/chat/",
+    "publisher" : {
+      "@type" : "Organization",
+      "name" : "Веб студия имени Барона Сайтоверстауйзена",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://qucu.ru/public/images/imgpr.png"
+    }
+    }
+  }
+  </script>
+    <div class="boxi">
+
+    <h2 class='colonka'>Камень, ножинцы, бумага!</h2>
+    <br><h3 class='colonka'>Поиграем в игру, дружочек?<br></h3>
+	<div class="colonka"><img src="public/images/imgpr.png" class="imgee"></div>
+    <form align='center'>
+    <input type="button" id="rock" onclick="rock2()" value="камень">
+    <input type="button" id="button" onclick="scissors2()" value="ножницы">
+    <input type="button" id="paper" onclick="paper2()" value="бумага">
+  </form><br><br><br><sub class='colonka'><a href="https://qucu.ru/chat/">Бесплатный чат!</a></sub><br><br><br>
+	<h4 class='colonka'>Правила простые: Камень побеждает ножницы, ножницы режут бумагу, бумага оборачивает камень.
+	</h4>
+  <h6 class="pravila">Победитель определяется по следующим правилам: Бумага побеждает камень («бумага накрывает камень» или «камень тонет, бумага нет»). Камень побеждает ножницы («камень затупляет или ломает ножницы»). Ножницы побеждают бумагу («ножницы разрезают бумагу»)</h6>
+  <div class="colonka"></div></div>
+<script>
+      var Player_1;
+      var Player_2;
+      var rock = 'камень';
+      var scissors = 'ножницы';
+      var paper = 'бумага';
+      var toGame = Math.random();
+      if (toGame > 0.75){
+        Player_1 = rock;
+
+      }else if(toGame < 0.35){
+        Player_1 = scissors;
+
+      }else{
+        Player_1 = paper;
+
+      }
+
+      //document.write(Player_1);
+     //setInterval(toGeme, 100);
+     // ------------Камень-----------------------
+      function rock2(){
+      Player_2 = rock;
+      if (Player_1 == Player_2){
+         alert(Player_1 +' vs '+ Player_2+'\r\n Ничья!');
+         window.location.reload();
+      }else if(Player_1 == scissors){
+          alert(Player_1 +' vs '+ Player_2 +'\r\n Камень побеждает ножницы!\r\n Wins you! \r\n ПОБЕДА! =)');
+          window.location.reload();
+      }else if(Player_1 == paper){
+      alert(Player_1 +' vs '+ Player_2+'\r\nБумага побеждает камень' +'\r\n you losse \r\n проигрыш =(');
+      window.location.reload();}
+      else{alert('что то пошло не так!');}
+      }
+//-----------------------------------------------
+//---------------Ножницы------------------------
+      function scissors2(){
+        Player_2 = scissors;
+       if (Player_1 == Player_2){
+         alert(Player_1 +' vs '+ Player_2+'\r\n Ничья!');
+         window.location.reload();
+      }else if(Player_1 == rock){
+          alert(Player_1 +' vs '+ Player_2+'\r\n Камень побеждает ножницы!\r\n lose you! \r\n проигрыш =(');
+          window.location.reload();
+      }else if(Player_1 == paper){
+      alert(Player_1 +' vs '+ Player_2+'\r\n Ножницы режут бумагу' +' \r\n you wins \r\n ПОБЕДА! =)');
+      window.location.reload();}
+      else{alert('что то пошло не так!');}
+      }
+      //-----------------------------------------
+      //-------------Бумага----------------------
+      function paper2(){
+        Player_2 = paper;
+       if (Player_1 == Player_2){
+         alert(Player_1 +' vs '+ Player_2+'\r\n Ничья!');
+         window.location.reload();
+      }else if(Player_1 == rock){
+          alert(Player_1 +' vs '+ Player_2+'\r\n Бумага оборачивает камень! \r\n win you!\r\n ПОБЕДА! =)');
+        window.location.reload();
+      }else if(Player_1 == scissors){
+      alert(Player_1 +' vs '+ Player_2+'\r\n Ножницы режут бумагу' +' \r\n you lose \r\n проигрыш =(');
+      window.location.reload();}
+      else{alert('что то пошло не так!');}
+      }
+</script>
+<!-- Счетчики -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CTRLNMFNGY');
+</script>
+<div class="firstBox">
+ <footer>
+     <div style="max-width:100%; width:900px; text-align:center; background:rgba(10,255,250,0.3)">
+         </div>
+         <!--
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                 Here commentsBlock!
+         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+         -->
+         <div id="comments"></div>
+         <script>
+          async function loadAssets() {
+          try{
+            // Загружаем CSS
+            const cssResponse = await fetch("https://comments.qucu.ru/style");
+            const cssText = await cssResponse.text();
+            const style = document.createElement("style");
+            style.textContent = cssText;
+            document.head.append(style);
+            // Загружаем JS
+            const jsResponse = await fetch("https://comments.qucu.ru/js/a001");
+            const jsText = await jsResponse.text();
+            const js = document.createElement("script");
+            js.type = "text/javascript";
+            js.textContent = jsText;
+            document.head.append(js);
+            console.log("JS и CSS успешно подгружены!");
+          }catch(err){console.error("Ошибка загрузки:", err)};
+        }
+        loadAssets();
+        </script>
+     </footer>
+  </div>
+  </body>
+
+  <!-- ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
+                    Начало меню!
+    ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ-->
+
+    <div id="menu"></div>
+    <noscript>
+    <a href="https://nasobe.ru">
+    </noscript>
+    <button class="burg"><span style="font-size:45px;">🍔</span>
+    </button>
+    <noscript>
+    </a>
+    </noscript>
+    <!--кнопки style, теперь все кнопки ShikarnY.-->
+    <script>
+
+        //--------------------------------------------------------------
+        //--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+        //--------------------------------------------------------------
+    function run(){
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", 'public_old/menu/menu.html', true);
+        xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+        if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+        document.getElementById("menu").innerHTML = this.responseText;
+            }
+        }
+        xhr.send();
+    }
+    /*--------------------------------------------------------------------------
+    ----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+    --------------------------------------------------------------------------*/
+                        //setInterval(run, 700);
+                        run();
+    </script>
+    <link rel="stylesheet" href="public_old/menu/style-menu.css">
+    <script src="public_old/menu/script-menu.js"></script>
+</html>

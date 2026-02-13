@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Full stack на html/js благодаря подгрузки json через PHP</title>
+    <meta name="description" content="JSON формат для подгрузки с бекенда всего что можно передать с помощью php">
+    <!-- VAZhnoE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/voting.html">
+    <meta name="robots" content="all">
+    <meta name="autor" content="Amir Navrutdinov">
+    <link rel="icon" href="public/images/icon9.svg">
+    <meta name="theme-color" content="#a0ffed">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6824659625881284"
+     crossorigin="anonymous"></script>
+    <style>
+    *{
+      margin:0;
+    }
+    body{
+      background: linear-gradient(rgba(0,255,0,0.3),rgba(255,0,0,0.5));
+      min-height: 100vh;
+      font-size: 20px;
+    }
+    main{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    article{
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      min-height: 100vh;
+      max-width: 100%;
+      width:900px;
+      background:rgba(0,255,0,0.1);
+      flex-direction: column;
+    }
+    form{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      word-wrap: break-word;
+      flex-wrap: wrap;
+      /* flex-direction: column; */
+
+    }
+    button{
+      max-width: 100%;
+      width:300px;
+      background: none;
+      border:none;
+    }
+    .txt{
+      font-size:75px;
+    }
+    .txtZ{
+      font-size: 35px;
+    }
+    @media(max-width:500px){
+      button{
+        max-width: 100%;
+        width:130px;
+        font-size: 15px;
+      }
+      .txtZ{
+        font-size:15px;
+      }
+      .txt{
+        font-size: 35px;
+      }
+    }
+    .first{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      width:900px;
+      flex-direction: column;
+    }
+    footer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      width:900px;
+      text-align: center;
+    }
+    #sigCommentsBlock{
+      max-width: 100%;
+      width:900px;
+    }
+    h1,h2{
+      background: rgba(0,255,0,0.3);
+      color:white;
+      text-shadow:2px 2px 3px black;
+      text-align: center;
+      width:900px;
+      max-width: 100%;
+    }
+    p{
+      margin:1%;
+    }
+    img{
+      max-width: 100%;
+    }
+    </style>
+
+<!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Article",
+  "name" : "Full stack на голом html/js благодаря подгрузки json на PHP",
+  "headline": "PHP крадется тайком… и запускает 'сюрикены'",
+  "author" : {
+    "@type" : "Person",
+    "name" : "Amir Navrutdinov",
+    "alternateName": ["Amir Shikarno", "Амир Наврутдинов"]
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://qucu.ru/voting.html"
+ },
+  "datePublished" : "2021-06-23",
+  "dateModified" : "2024-02-27",
+  "image" : "https://qucu.ru/public/images/imagesWindow.png",
+  "articleSection" : "вариант чтобы прощупать все варианты работы json формата через php.",
+  "articleBody" : "Вытащить пост из бд, все что угодно, легко. Когда надо обрабатывать точечные посылы на бекенде. Тогда то и возникает конвертация json формата в переменные для модификации и перебора многомерного массива. Чтобы экзистенциализировать упаковку его в ту же самую конвертацию и отправку во фронтенд.",
+  "url" : "https://qucu.ru/voting.html",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "Веб мастерская имени Барона Cайтоверстаузена",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://qucu.ru/public/images/lol/spa.webp"
+    }
+  }
+}
+</script>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>Full stack на html/js благодаря подгрузки json на <s>PHP</s> NODEJS</h1>
+        <p>Вытащить пост из бд, все что угодно, легко. Когда надо обрабатывать точечные посылы на бекенде. Тогда то и возникает конвертация json формата в переменные для модификации и перебора многомерного массива. Чтобы экзистенциализировать упаковку его в ту же самую конвертацию и отправку во фронтенд.<p>
+          <h2><s style='color:grey;'>PHP</s> NODEJS крадется тайком… и запускает “сюрикены”.</h2>
+          <picture>
+            <source srcset="public/images/imagesWindow.webp" type="image/webp">
+            <img src="public/images/imagesWindow.png" alt="php крадется тайком чтобы запустить свои сюрикены и JSON">
+          </picture>
+          <p>Что может быть легче, как ни взять и написать, свой собственный скрипт на php, а еще луше на nodejs c тайной подгрузки, данных с сервера. Кнопки голосовалок. И написаный скрипт формы, передачи голосовалки с button возвращается ответом через json, генерируемый где то там в далеко сервере beckend. Мчится на край света... в глухую Сибирь, а потом обратно в Европу. Чтобы высчитать все голоса и показать сразу всем. Всю правду! Все это, очень долго. Еще загадочно. И задержка. Возможно есть, по необъяснимым причинам. Все таки собрать в путь и отправить. Передачу, json формата, полного стека массивов. Расчет происходит уже через javascript. Потому что так проще. Весь порыв вдохновения встал перед ковырянии в многомерным ассоциативном массиве. Несмотря на то что перезаписать многомерный ассоциативный массив в json формат и обратно, можно. Но, если осторожно. Легким способом пройтись регуляркой. Eсли учесть тот “необъяснимый” факт что на стекОверфлоу, до сих пор не ответили на простой вопрос: “почему мой коТ, не работает”. Самое простое решение нашлось на сайте <a href="https://delay-delo.com/content/rabota-php-c-json-dobavlenie-udalenie-i-obnovlenie-v-fayle">https://delay-delo.com/content/rabota-php-c-json-dobavlenie-udalenie-i-obnovlenie-v-fayle</a> Своими руками и своими силами. Модификация из примера поможет сократить на пол сотни строчек. Чтобы получить шикарный и главное рабочий скрипт.</p>
+          <h2>Теперь о самом главном.</h2>
+          <p>На nodejs достаточно модуля fs, а в php необходимы методы json_encode and json_decode(json); </p>
+          <p>Это тестовый вариант чтобы прощупать все варианты работы json формата через nodejs and express, fs. Поэтому нет ограничения кликов, без регистрации.</p>
+        <form action="/voting/allow-cors" method="post">
+            <button name="excellent" class="txtZ" onclick='Excellent()'>
+          <fieldset>
+            <legend>EXCELLENT</legend>
+          <span class="txt">👌</span>
+            <p id="exc"></p>
+            <!-- <meter min='0'  max='99' optimum="500" value=""id="exc">excellent</meter><p id="exc"></p> -->
+          </fieldset>
+          </button>
+          <!-- <button name="result">result</button> -->
+    <button name="VO" class="txtZ" onClick="VeryGood()">
+          <fieldset>
+            <legend>Very GOOD</legend>
+          <span class="txt">👍</span>
+          <p id="vo"></p>
+                <!-- <meter min='0'  max='99' optimum="500" value="" id="vo"></meter><p id="vo"></p> -->
+          </fieldset>
+          </button>
+            <button name="NO" class="txtZ"  onClick='Non()'>
+          <fieldset>
+            <legend>not_good</legend>
+          <span class="txt">👎</span>
+          <p id="no"></p>
+            <!-- <meter min='0'  max='99' optimum="500" value="" id="no"></p></meter><p id="v"></p> -->
+          </fieldset>
+          </button>
+          <!-- <button name="OO" style="background:none; border:none;font-size:75px;">👊</button> -->
+        </form>
+        <!-- <div id="text"></div> -->
+              <!-- <meter min='0'  max='99' optimum="500" value=""id="exc">excellent</meter> -->
+    <!-- <p id="exc"></p> -->
+  </article>
+  <div class="first">
+    <footer>
+
+        </footer>
+        <section>
+          <!--
+           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                  Here commentsBlock!
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          -->
+          <div id="comments"></div>
+          <script>
+          async function loadAssets() {
+          try{
+            // Загружаем CSS
+            const cssResponse = await fetch("https://comments.qucu.ru/style");
+            const cssText = await cssResponse.text();
+            const style = document.createElement("style");
+            style.textContent = cssText;
+            document.head.append(style);
+            // Загружаем JS
+            const jsResponse = await fetch("https://comments.qucu.ru/js/a001");
+            const jsText = await jsResponse.text();
+            const js = document.createElement("script");
+            js.type = "text/javascript";
+            js.textContent = jsText;
+            document.head.append(js);
+            console.log("JS и CSS успешно подгружены!");
+          }catch(err){console.error("Ошибка загрузки:", err)};
+        }
+        loadAssets();
+        </script>
+        </section>
+  </div>
+    </main>
+  </body>
+<script>
+// '`${excellentV}`'
+
+// document.getElementById('exc').value = '29';
+// document.getElementById('vo').value = 50;
+// document.getElementById('no').value = 9;
+  // function readTextFile(file, callback) {
+  //   let rawFile = new XMLHttpRequest();
+  //   rawFile.overrideMimeType("application/json");
+  //   rawFile.open("POST", file, true);
+  //   rawFile.onreadystatechange = function() {
+  //       if (rawFile.readyState === 4 && rawFile.status == "200") {
+  //           callback(rawFile.responseText);
+  //       }
+  //     }
+  //   rawFile.send(null);
+  // }//readTextFile;
+
+
+  //---------------------------DOMContentLoaded---------------------------------
+window.addEventListener('DOMContentLoaded', ()=>{
+    console.log('oK');
+    setTimeout(()=>{
+      const jsons3={};
+      fetch('https://qucu.ru/voting',{
+        method: "POST", // или 'PUT'
+        body: JSON.stringify(jsons3), // данные могут быть 'строкой' или {объектом}!
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode:"cors",
+      })
+      .then((response)=>{
+        return response.text();
+      })
+      .then((text)=>{
+        let textArr=JSON.parse(text);
+        console.log(JSON.parse(text));
+        let no=+0;
+        for(let oj=0;oj<=textArr.length;oj++){
+          if(textArr[oj].no){
+            console.log(oj);
+            no++;
+            console.log(no);
+          }
+          document.querySelector('#no').innerHTML=`${no}`;
+        }
+      });
+
+    },300);
+
+  });
+
+  window.addEventListener('DOMContentLoaded', ()=>{
+      console.log('ooK');
+      setTimeout(()=>{
+          const jsons2={};
+
+          fetch('https://qucu.ru/voting',{
+            method: "POST", // или 'PUT'
+            body: JSON.stringify(jsons2), // данные могут быть 'строкой' или {объектом}!
+            headers: {
+              "Content-Type": "application/json",
+            },
+              mode:"cors",
+          })
+          .then((response)=>{
+            return response.text();
+          })
+          .then((text)=>{
+            let textArr=JSON.parse(text);
+            console.log(JSON.parse(text));
+            let gut=+0;
+            for(let oj=0;oj<=textArr.length;oj++){
+              if(textArr[oj].gut){
+                console.log(oj);
+                gut++;
+                console.log(gut);
+              }
+              document.querySelector('#vo').innerHTML=`${gut}`;
+            }
+          });
+
+
+      },300);
+
+    });
+    window.addEventListener('DOMContentLoaded', ()=>{
+
+      const jsons={};
+
+      fetch('https://qucu.ru/voting',{
+        method: "POST", // или 'PUT'
+        body: JSON.stringify(jsons), // данные могут быть 'строкой' или {объектом}!
+        headers: {
+          "Content-Type": "application/json",
+        },
+          mode:"cors",
+      })
+      .then((response)=>{
+        return response.text();
+      })
+      .then((text)=>{
+        let textArr=JSON.parse(text);
+        console.log(text);
+        console.log(textArr);
+        console.log(textArr.excellent);
+        console.log(textArr[2]);
+        console.log(textArr[2].id);
+        console.log(textArr.id);
+        let oK=+0;
+        for(let oj=0;oj<=textArr.length;oj++){
+          if(textArr[oj].excellent){
+            console.log(oj);
+            oK++;
+            console.log(oK);
+          }
+          document.querySelector('#exc').innerHTML=`${oK}`;
+        }
+        return oj.length;
+        console.log(textArr.excellent);
+      });
+    });
+
+//--------------------------------------------------------------------------
+//--------------------DOMContentLoaded--------END------------------------
+//----------------------------------------------------------------------
+  function Excellent(){
+      console.log('=====');
+      const jsons={excellent: "excellent"};
+
+      event.preventDefault();
+      fetch('https://qucu.ru/voting',{
+        method: "POST", // или 'PUT'
+        body: JSON.stringify(jsons), // данные могут быть 'строкой' или {объектом}!
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode:"cors",
+      })
+      .then((response)=>{
+        return response.text();
+      })
+      .then((text)=>{
+        let textArr=JSON.parse(text);
+        // console.log(text);
+        // console.log(textArr);
+        // console.log(textArr.excellent);
+        // console.log(textArr[2]);
+        // console.log(textArr[2].id);
+        // console.log(textArr.id);
+        let oK=+1;
+        for(let oj=0;oj<=textArr.length;oj++){
+          if(textArr[oj].excellent){
+            console.log(oj);
+            oK++;
+            console.log(oK);
+          }
+          document.querySelector('#exc').innerHTML=`${oK}`;
+        }
+        // return oj.length;
+        //   console.log(textArr.excellent);
+      });
+  };
+
+    // window.location.href='/voting.html';
+  Excellent();
+  function VeryGood(){
+    const jsons2={gut: "gut"};
+    event.preventDefault();
+    fetch('https://qucu.ru/voting',{
+      method: "POST", // или 'PUT'
+      body: JSON.stringify(jsons2), // данные могут быть 'строкой' или {объектом}!
+      headers: {
+        "Content-Type": "application/json",
+      },
+        mode:"cors",
+    })
+    .then((response)=>{
+      return response.text();
+    })
+    .then((text)=>{
+      let textArr=JSON.parse(text);
+      console.log(JSON.parse(text));
+      let gut=+1;
+      for(let oj=0;oj<=textArr.length;oj++){
+        if(textArr[oj].gut){
+          console.log(oj);
+          gut++;
+          console.log(gut);
+        }
+        document.querySelector('#vo').innerHTML=`${gut}`;
+      }
+    });
+  }
+  VeryGood();
+  function Non(){
+    const jsons3={no: "no"};
+    event.preventDefault();
+    fetch('https://qucu.ru/voting',{
+      method: "POST", // или 'PUT'
+      body: JSON.stringify(jsons3), // данные могут быть 'строкой' или {объектом}!
+      headers: {
+        "Content-Type": "application/json",
+      },
+        mode:"cors",
+    })
+    .then((response)=>{
+      return response.text();
+    })
+    .then((text)=>{
+      let textArr=JSON.parse(text);
+      console.log(JSON.parse(text));
+      let no=+1;
+      for(let oj=0;oj<=textArr.length;oj++){
+        if(textArr[oj].no){
+          console.log(oj);
+          no++;
+          console.log(no);
+        }
+        document.querySelector('#no').innerHTML=`${no}`;
+      }
+    });
+  }
+  Non();
+
+  function openListVoting(){
+
+  }
+    //usage:
+//     readTextFile("generation-objects/voting.json", function(text){
+//     let data = JSON.parse(text);
+//     console.log(JSON.stringify(data));
+// let str= JSON.stringify(data);
+// let result;
+// resultExcellent=str.match(/excellent/gi);
+// resultNo=str.match(/noy/gi);
+// resultVo=str.match(/gut/gi);
+// let votingVo;
+// let excellentV;
+// excellentV=resultExcellent.length;
+// votingVo=resultVo.length;
+// votingNo=resultNo.length;
+// console.log(excellentV);
+// console.log(votingVo);
+// console.log(votingNo);
+//   document.getElementById('vo').innerHTML=votingVo;
+//   document.getElementById('exc').innerHTML=excellentV;
+//   document.getElementById('no').innerHTML=votingNo;
+//     });
+
+  </script>
+  <!-- Счетчики -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CTRLNMFNGY');
+  </script>
+  <!-- ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
+                 Начало меню!
+ ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ-->
+<div id="menu"></div>
+<button class="burg">
+ <div id='menu'><p style="font-size:45px;">🍔</p></div>
+</button>
+<script>
+
+ //--------------------------------------------------------------
+ //--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+ //--------------------------------------------------------------
+function run(){
+ var xhr = new XMLHttpRequest();
+ xhr.open("GET", 'public_old/menu/menu.html', true);
+ xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+ if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+ document.getElementById("menu").innerHTML = this.responseText;
+     }
+ }
+ xhr.send();
+}
+/*--------------------------------------------------------------------------
+----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+--------------------------------------------------------------------------*/
+                 //setInterval(run, 700);
+                 run();
+</script>
+<link rel="stylesheet" href="public_old/menu/style-menu.css">
+<script src="public_old/menu/script-menu.js"></script>
+</html>

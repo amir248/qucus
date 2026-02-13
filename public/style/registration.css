@@ -1,0 +1,47 @@
+d input{
+  width:100%;
+  max-width:700px;
+}
+form{
+  max-width: 700px;
+  width:100%;
+}
+button{
+  float:right;
+}
+fieldset:nth-child(1){
+  background: rgba(255,0,0,0.3);
+}
+fieldset:nth-child(2){
+  background: rgba(255,0,0,0.3);
+}
+fieldset:nth-child(3){
+  background: rgba(255,0,0,0.3);
+}
+a{
+  margin:0%;
+}
+button{
+  width:100%;
+  height:30px;
+  background: coral;
+  margin-bottom:30px;
+  border-radius: 7px;
+  color:white;
+  text-shadow:black 1px 1px;
+  font-size: 20px;
+}
+button:hover{
+  background: orange;
+  color:yellow;
+}
+#cab fieldset img{
+  width:100%;
+  max-width: 150px;
+}
+#cab fieldset{
+  background:rgba(0,255,0,0.1);
+}
+#cab fieldset button{
+  max-width: 170px;
+}

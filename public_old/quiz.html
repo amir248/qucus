@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <title>Квиз</title>
+        <meta name="description" content="📄Реализация квиза со скоростной подгрузкой контента.">
+        <link rel="canonical" href="https://qucu.ru/quiz.html">
+        <meta name="robots" content="all">
+        <meta name="autor" content="Amir Shikarno">
+        <style>
+            *{
+                margin: 0;
+            }
+            body{
+                background: linear-gradient(to bottom, rgb(255, 228, 171), rgb(126, 164, 173));
+                font-size: 20px;
+            }
+            main{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            article{
+                display: flex;
+                flex-direction: column;
+                width: 700px;
+                max-width: 100%;
+                background-color: rgba(255, 248, 220, 0.356);
+                justify-content: center;
+            }
+            .first{
+                display:flex;
+                justify-content: center;
+
+                width: 100%;
+            }
+            footer{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 700px;
+                max-width: 100%;
+                background-color: darkcyan;
+                text-align: center;
+            }
+            .margin{
+                margin:1%;
+            }
+            .block{
+                display: flex;
+                justify-content: center;
+                width: 700px;
+                max-width: 100%;
+                background-color: rgba(244, 253, 159, 0.37);
+            }
+            .bgColorGreen{
+                background-color: rgba(77, 148, 77, 0.37);
+            }
+
+            .columnCell{
+                display: flex;
+                justify-content: space-evenly;
+            }
+            img{
+                width: 700px;
+                max-width: 100%;
+            }
+            h1,h2{
+                text-align: center;
+                background-color: orange;
+            }
+            .bgColorRed{
+                background-color: rgba(255, 163, 163, 0.212);
+            }
+            .dis{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 700px;
+                max-width: 100%;
+                background: linear-gradient(to bottom, rgba(255, 250, 238, 0.205), rgba(197, 244, 255, 0.055));
+                text-align: center;
+            }
+        </style>
+        <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Article",
+      "name" : "Квиз",
+      "headline" : "Квиз и Способ реализации квиза",
+      "author" : {
+        "@type" : "Person",
+        "name" : "Amir Navrutdinov",
+        "alternateName": ["Amir Shikarno", "Амир Наврутдинов"]
+      },
+      "datePublished" : "2020-12-28",
+      "dateModified" : "2024-02-27",
+      "image" : "https://qucu.ru/public/images/saitoverstauzen.jpg",
+      "articleSection" : "Способ реализации квиза",
+      "articleBody" : "Её называют интерективной онлайн викториной, интернет онлай опросом или тестом. \n                У квизов только одно предназначение. Разведать информацию для сегментации коммерческого предложения. Некий астральный метод получения нужной информации. Коварный способ прощупать тепленького клиента или при возможности разогреть! Проще сказать: Похоже на то как тыкать палкой во что-то неизведанное, пытаясь понять можно ли там чем нибудь поживиться.",
+      "url" : "https://qucu.ru/quiz.html",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "Веб мастерская имени Барона Сайтоверстаузена",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://qucu.ru/public/images/logo.png"
+          }
+      }
+    }
+    </script>
+    </head>
+    <body>
+        <main>
+            <article>
+               <h1>Квиз</h1>
+              <p class="margin">Её называют интерективной онлайн викториной, интернет опросом или тестом.
+                У квизов только одно предназначение. Разведать информацию для сегментации коммерческого предложения. Некий астральный метод получения нужной информации. Коварный способ прощупать тепленького клиента или при возможности разогреть! Проще сказать: Похоже на то как тыкать палкой во что-то неизведанное, пытаясь понять можно ли там чем нибудь поживиться.
+                </p>
+                <picture>
+                    <source type="image/webp" srcset="public/quiz/quiz-neon-sign_1262-19629.webp">
+                    <img src="public/quiz/quiz-neon-sign_1262-19629.jpg" alt="квиз">
+                </picture>
+                <h2>Способ реализации квиза</h2>
+                <p class="margin">Первый способ поставить прослушку на клики и мылить ответы с опросника, одному из продажников. Через созданную прослушку аддЭвентЛистенер(“клик”, функция с массивом ответов). Хотя в одном из видео на ютубе, ответы можно было распределить через джейсон скрипт, что кстати должно быть проще. Если передавать значение через ${ответ} динамическую переменную. Спасибо ютубу. </p>
+                <h2>Квиз с сео прибабахами и турбо приводом в топ
+                </h2>
+                <p class="margin">Поэтому тут не обойтись без быстродействия.
+                    Хорошая идея подгружать контент через xmlhttprequest - это практически незаменимый способ “волшебства”. Что самое главное простой как три копейки, но при этом вполне рабочий во всех условиях. Если смотреть со стороны работоспособности и долговременной поддержки, то подгрузка контента занимает лидирующие позиции в вымышленном списке схематических реализаций таких волшебных технологий.
+                    </p>
+                <h2>Сама викторина:</h2>
+                <p class="margin">Викторина с опросником: “Квиз”.</p>
+                <p class="margin">
+                    <strong>Презентация.</strong>
+                    Мы навороченная пупер Супер фирменная фирма, по забугорной технологии. И нам необходимо прояснить чуточку информации, чтобы можно было уделить наибольшее представление к фокусировки на Ваших интересах.
+                    </p>
+
+               <form method="POST" action="mailQuiz.php" name="contact_form">
+                    <fieldset id="odynFil">
+                        <legend><strong>Деньги есть?</strong></legend>
+                            <div class="columnCell">
+                                <label id="odyn">
+                                    <input type="radio" name="but">Да!
+                                </label>
+                                <label id="odyn1">
+                                    <input type='radio' name="but">неТ
+                                </label>
+                                <label id="odyn2">
+                                    <input type='radio' name="but">Низнаю
+                                </label>
+                            </div>
+
+                    </fieldset>
+                    <div class="margin">
+                        <p id="text"></p>
+                    </div>
+                    <fieldset id="odynFil2">
+                        <legend>Твой самый лучший день!</legend>
+                        <div class="columnCell">
+                            <label>
+                                <input type="radio" name="two" id="two0">Все дни самые лучшие.
+                            </label>
+                            <label>
+                                <input type="radio" name="two" id="two1">Когда нибудь. Или он уже был.
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="margin">
+                        <p id="text2"></p>
+                    </div>
+                    <fieldset id="odynFil3">
+                        <legend>Верить в юмор это хорошо?</legend>
+                        <div class="columnCell">
+                            <label>
+                                <input type="radio" name="fre" id="free0" value="yes">Da.
+                            </label>
+                            <label>
+                                <input type="radio" name="fre" id="free1" value="no">No.
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="margin">
+                        <p id="text3"></p>
+                    </div>
+                    <fieldset id="odynFil4">
+                        <legend>Что больше А или С? Если А меньше Б в два раза, а Б больше С в три.</legend>
+                        <div class="columnCell">
+                            <label>
+                                <input type="radio" name="four" id="four0" value="yes">А больше, C.
+                            </label>
+                            <label>
+                                <input type="radio" name="four" id="four1" value="no">А меньше чем С
+                            </label>
+                            <label>
+                                <input type="radio" name="four" id="four2" value="no">Бог любит троицу!
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="margin">
+                        <p id="text4"></p>
+                    </div>
+                </form>
+                <div class="first">
+                    <fieldset class="block">
+                    <form method="POST" action="public_old/mailQuiz.php" name="contact_form">
+                        <!-- <fieldset>
+                            <legend>Имя!</legend><input type="text" name="name">
+                        </fieldset>
+                            <br> -->
+                        <legend>Мыло</legend><input type="email" name="email" id="email" required><br>
+                        <legend>Сообщение :-D</legend><textarea name="message"></textarea><br>
+                        Ответы:<input type='checkbox' id="ot" >
+
+                        <div><p id="oto"></p></div>
+                        <textarea hidden name="messages" id="oto"><script></script></textarea>
+                        <button>Отправить</button>
+                        <script>
+                            let answerGet;
+                            document.querySelector('#ot').addEventListener('click', function(){
+                                document.querySelector('#oto').innerHTML ='ответы на вопросы: '+ ' ' +Object.values(answer);
+
+                                answerGet = innerHTML(document.write(Object.values(answer)));
+                                console.log(answerGet);
+                            });
+                            // var frmvalidator  = new Validator("contactform");
+                            // frmvalidator.addValidation("name","req","Please provide your name");
+                            // frmvalidator.addValidation("email","req","Please provide your email");
+                            // frmvalidator.addValidation("email","email",
+                            // "Please enter a valid email address");
+                        </script>
+
+                    </form>
+                    </fieldset>
+                </div>
+                <!--
+                 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                        Here commentsBlock!
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                -->
+                <div id="comments"></div>
+                 <script>
+          async function loadAssets() {
+          try{
+            // Загружаем CSS
+            const cssResponse = await fetch("https://comments.qucu.ru/style");
+            const cssText = await cssResponse.text();
+            const style = document.createElement("style");
+            style.textContent = cssText;
+            document.head.append(style);
+            // Загружаем JS
+            const jsResponse = await fetch("https://comments.qucu.ru/js/a001");
+            const jsText = await jsResponse.text();
+            const js = document.createElement("script");
+            js.type = "text/javascript";
+            js.textContent = jsText;
+            document.head.append(js);
+            console.log("JS и CSS успешно подгружены!");
+          }catch(err){console.error("Ошибка загрузки:", err)};
+        }
+        loadAssets();
+        </script>
+
+            </article>
+        </main>
+        <div class="first">
+            <footer>
+                <p class="margin"></p>
+                  </footer>
+        </div>
+        <script>
+            let answer ={ };
+                document.querySelector('#odyn').addEventListener('click', function(){
+                    document.querySelector('#odynFil').style.cssText=`
+                    background-color: rgba(11, 216, 11, 0.37);
+            `;
+                odyn.classList.add('bgColorGreen');
+                odyn1.classList.remove('bgColorGreen');
+                odyn2.classList.remove('bgColorGreen');
+                //подключка ответа
+                let xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'quiz/yes.html');
+                    xhr.send();
+                    xhr.onload = function() {
+                    if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+                        alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
+
+                    } else { // если всё прошло гладко, выводим результат
+                        // alert(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+                        document.querySelector('#text').innerHTML= this.response;
+                    }
+                    };
+                //конец подключки
+                if( typeof answer.odyn === 'undefined'){
+                    answer.odyn = "первый ответ: yes";
+                }else if(typeof answer.odyn == 'string'){
+                    delete answer.odyn;
+                    answer.odyn = "первый ответ: Деньги есть!"
+                }
+                else{
+                    answer.odyn=" 1, ny neznay";
+                }
+                console.log(answer);
+                console.log(answer.odyn);
+                });
+
+                document.querySelector('#odyn1').addEventListener('click', function(){
+                    document.querySelector('#odynFil').style.cssText=`
+                    background-color: rgba(11, 216, 11, 0.37);
+                `;
+                odyn1.classList.add('bgColorGreen');
+                odyn2.classList.remove('bgColorGreen');
+                odyn.classList.remove('bgColorGreen');
+                //подключка ответа
+                let xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'public_old/quiz/no.html');
+                    xhr.send();
+                    xhr.onload = function() {
+                    if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+                        alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
+
+                    } else { // если всё прошло гладко, выводим результат
+                        // alert(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+                        document.querySelector('#text').innerHTML= this.response;
+                    }
+                    };
+                //конец подключки
+                if(typeof answer.odyn === 'undefined'){
+                    answer.odyn = "1 ответ: нет";
+
+                }else if(typeof answer.odyn == 'string'){
+                    delete answer.odyn;
+                    answer.odyn = ' 1 нет.';
+
+                }else{
+                    answer.odyn =" ну незнаю";
+                }
+                console.log(answer);
+                });
+                document.querySelector('#odyn2').addEventListener('click', function(){
+                    document.querySelector('#odynFil').style.cssText=`
+                    background-color: rgba(11, 216, 11, 0.37);
+                `;
+                odyn2.classList.add('bgColorGreen');
+                odyn1.classList.remove('bgColorGreen');
+                odyn.classList.remove('bgColorGreen');
+
+                //подключка ответа
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'public_old/quiz/i-do-not-know.html');
+                    xhr.send();
+                    xhr.onload = function() {
+                    if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+                        alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
+
+                    } else { // если всё прошло гладко, выводим результат
+                        // alert(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+                        document.querySelector('#text').innerHTML= this.response;
+                    }
+                    };
+                //конец подключки
+                if(typeof answer.odyn === 'undefined'){
+                    answer.odyn = "1 низан";
+                }else if(typeof answer.odyn == 'string'){
+                    delete answer.odyn;
+                    answer.odyn="1 низнаю";
+                }
+                else{
+                    answer.odyn="1 nezan";
+                }
+                console.log(answer);
+                });
+
+                  document.querySelector('#two0').addEventListener('click',function(){
+                    document.querySelector('#odynFil2').classList.add('bgColorGreen');
+                    document.querySelector('#text2').innerHTML ="Самый лучший ответ. Видимо когда Обиван Кеноби сказал: уровень оптимизаторов в его крови просто зашкаливает, я никогда того не видил, Сверх оптимистического настроя. Иожет он просто дурак?";
+                    answer.two = ' 2 самый лучший!';
+                  });
+
+                  document.querySelector('#two1').addEventListener('click',function(){
+                    document.querySelector('#odynFil2').classList.add('bgColorGreen');
+                    document.querySelector('#text2').innerHTML ="Этот день тоже может быть хорошим или чуточку лучше, если использовать что нибудь волшебное и поверить в сказку.";
+                    answer.two = ' 2 no';
+                  });
+
+                // free block
+                document.querySelector('#free0').addEventListener('click',function(){
+                    document.querySelector('#odynFil3').classList.add('bgColorRed');
+                    document.querySelector('#text3').innerHTML ="Шикарно! Это есть хорошо! И если что в веб мастерскую имени Барона Сайтовертаузена, требуются веселые, программисты. P.S. С навыками веселого кодинга.";
+                    answer.free = ' 3 веселый кодинг!';
+                  });
+
+                  document.querySelector('#free1').addEventListener('click',function(){
+                    document.querySelector('#odynFil3').classList.add('bgColorRed');
+                    document.querySelector('#text3').innerHTML =" ну что ж бывает.";
+                    answer.free = ' 3 ну бывает';
+                  });
+
+
+                  // four block
+                  document.querySelector('#four0').addEventListener('click',function(){
+                      document.querySelector('#odynFil4').classList.add('bgColorRed');
+                      document.querySelector('#text4').innerHTML=' Оооо, а вы кажется умнее чем повествует ваш внешний вид.';
+                      answer.four = 'four: Мозги есть!'
+                  });
+                  document.querySelector('#four1').addEventListener('click',function(){
+                      document.querySelector('#odynFil4').classList.add('bgColorRed');
+                      document.querySelector('#text4').innerHTML=' Так, так, так..., очень интересное умозаключение! А вЫ случайне не ученый с ренТв?!';
+                      answer.four = 'four: присутствуют признаки просмотра телепередач';
+                  });
+                  document.querySelector('#four2').addEventListener('click',function(){
+                      document.querySelector('#odynFil4').classList.add('bgColorRed');
+                      document.querySelector('#text4').innerHTML=' Да, точно! А кто "шпрехает компутер" и без надлежащего "санТехнического образования" Высшего(наивысочайшего!), ещё и фотать монитор чтобы передать printscreen. Для тех в аду есть особый котел!';
+                      answer.four = 'four: the End!'
+                  });
+        </script>
+  <!-- ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
+                    Начало меню!
+    ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ-->
+
+
+    <button class="burg">
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="40px" height="31px">
+        <image  x="0px" y="0px" width="40px" height="31px"  xlink:href="data:img/png;base64,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" />
+        </svg>
+        </button>
+        <!-- Счетчики -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-CTRLNMFNGY');
+        </script>
+
+
+
+    <script>
+
+        //--------------------------------------------------------------
+        //--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+        //--------------------------------------------------------------
+    function run(){
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", 'public_old/menu/menu.html', true);
+        xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+        if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+        document.getElementById("menu").innerHTML = this.responseText;
+            }
+        }
+        xhr.send();
+    }
+    /*--------------------------------------------------------------------------
+    ----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+    --------------------------------------------------------------------------*/
+                        //setInterval(run, 700);
+                       setTimeout(run, 2000);
+    </script>
+
+    <link rel="stylesheet" href="public_old/menu/style-menu.css">
+    <script src="public_old/menu/script-menu.js"></script>
+
+
+    <div id="menu"></div>
+
+
+
+
+
+
+  </section>
+  <div class="first">
+    </div>
+</body>
+
+              <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+    <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "LocalBusiness",
+      "name" : "Верстка адаптивного сайта визитки",
+      "url" : "https://qucu.ru/",
+      "image" : "https://qucu.ru/public/images/logo.png",
+      "review" : {
+        "@type" : "Review",
+        "author" : {
+          "@type" : "Person",
+          "name" : "Amir Navrutdinov"
+        }
+      }
+    }
+    </script>
+</html>

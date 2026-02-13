@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%=title%></title>
+    <!-- /comments -->
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="/style/registration.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='description' content='<%= description %>'>
+    <link rel="shortcut icon" href="/img/ico.svg">
+
+
+  </head>
+  <body>
+    <main>
+      <!-- <article>
+        <h1><%=title%></h1>
+        <p><%=text%></p>
+        <form class="" action="/" method="post">
+
+        </form>
+        <ul>
+
+        </ul>
+      </article> -->
+      <aside>
+        <h3>Autorization:</h3>
+        <form action="/login" method="post">
+          <fieldset>
+            <input type="text" name="username" value="" placeholder="login">
+
+          </fieldset>
+          <fieldset>
+            <input type="password" name="password" value="" placeholder='password'>
+
+          </fieldset>
+          <span><%= info %></span>
+          <button type="submit" name="button">push</button>
+          <a href="/registration">or registration</a>
+
+        </form>
+        <ul>
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+        </ul>
+      </aside>
+
+    </main>
+  </body>
+</html>

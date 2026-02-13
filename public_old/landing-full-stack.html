@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Передача json через php в адаптивный лендинг.</span></title>
+      <meta name='description' cotnent="Фулл стек лендинг. По версии собственноручно разработки веб мастерской имени барона сайтоверстаузена. Хотя это совсем не новая техника.">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="canonical" href="/good-deal.html">
+      <meta name="robots" content="all">
+      <meta name="autor" content="Amir Navrutdinov">
+      <link rel="icon" href="images/icon9.svg">
+      <meta name="theme-color" content="#a0ffed">
+    <style>
+    *{
+      margin:0;
+    }
+    body{
+      background:linear-gradient(rgb(255,205,120),rgba(0,255,0,0.3),rgb(120,255,255));
+      min-height:100vh;
+      font-size:20px;
+    }
+    main{
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    .first{
+    display:none;
+    }
+    article{
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      max-width: 100%;
+      width:900px;
+      flex-direction: column;
+    }
+    section{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      width:900px;
+      flex-direction:column;
+    }
+    footer{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      width:900px;
+      flex-direction:column;
+      text-align: center;
+    }
+    #sigCommentsBlock{
+      max-width: 100%;
+      width:900px;
+    }
+    img{
+      max-width: 100%;
+    }
+    h1,h2{
+      color: yellow;
+      text-shadow:darkred 2px 2px 3px;
+    }
+    </style>
+    <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Article",
+  "name" : "Лендинг с технологией Full stack",
+  "headline": "Лендинг из генерируемого объекта из sql с помощью php",
+  "author" : {
+    "@type" : "Person",
+    "name" : "Амир Наврутдинов",
+    "alternateName": ["Amir Shikarno", "Amir Navrutdinov"]
+  },
+  "datePublished" : "2021-06-18",
+  "dateModified" : "2023-09-30",
+  "image" : "https://qucu.ru/images/full-stack-development.png",
+  "articleSection" : "В итоге имеется многофункциональный лендинг по принципу сингл пейдж апликейшн.",
+  "articleBody" : "Фулл стек лендинг. По версии собственноручной разработки, в веб мастерской имени барона сайтоверстаузена. Хотя это совсем не новая техника. Даже прилично старая, как сингл пейдж апликейшн на голом яваскрипте. Так и отправка джейсон формата через пиашпи, в голый аштиэмель. С помощью php, который крадется тайком, в полной боевой готовности! … запустить свой сюрикен",
+  "url" : "https://qucu.ru/landing-full-stack.html",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "веб мастерская имени Барона Сайтоверстаузена",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://qucu.ru/images/logo.png"
+         }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://qucu.ru/landing-full-stack.html"
+ }
+}
+</script>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1><span id="zag"></span></h1>
+        <p style="background:rgba(0,255,0,0.3);"><span id="uno"></span></p>
+
+
+        <span id="text"></span>
+
+        <span id='ok'></span>
+
+        <div>
+        <form action="generation-objects/landing-full-stack.php" method="post">
+          <span style="float:left; font-size:100px;" id="output">🥷</span>
+
+          Тестовая страница для проверки технологии подгрузки контента с помощью php, который крадётся как ниндзя, в полном боевом воплощении. PHP генерирует выгрузку из базы данных в массив “многомерный” формата json. Который появляется на лендинге подгрузкой: “как ТОЧНЫЙ бросок, боевого <button>СЮРИКЕНА!</button>”.</div>
+        </form>
+        <a href="https://qucu.ru/full-stack.html">по аналогии подгрузки из выпадающего списка</a>
+    <div>
+      <span style="float:right; font-size:75px;" id="output">😆</span>
+      В нашем случае представлены пара способов формирования json выгрузки из BD. Кнопкой “баттон” и ниндзей, “тоже баттоном”. PHP скрипт отлавливает $_POST[‘button’]; -тихонечко и скрытно.(так чтобы никто не видел(...и никто не знал)). <a href=/blozhik/>Из самописного лендинга: “тестовой наработки”, практики шпрехен кАмпутер.</a>
+    </div>
+      </article>
+      <div class="first">
+        <footer>
+        </footer>
+            <section>
+              <!--
+               XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                      Here commentsBlock!
+              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+              -->
+              <div id="comments"></div>
+               <script>
+          async function loadAssets() {
+          try{
+            // Загружаем CSS
+            const cssResponse = await fetch("https://comments.qucu.ru/style");
+            const cssText = await cssResponse.text();
+            const style = document.createElement("style");
+            style.textContent = cssText;
+            document.head.append(style);
+            // Загружаем JS
+            const jsResponse = await fetch("https://comments.qucu.ru/js/a001");
+            const jsText = await jsResponse.text();
+            const js = document.createElement("script");
+            js.type = "text/javascript";
+            js.textContent = jsText;
+            document.head.append(js);
+            console.log("JS и CSS успешно подгружены!");
+          }catch(err){console.error("Ошибка загрузки:", err)};
+        }
+        loadAssets();
+        </script>
+            </section>
+      </div>
+    </main>
+  </body>
+  <script>
+  let number;
+    window.addEventListener("DOMContentLoaded",()=>{
+      function readTextFile(file, callback) {
+        let rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function() {
+            if (rawFile.readyState === 4 && rawFile.status == "200") {
+                callback(rawFile.responseText);
+            }
+          }
+        rawFile.send(null);
+        }
+        //usage:
+
+        number="0";
+        let pos;
+        pos="0";
+        let Title;
+        Title="1";
+
+        // description
+        let uno;
+        uno="2";
+
+        let trY;
+        trY='3';
+
+        readTextFile("generation-objects/LP-json-bd.json", function(text){
+        let data = JSON.parse(text);
+        console.log(Object.values(data));
+        console.log(Object.values(data[`${number}`]));
+        console.log(Object.values(data[`${pos}`]).join(''));
+        document.getElementById('uno').innerHTML=Object.values(data[`${number}`][`${uno}`]).join('');
+        document.getElementById('text').innerHTML=Object.values(data[`${number}`][`${trY}`]).join("");
+        // document.getElementById('ok').innerHTML=Object.values(data[`${number}`]).join("");
+        document.getElementById('zag').innerHTML=Object.values(data[`${number}`][`${Title}`]).join('');
+        });
+        setTimeout(()=>
+        (document.querySelector('.first').style.cssText=`
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        max-width: 100%;
+        flex-direction: column;
+      `),2000);
+    });
+
+    document.getElementsByTagName('span')[4].addEventListener('click',()=>{
+       // document.querySelector('#ok').innerHTML=`clear `;
+
+       var request = new XMLHttpRequest();
+function reqReadyStateChange() {
+    if (request.readyState == 4) {
+        var status = request.status;
+        if (status == 200) {
+            document.getElementById("output").innerHTML=request.responseText;
+        }
+    }
+}
+       // строка с параметрами для отправки
+       // var body = "name=" + user.name + "&age="+user.age;
+       request.open("POST", "/generation-objects/landing-full-stack.php");
+       request.onreadystatechange = reqReadyStateChange;
+       request.send();
+       console.log(document.getElementsByTagName('span'));
+    })
+  </script>
+  <!-- Счетчики -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CTRLNMFNGY');
+  </script>
+</html>

@@ -1,0 +1,260 @@
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all">
+        <meta name="autor" content="Amir Shikarno">
+        <link rel="canonical" href="https://qucu.ru/loading-content-to-enter-the-green-zone-on-page-speed.html">
+        <meta name="description" content="Дополнительная подгрузка контента после того как пейдж спид дал зеленый цвет, воочию увидеть что из этого выходит можно на страницы верстальщиков.">
+        <title>Подгрузка контента для вхождения в грин зону</title>
+        <!-- <script data-ad-client="ca-pub-6824659625881284" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+    </head>
+    <body>
+        <style>
+            *{
+                margin:0;
+            }
+            body{
+              background: linear-gradient(rgba(0,255,0,0.5),rgba(0,0,255,0.5));
+            }
+            .flex_box{
+                display:flex;
+                /* background-color: rgb(255, 210, 253); */
+                flex-direction:column;
+                align-items: center;
+                max-width: 97%;
+                min-height: 100%;
+            }
+            .padding{
+                padding: 3%;
+            }
+            .box_one{
+                display: flex;
+                flex-wrap: wrap;
+                min-height: 40px;
+                align-items: center;
+                justify-content: center;
+                background-color: salmon;
+            }
+            .headers{
+                max-width: 90%;
+                width: 900px;
+
+
+            }
+            .articles{
+                display: flex;
+                font-size: 18px;
+                color:rgb(30, 77, 24);
+                flex-direction: column;
+                justify-content: center;
+                width: 900px;
+                max-width: 100%;
+            }
+            .color-green{
+                background-color: rgba(174, 255, 174, 0.5);
+
+            }
+            .img-net{
+                max-width: 100%;
+                width: 900px;
+                height: auto;
+            }
+            header{
+                max-width: 90%;
+            }
+            section{
+              max-width: 100%;
+              width:900px;
+            }
+            .first{
+                display:flex;
+                max-width: 100%;
+                flex-direction:column;
+                justify-content: center;
+                align-items: center;
+                word-wrap: break-word;
+            }
+            #sigCommentsBlock{
+              max-width: 100%;
+              width:900px;
+            }
+        </style>
+        <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Article",
+      "headline" : "Видимость подгруженного контента в поиске",
+      "author" : {
+        "@type" : "Person",
+        "publisher" : "Amir Shikarno",
+        "alternateName": ["Amir Navrutdinov", "Амир Наврутдинов"]
+      },
+      "datePublished" : "2020-04-25",
+      "dateModified" : "2025-08-08",
+      "image" : "https://qucu.ru/public/network.jpg",
+      "articleSection" : "веб программист",
+      "articleBody" : "задерженная загрузка страницы",
+      "url" : "https://qucu.ru/loading-content-to-enter-the-green-zone-on-page-speed.html"
+    }
+    </script>
+    <!-- Счетчики -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CTRLNMFNGY');
+    </script>
+        <article class ="flex_box padding">
+                <header>
+                    <h1 class="headers padding">Ранжирование подгружаемого котента в поиске</h1>
+                    <p class="articles padding">Чтобы проверить как будут отображаться подгруженные страницы и будут ли они видны из поиска, если подгрузка проходит только через пару секунд, в то время как бот уже зафиксировал тот результат что был до того как началась поддача контента.</p>
+                </header>
+                <img class="img-net" src="public/images/network.jpg" alt="обзор загрузки веб страницы">
+
+                <h2 class="headers padding">XMLHttpRequest - шикарная функция дополнять контент даже после загузки страницы.</h2>
+                <div id='xmlhttprequest' class="articles color-green"></div>
+                <script>
+                    function start(){
+                        var xmlhttp = new XMLHttpRequest();
+                        xmlhttp.open('GET', 'file/textslide.html');
+                                xmlhttp.onreadystatechange = function(){
+                                if(xmlhttp.status == 200){
+                                    responseType ="Text";
+                                    document.querySelector('#xmlhttprequest').innerHTML = this.response;
+                                }
+                            }
+                            xmlhttp.send();
+                    }
+                    start();
+                </script>
+                 <img class="img-net" src="public/images/xmlhttprequest.jpg" alt="функция xmlhttprequest">
+                <p class="padding"><strong class="padding">P.S. Если что подгружаемый контент выделен зеленым цветом.</strong></p>
+
+
+            <h2 class="headers padding">Отображение через сетТаймаут.</h2>
+            <img class="img-net" src="public/images/setinterval.jpg" alt="функция setinterval">
+            <div class="articles">
+
+                <p class="padding">Функция сетИнтервал(тоесть сетТаймаут) откладывает выполнеие на заданное колличество секунд или милисекунд. Аланлогиченя функция интервал повторятся через промежуток времени. Они очень похоже, хотя конечно разница очевидна.
+                <strong>И вот ответ на вопрос как же повлияет на ранжирование отложенная загрузка контента.</strong></p>
+                <div class="padding">Чтобы это проверить была созданна переменная с записанным в неё текстом, потом переменная отображается через функцию setTimeout(let, 2000); через две секунды.</div>
+                <p class="letSetInterval color-green padding"></p>
+
+                <script>
+                    let text = 'Влияет ли отложенная загрузка на ранжирование в поиске или нет? Это можно проверить выделив весь этот текст и загуглив его. Ответ будет очевиден. Если в поиске не будет этого предложения с вопросом, значит отложенная загрузка не индексируется поисковиком.';
+                    setTimeout(function(){
+                        document.querySelector('.letSetInterval').innerHTML = text;
+                    }, 2000);
+                </script>
+
+                <strong class="padding">P.S. Тут также для наглядности отложенный текст выделен осообым цветом.</strong>
+            </div>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Правый адапт квадрат. Верх. -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-6824659625881284"
+                data-ad-slot="6105965580"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+                <h2 class="headers padding">Собственно для чего все это надо.</h2>
+                <p class="articles padding">В первую очередь провека для того чтобы как понять поисковик смотрит на страницы которые отображают контент спустя время. Когда страница находится в грин зоне на гугл пейдж спид, а потом начинает докачивать все необходимое для далнейшего функционала.</p>
+
+                <script>
+                    let text2 = 'Уууууу... Опять подгрузка после загрузки страницы';
+                    setTimeout(function(){
+                        document.querySelector('.letSetInterval2').innerHTML = text2;
+                    }, 5000);
+                </script>
+                <span class="articles">
+                  <p class="letSetInterval2 color-green padding"></p>
+            </span>
+
+        </article>
+        <div class="first">
+        <section>
+          <!--
+           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                  Here commentsBlock!
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          -->
+          <div id="comments"></div>
+          <a href="https://qucu.ru/comments/" style="font-size: 17px;">https://qucu.ru/comments/</a>
+          <script type="text/javascript">
+            const site={
+              origin: 'https://qucu.ru/',
+              referrer: "https://qucu.ru/loading-content-to-enter-the-green-zone-on-page-speed.html"
+            }
+            const importantBag={id:"nasoberu",site:window.location};
+              // const id='nasoberu';// important!!!
+              const script =document.createElement('script');
+              const url ='https://comments.qucu.ru/allow-cors';
+              async function goComments(){
+                await fetch(url,{
+                    headers: {
+                              'Content-Type': 'application/json'
+                          },
+                  origin:site.origin,
+                  method: "POST",
+                  referrer: site.referrer,
+                  referrerPolicy: "origin-when-cross-origin",
+                  mode:"cors",
+                  credentials: "include",
+                  cache: "no-store",
+                }).then(response=>response.text()).then(result=>{
+                  document.querySelector('#comments').append(script);
+                  let oK = document.querySelector('#comments > script');
+                  oK.innerHTML=result;
+                });
+              };
+              setTimeout(()=>goComments(),300);
+          </script>
+        </section>
+      </div>
+        <footer class="box_one">
+            <p><a href="https://qucu.ru">главная</a> /<a href="#">/ верх</a></p>
+        </footer>
+
+
+
+    </body>
+    <!-- ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
+                    Начало меню!
+    ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ-->
+    <div id="menu"></div>
+    <button class="burg">
+  <span style="font-size:45px;">🍔</span>
+    </button>
+    <!--Зря ты стиль кнопки изменил, теперь все кнопки после этого стилая пропадают.-->
+    <script>
+
+        //--------------------------------------------------------------
+        //--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+        //--------------------------------------------------------------
+    function run(){
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", 'public_old/menu/menu.html', true);
+        xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+        if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+        document.getElementById("menu").innerHTML = this.responseText;
+            }
+        }
+        xhr.send();
+    }
+    /*--------------------------------------------------------------------------
+    ----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+    --------------------------------------------------------------------------*/
+                        //setInterval(run, 700);
+                        run();
+    </script>
+    <link rel="stylesheet" href="public_old/menu/style-menu.css">
+    <script src="public_old/menu/script-menu.js"></script>
+</html>

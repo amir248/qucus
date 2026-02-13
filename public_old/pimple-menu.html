@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="/pimple-menu.html">
+    <meta name="robots" content="all">
+    <meta name="autor" content="Amir Navrutdinov">
+    <title>пупырочное меню</title>
+    <meta name='description' cotnent="Адаптивная менюшка из пупырок на джейэсе, для адаптивного сайта на мобильном телефоне.">
+    <link rel="icon" href="public/images/icon9.svg">
+    <meta name="theme-color" content="#a3ffa9">
+    <style>
+      *{
+        margin:0;
+      }
+      body{
+        background:linear-gradient(rgb(251, 255, 150),rgb(99, 255, 249));
+        /* min-height:100vh; */
+        font-size:20px;
+        min-height: 100%;
+      }
+      main{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        max-width:100%;
+        min-height: 100%;
+      }
+      .first{
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          max-width:100%;
+      }
+      article{
+        display:flex;
+        /* justify-content:center; */
+        align-items:center;
+        max-width:100%;
+        width:700px;
+        flex-direction:column;
+        /* margin-right:40px; */
+      }
+      footer{
+        display:flex;
+        align-items:center;
+        max-width:100%;
+        width:700px;
+        text-align:center;
+        flex-direction:column;
+      }
+      .pimple-box{
+        display:flex;
+        position:fixed;
+        justify-content:flex-end;
+        /* align-items:flex_end; */
+        width:100%; /* способ по всей ширине блока */
+        max-width:100%;
+        z-index:9;
+      }
+      .pimple-green{
+        display:flex;
+        position:fixed;
+        justify-content:flex-start;
+        align-items:center;
+        width:40px;
+        height:100px;
+        background:green;
+        border-top-left-radius: 333px;
+        border-bottom-left-radius:333px;
+        margin-top:110px;
+        transition: all 1s ease-out;
+      }
+      .pimple-orange{
+        display:flex;
+        position:fixed;
+        justify-content:flex-start;
+        align-items:center;
+        width:40px;
+        height:100px;
+        background:orange;
+        border-top-left-radius: 333px;
+        border-bottom-left-radius:333px;
+        margin-top:220px;
+        transition: all 1s ease-out;
+      }
+      .pimple-violet{
+        display:flex;
+        position:fixed;
+        justify-content:flex-start;
+        align-items:center;
+        width:40px;
+        height:100px;
+        background:violet;
+        border-top-left-radius: 333px;
+        border-bottom-left-radius:333px;
+        margin-top:340px;
+        transition: all 1s ease-out;
+      }
+      .text-green{
+        display:none;
+      }
+      .text-orange{
+        display:none;
+      }
+      .text-violet{
+        display:none;
+      }
+      p{
+        margin:1%;
+        margin-right:40px;
+      }
+      .buttony{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      margin:1%;
+      }
+      #leftButton{
+      background: green;
+      /* border: rgb(160, 56, 56) solid 2px; */
+      /* border-radius: 10px; */
+      padding: 1%;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      }
+      #leftButton:hover{
+      text-shadow: black 2px 2px 2px;
+      }
+      #leftButton:active{
+      text-shadow: cyan -2px -2px 3px;
+      }
+      #rightButton{
+      background: green;
+      /* border: rgb(160, 56, 56) solid 2px; */
+      /* border-radius: 10px; */
+      padding: 1%;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      }
+      #rightButton:hover{
+      text-shadow: black 2px 2px 2px;
+      }
+      #rightButton:active{
+      text-shadow: cyan -2px -2px 3px;
+      }
+      a:hover{
+        color:red;
+      }
+      img{
+        max-width:100%;
+      }
+      #sigCommentsBlock{
+        width:700px;
+        max-width: 100%;
+      }
+      #offmenu{
+          top:10px;
+          max-height: 100%;
+          max-width: 100%;
+          /* opacity: 0.9; */
+          background-color:rgb(64, 150, 56);
+          border: 1px solid red;
+          font-size: 24px;
+          padding-bottom: 3%;
+          visibility: visible;
+          /* overflow: hidden;
+          display: none;
+          visibility: hidden;  */
+      }
+      #offmenu li{
+        margin:1%;
+        background: yellowgreen;
+        width:90%;
+        height:100%;
+        padding: 1%;
+        border: 1px solid black;
+        list-style-type:none;
+      }
+      /* #offmenu ul{
+        text-decoration: none;
+      } */
+      #offmenu li:hover{
+        background: green;
+      }
+    </style>
+
+<!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Article",
+  "name" : "Пупырочное меню",
+    "headline": "Пупырочное меню, выдвижные вкладки.",
+  "author" : {
+    "@type" : "Person",
+    "name" : "Amir Navrutdinov",
+    "alternateName": ["Amir Shikarno", "Амир Наврутдинов"]
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://qucu.ru/pimple-menu.html"
+ },
+  "datePublished" : "2021-05-07",
+  "dateModified" : "2025-08-08",
+  "image" : "http://qucu.ru/public/images/layout/DSC_4944.JPG",
+  "articleSection" : "Пупырочное меню с забугорного “пимпл меню” - это распространенная техника вкладочных страниц.",
+  "articleBody" : "Вот так! Придется смириться что “пупырки” хоть смешные и странные, но это действительно самый удобный способ утрамбовать разделы в нуменклотированную группировку. И даже сейчас могут терзать раздумья, делать ли “пупырочное меню” или просмотреть более традиционный способ нуменклотировать раздел. Даже сама идея пупырочного меню это попытка повторить гениальнейший дизайн плавного сайта, в котором красовалась обтекающая кнопка на вызов менюшки  в округленной форме, как капелька воды прилипшая к краю после дождя.Красивые разноцветные кнопки с точным ассоциативным посылом, о всем что можно было послать. Визуально обозначив ярлык, максимально полным обозначением.",
+  "url" : "https://qucu.ru/pimple-menu.html",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "веб мастерская имени Барона Сайтоверстаузена",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://qucu.ru/public/images/lol/spa.webp"
+    }
+  }
+}
+</script>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>Пупырочное меню</h1>
+        <p>Вот так! Придется смириться что “пупырки” хоть смешные и странные, но это действительно самый удобный способ утрамбовать разделы в нуменклотированную группировку. </p>
+        <p>И даже сейчас могут терзать раздумья, делать ли “пупырочное меню” или просмотреть более традиционные способы нуменклотировать раздел. Даже сама идея пупырочного меню это попытка повторить гениальнейший дизайн плавного сайта, в котором красовалась обтекающая кнопка на вызов менюшки  в округленной форме, как капелька воды прилипшая к краю после дождя.</p>
+        <p>Красивые разноцветные кнопки с точным ассоциативным посылом, о всем что можно было послать. Визуально обозначив ярлык, максимально полным обозначением.</p>
+        <p>Пупырочное меню с забугорного “пимпл меню” - это распространенная техника вкладочных страниц. Когда для подгрузки используется одна страница, динамически модифицируется с помощью dHTML. Используя только лишь одну великую троицу веб технологий “html+css+js”.</p>
+        <div class='imagesWindow'>
+          <div id="news"></div>
+        </div>
+        <div style="display:flex; justify-content:center; z-index:1;">
+            <div id="leftButton"><span style="font-size:75px;">↩</span></div>
+            <div id="rightButton"><span style="font-size:75px;">↪</span></div>
+        </div>
+        <p>И когда приходится задумываться о скорости для мобильных. То создается вопрос сколько же весит пупырочный скрипт? Оказалось что, чтобы не было написано на джейэсе, будет легким. Поэтому один только скрпит пупырочной менюшки с тремя вкладками стопроцентно в зеленой зоне для мобильных. Такое вот начало на 295 строчке лендинга. Поэтому сюда можно без опасения включать адаптивную галерею и систему комментариев.</p>
+        <p>Но есть задача которую обойти простым обходным путем не получится. Z-index: - если перекрыть кликабельные слои, то функциональность клика будет утрачена. А это недопустимо для обеспечения взаимодействия страницы! И ради верхнего слоя пупырки придется отодвинуть чтобы они не перекрывали функциональные свойства.</p>
+        <div class="pimple-box">
+          <div class="pimple-green">❌<span class="text-green">List Menu</span></div>
+          <div class="pimple-orange">✅<span class="text-orange">Hosting</span></div>
+          <div class="pimple-violet">😆<span class="text-violet"><a href="https://qucu.ru/resume/Amir.html">Resume</a></span></div>
+        </div>
+      </article>
+    </main>
+    <div class="first">
+    <footer>
+      <section style="display:flex; max-width:100%; width:700px;">
+              </section>
+              <!--
+               XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                      Here commentsBlock!
+              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+              -->
+              <div id="comments"></div>
+             <script>
+          async function loadAssets() {
+          try{
+            // Загружаем CSS
+            const cssResponse = await fetch("https://comments.qucu.ru/style");
+            const cssText = await cssResponse.text();
+            const style = document.createElement("style");
+            style.textContent = cssText;
+            document.head.append(style);
+            // Загружаем JS
+            const jsResponse = await fetch("https://comments.qucu.ru/js/a001");
+            const jsText = await jsResponse.text();
+            const js = document.createElement("script");
+            js.type = "text/javascript";
+            js.textContent = jsText;
+            document.head.append(js);
+            console.log("JS и CSS успешно подгружены!");
+          }catch(err){console.error("Ошибка загрузки:", err)};
+        }
+        loadAssets();
+        </script>
+            </section>
+          </script>
+        </div>
+    </footer>
+  <script>
+  const pimple_button ={
+    one : false,
+    two : false,
+    three : false
+  }
+function prover_pimple_button(){
+
+
+
+}
+console.log(pimple_button);
+
+
+
+
+    let pimple_green_number= +0;
+  document.querySelector('.pimple-green').addEventListener('click',()=>{
+    pimple_button.one=true;
+      //_______________________
+      //----------------------
+      if(pimple_button.two==true){
+        document.querySelector('.pimple-orange').style.cssText=`
+        width:40px;
+        `;
+        document.querySelector('.text-orange').style.cssText=`
+        display:none;
+        transition:all 1.5s ease-out;
+        `;
+
+        console.log(pimple_button.two);
+        // document.querySelector('.menuOrange').remove();
+
+        pimple_button.two=false;
+        pimple_orange_number=0;
+
+      }else if(pimple_button.three==true){
+        document.querySelector('.pimple-violet').style.cssText=`
+        width:40px;
+        `;
+        document.querySelector('.text-violet').style.cssText=`
+        display:none;
+        transition:all 2s ease-out;
+        `;
+        pimple_button.three=false;
+        pimple_violet_number=0;
+      }
+      console.log('pimple_green'+pimple_button.one);
+      pimple_button.two=false;
+
+      //_________________________
+      //-------------------------
+    console.log('pimple-green');
+    pimple_green_number++;
+    if(pimple_green_number==1){
+      document.querySelector('.pimple-green').style.cssText=`
+      width:140px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      transition:all 1s ease-out;
+      font-size:40px;
+      `;
+      document.querySelector('.text-green').style.cssText=`
+      display:block;
+      transition:all 1s ease-out;
+      `;
+          let menuGreenOld = document.createElement('div');
+          menuGreenOld.className='menuSh';
+          document.body.appendChild(menuGreenOld);
+          document.querySelector('.menuSh').style.cssText=`
+          font-size:25px;
+          position:fixed;
+          top:0;
+
+          // transition:all 3s ease-out;
+          opacity:0.9;
+          overflow:scroll;
+
+          z-index:3;
+          height:100%;
+          min-height:100%;
+          max-height:100%;
+          `;
+          menuGreenOld.innerHTML=`<p id="menuSh"></p>`;
+          document.getElementsByTagName('body')[0].style.cssText=`
+          overflow:hidden;
+          `;
+          console.log('pimpleGreenOpen');
+          pimple_button.one=false;
+          //--------------------------------------------------------------
+          //--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+          //--------------------------------------------------------------
+      function run(){
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", 'public_old/menu/menu.html', true);
+          xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+          if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+          document.getElementById("menuSh").innerHTML = this.responseText;
+              }
+          }
+          xhr.send();
+      }
+      /*--------------------------------------------------------------------------
+      ----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+      --------------------------------------------------------------------------*/
+                          setTimeout(run, 700);
+    }else if(pimple_green_number==2){
+      document.querySelector('.pimple-green').style.cssText=`
+      width:40px;
+      `;
+      document.querySelector('.text-green').style.cssText=`
+      display:none;
+      transition:all 1s ease-out;
+      `;
+      document.querySelector('.menuSh').remove();
+      document.getElementsByTagName('body')[0].style.cssText=`
+      overflow:auto;
+      `;
+      console.log('pimpleGreenClosed');
+      pimple_green_number=0;
+    }
+  });
+
+
+  //___________________________________________________________
+    //--------------------------------------------- Orange ------
+
+  let pimple_orange_number= +0;
+  document.querySelector('.pimple-orange').addEventListener('click',()=>{
+    // pimple_button
+      if(pimple_button.one==true){
+        document.querySelector('.pimple-green').style.cssText=`
+        width:40px;
+        `;
+        document.querySelector('.text-green').style.cssText=`
+        display:none;
+        transition:all 1.5s ease-out;
+        `;
+        // document.querySelector('.menuSh').remove();
+        pimple_green_number=0;
+        document.getElementsByTagName('body')[0].style.cssText=`
+        overflow:auto;
+        `;
+        // document.querySelector('.menuSh').remove();
+        pimple_button.one=false;
+      }else if(pimple_button.three==true){
+        document.querySelector('.pimple-violet').style.cssText=`
+        width:40px;
+        `;
+        document.querySelector('.text-violet').style.cssText=`
+        display:none;
+        transition:all 2s ease-out;
+        `;
+        pimple_button.three=false;
+        pimple_violet_number=0;
+      }
+      console.log(pimple_button.one);
+      pimple_button.three=false;
+      //_______________________
+      //---------------------------------
+    console.log('pimple-orange');
+    pimple_orange_number++;
+    if(pimple_orange_number==1){
+      document.querySelector('.pimple-orange').style.cssText=`
+      width:240px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      transition:all 1.5s ease-out;
+      font-size:40px;
+      `;
+      document.querySelector('.text-orange').style.cssText=`
+      display:block;
+      transition:all 1.5s ease-out;
+      `;
+      pimple_button.two=true;
+      console.log(pimple_button.two);
+      console.log(pimple_orange_number);
+
+      let menuOrangeOld = document.createElement('div');
+      document.body.appendChild(menuOrangeOld);
+      menuOrangeOld.className='menuOrange';
+      document.querySelector('.menuOrange').style.cssText=`
+      display: grid;
+      margin:auto;
+      justify-items: center;
+      align-items: center;
+      font-size:45px;
+      position:fixed;
+      text-align:center;
+      background:white;
+      padding: 25px;
+      top:55%;
+      `;
+      menuOrangeOld.innerHTML=`<a href="#" style="margin:auto;">На быстром хостинге<br><img src='#' alt='fozzy'></a>`;
+    }else if(pimple_orange_number==2){
+      document.querySelector('.pimple-orange').style.cssText=`
+      width:40px;
+      `;
+      document.querySelector('.text-orange').style.cssText=`
+      display:none;
+      transition:all 1.5s ease-out;
+      `;
+      pimple_orange_number=0;
+        document.querySelector('.menuOrange').remove();
+    }
+  });
+  let pimple_violet_number=+0;
+  //________________________________________________________
+//---------------------------------------- Violet ----------
+
+  document.querySelector('.pimple-violet').addEventListener('click',()=>{
+    // pimple_button
+      if(pimple_button.one==true){
+        console.log(pimple_button.one);
+        document.querySelector('.pimple-green').style.cssText=`
+        width:40px;
+        `;
+        document.querySelector('.text-green').style.cssText=`
+        display:none;
+        transition:all 1.5s ease-out;
+        `;
+        pimple_button.one=false;
+        pimple_green_number=0;
+        document.querySelector('.menuSh').remove();
+        document.getElementsByTagName('body')[0].style.cssText=`
+        overflow:auto;
+        `;
+
+      }else{
+        document.querySelector('.pimple-orange').style.cssText=`
+        width:40px;
+        `;
+        document.querySelector('.text-orange').style.cssText=`
+        display:none;
+        transition:all 2s ease-out;
+        `;
+        // if(pimple_button.two==true){
+        //   document.querySelector('.menuOrange').remove();
+        //   pimple_button.two=false;
+        //   pimple_orange_number=0;
+        // }
+
+
+      }
+      // if(pimple_button.two==true){
+      //     document.querySelector('.menuOrange').remove();
+      // }
+      console.log(pimple_button.one);
+      //_____________________________
+      //-----------------------------
+    console.log('pimple-violet');
+    pimple_violet_number++;
+    if(pimple_violet_number==1){
+      document.querySelector('.pimple-violet').style.cssText=`
+      width:340px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      transition:all 2s ease-out;
+      font-size:40px;
+      `;
+      document.querySelector('.text-violet').style.cssText=`
+      display:block;
+      transition:all 2s ease-out;
+      `;
+      pimple_button.three=true;
+      console.log(pimple_button.three);
+      console.log(pimple_violet_number);
+    }else if(pimple_violet_number==2){
+      document.querySelector('.pimple-violet').style.cssText=`
+      width:40px;
+      `;
+      document.querySelector('.text-violet').style.cssText=`
+      display:none;
+      transition:all 2s ease-out;
+      `;
+      pimple_violet_number=0;
+    }
+  });
+
+
+// дальше идет галерея!
+    console.log(window.location.hash +'_ '+'proverka');
+let imgPod = ['public/images/layout/image.html','public/images/layout/image1.html','public/images/layout/image2.html','public/images/layout/image3.html','public/images/layout/image4.html', 'public/images/pimple/image.html','public/images/pimple/image1.html','public/images/pimple/image2.html','public/images/pimple/image3.html','public/images/pimple/image4.html'];
+let i= +0;
+if(window.location.hash=="#1"){
+i=1;
+nextImages();
+}else if(window.location.hash=="#2"){
+i=2;
+nextImages();
+}else if(window.location.hash=="#3"){
+i=3;
+nextImages();
+}else if(window.location.hash=="#4"){
+i=4;
+ nextImages();
+}else if(window.location.hash=="#5"){
+i=5;
+ nextImages();
+}else if(window.location.hash=="#6"){
+i=6;
+ nextImages();
+}else if(window.location.hash=="#7"){
+i=7;
+ nextImages();
+}else if(window.location.hash=="#8"){
+i=8;
+ nextImages();
+}else if(window.location.hash=="#9"){
+i=9;
+ nextImages();
+}else if(window.location.hash=="#10"){
+ i=10;
+   nextImages();
+ // }else if(window.location.hash=="#11"){
+ //   i=11;
+ //     nextImages();
+//    }else if(window.location.hash=="#12"){
+//      i=12;
+//        nextImages();
+//      }else if(window.location.hash=="#13"){
+//        i=13;
+//          nextImages();
+//        }else if(window.location.hash=="#14"){
+//          i=14;
+//            nextImages();
+//          }else if(window.location.hash=="#15"){
+//            i=15;
+//              nextImages();
+}else if(window.location.hash=="#0"){
+i=0;
+ nextImages();
+}
+else{
+// i=2;
+nextImages();
+}
+
+
+
+// прослушка ширины изображения
+
+console.log(window.innerWidth+" _"+window.innerHeight); // не прокатило! :-D
+if(window.innerWidth<=700){
+
+let rpoZh=700-window.innerWidth;
+ let andE =(700*100)/window.innerWidth;
+ console.log(rpoZh+"____"+andE+'_Prosto andE');
+ let height = (500*100)/(andE);
+ console.log(height+'_proverka height');
+ document.querySelector('.imagesWindow').style.cssText=`
+display:flex;
+height: ${height}px;
+`;
+console.log(`${andE}`+'Туту написано из оттдуа');
+}else{
+document.querySelector('.imagesWindow').style.cssText=`
+display:flex;
+height:500px;
+width:700px;
+z-index:0;
+`;
+}
+
+
+ function nextImages(){
+     let podimgl = new XMLHttpRequest();
+     podimgl.open('GET', `${imgPod[i]}`);
+     podimgl.send();
+     podimgl.onload = function(){
+         if(podimgl.status ==200){
+             responseType ="Text";
+             document.querySelector('#news').innerHTML = this.response;
+         }
+     }
+ }
+let countFot = +9;
+    nextImages();
+     leftButton.addEventListener('click',function(){
+         if(i>0){
+             i--;
+             window.location= '/pimple-menu.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log(imgPod);
+             console.log(i);
+         }else if(i==countFot){
+             i=countFot;
+               window.location= '/pimple-menu.html#'+[i];
+             console.log(imgPod);
+             console.log(i);
+         }else{
+             i=countFot;
+               window.location= '/pimple-menu.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log('ну незнаю!');
+         }
+     });
+     rightButton.addEventListener('click',function(){
+         if(i<countFot){
+             i++;
+               window.location= '/pimple-menu.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log(imgPod);
+             console.log(i);
+         }else if(i==countFot){
+             i=0;
+               window.location= '/pimple-menu.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log(imgPod);
+             console.log(i);
+           }else if(i==countFot){
+             i=0;
+               window.location= '/pimple-menu.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log(imgPod);
+             console.log(i);
+         }else{
+           i=0;
+             window.location= '/pimple-menu.html#'+[i];
+             setTimeout(nextImages(),10);
+             console.log('ну незнаю2!');
+             console.log(imgPod);
+             console.log(i);
+         }
+     });
+
+
+</script>
+<!-- Счетчики -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CTRLNMFNGY');
+</script>
+</body>
+</html>

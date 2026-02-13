@@ -1,0 +1,4 @@
+#important ignore files
+/node_modules/
+/get/
+/recaptcha/

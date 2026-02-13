@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%=title%></title>
+    <!-- /comments -->
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/registration.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='description' content='<%= description %>'>
+    <link rel="shortcut icon" href="/img/ico.svg">
+
+
+  </head>
+  <body>
+    <main>
+      <article>
+
+        <h1><%=title%></h1>
+        <p><%=text%></p>
+
+        <section>
+          <p><br />&lt;div id="comments" style="width:100%;max-width:100%"&gt;&lt;/div&gt;<br />&lt;a href="https://nasobe.ru/comments/" style="font-size: 17px;"&gt;https://nasobe.ru/comments&lt;/a&gt;<br />&lt;script type="text/javascript"&gt;<br />const id='XXX';//important<br />const script =document.createElement('script');<br />const url ='https://nasobe.ru/comments/script/allow-cors/';<br />async function goComments(){<br />await fetch(url,{<br />origin:'https://yourSite/',<br />method: "POST",<br />referrer: "https://yourSite",<br />referrerPolicy: "strict-origin-when-cross-origin",<br />mode:"cors",<br />credentials: "omit",<br />cache: "no-store",<br />}).then(response=&gt;response.text()).then(result=&gt;{<br />document.querySelector('#comments').append(script);<br />let oK = document.querySelector('#comments &gt; script');<br />oK.innerHTML=result;<br />});<br />}<br />setTimeout(()=&gt;goComments(),300);</p>
+  <p>&lt;/script&gt;</p>
+  <p>&nbsp;</p>
+        </section>
+      </article>
+      <aside>
+        <!-- <h3>Autorization:</h3> -->
+          <form action="https://qucu.ru/login" method="post">
+            <!-- <input type="text" name="login" value="" placeholder="login"> -->
+            <!-- <input type="password" name="password" value="" placeholder='password'> -->
+          </form>
+        <!-- <ul>
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+        </ul> -->
+        <strong>Hi, <%= name %></strong>
+        <ul>
+          <a href="/home"><li>home</li></a>
+          <a href="/cabin"><li>cabin >^_^<</li></a>
+          <a href="/script"><li>script</li></a>
+          <form action="/exit" method="post">
+            <!-- <a href="/exit"><li>exit</li></a>   -->
+          </form>
+        </ul>
+      </aside>
+
+    </main>
+  </body>
+</html>

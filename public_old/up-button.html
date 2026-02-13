@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Кнопка в самый верх на сайт</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="description" content='Кнопка в самый верх "up button" на свой сайт, скрипт с наглядным примером и объяснениями.'>
+        <link rel="canonical" href="https://qucu.ru/up-button.html">
+        <meta name="robots" content="all">
+        <meta name="autor" content="Amir Shikarno">
+        <style>
+            *{
+                margin:0;
+            }
+            body{
+
+                background: linear-gradient(to bottom, yellow, blue);
+            }
+            .first{
+                width: 100%;
+                display:flex;
+                font-size:20px;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            main{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                width: 700px;
+                max-width: 100%;
+                flex-wrap: wrap;
+
+            }
+            .textBlue{
+                color: rgb(111, 111, 247);
+            }
+            .textGreen{
+                color:green;
+            }
+            .textRed{
+                color:rgb(134, 48, 48);
+            }
+            .bgBlack{
+                background-color: rgb(36, 29, 29);
+                max-width: 100%;
+
+            }
+
+            .bgBlack2{
+                width: 700px;
+                max-width: 90%;
+                background-color: rgb(36, 29, 29);
+                border: solid rgb(36, 29, 29) 10px;
+
+
+            }
+            img{
+
+                width: 100%;
+            }
+            article{
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            code{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                width: 700px;
+                max-width: 100%;
+                flex-wrap: wrap;
+                word-wrap: break-word;
+                word-break: break-all;
+            }
+            .margin{
+                margin:1%;
+            }
+            .comenty{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                width: 700px;
+                max-width: 100%;
+                flex-wrap: wrap;
+                background-color: rgba(255, 236, 212, 0.096);
+            }
+            footer{
+                text-align: center;
+                width: 700px;
+                max-width: 100%;
+                background-color: rgba(255, 195, 117, 0.842);
+            }
+            h1{
+                background-color: coral;
+                width:100%;
+                text-align: center;
+            }
+        </style>
+        <!-- Разметка JSON-LD, созданная Мастером разметки структурированных данных Google. -->
+<script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Article",
+      "name" : "Кнопка up button на свой сайт",
+      "headline": "Кнопка проскролла в самый верх",
+      "author" : {
+        "@type" : "Person",
+        "name" : "Амир Наврутдинов",
+        "alternateName": ["Amir Shikarno", "Amir Navrutdinov"],
+        "url" : "https://qucu.ru/resume/Amir.html"
+      },
+      "datePublished" : "2020-12-07",
+      "dateModified" : "2024-02-27",
+      "image" : "https://qucu.ru/public/images/upbutton/Button-Button-Up.jpg",
+      "articleSection" : "самый легкий потому что стиль создается как только",
+      "articleBody" : "Ап батон - это кнопка пролистывания на самый верх. Своего рода замена кнопке “Home” на клавиатуре или кнопки “Page Up”. Кнопка Up Button служит лишь для того чтобы быстро пролистнуться на самый верх. В amp версиях страниц, для быстроты и упрощенности. Кнопку up button заменили на якорь с решеткой  <A href=\"#\">В_верх.</A>  в адресной строке появится решетка после нажатия на такую ссылку и страница мгновенно пролестнется на самый верх. - Ооо... нодо же, как гениально! :-D Принцип работы кнопки ап батон очень прост. Айдишнику назначается стиль через скрипт. Который появляется при прокрутке страницы дальше чем сто пикселей. И как только скрол будет равен нулю класс для батана исчезает.",
+      "url" : "https://qucu.ru/up-button.html",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "Веб мастерская имени Барона Сайтоверстаузена",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://qucu.ru/public/images/logo.png"
+          }
+      }
+    }
+    </script>
+    </head>
+    <body>
+    <!-- ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
+                    Up Button!
+    ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ-->
+    <div id="buttonUp"></div>
+            <!-- class OLd button  -->
+        <style>
+            .verh_invisible{
+                display:none;
+            }
+        </style>
+    <script>
+      buttonUp.style.cssText=`color: black !important;
+                    background-color: yellow;
+                    text-align: center;
+                    bottom:30px;
+                    position: fixed;
+                    right: 10%;
+                    opacity: 0.7;
+                    border-radius:50%;
+                    border: green solid 2px;
+                `;
+       window.addEventListener('scroll', function() {
+            document.getElementById('buttonUp').innerHTML = '^<br> Up<br>Button!<br>' + Math.round(scrollY);
+            });
+        window.onload=function(){
+            if(scrollY< 100){
+                document.getElementById('buttonUp').classList.add('verh_invisible');
+            }
+        }
+        window.addEventListener('scroll', function(){
+
+            if(scrollY < 100){
+                document.getElementById('buttonUp').classList.add('verh_invisible');
+            }else{
+                document.getElementById('buttonUp').classList.remove('verh_invisible');
+
+                document.getElementById("buttonUp").onclick = function(){
+                    window.scrollTo(0,0);
+                    }
+            }
+        });
+    </script>
+        <div class="first">
+            <main>
+                <h1>Кнопка up button на свой сайт</h1>
+                <p class="margin">Кнопка вверх на чистом яваскрипте js. Только один javascript и еще css сразу для вставки на сайт или в виджет.</p>
+                <picture>
+                    <source type="image/webp" srcset="public/images/upbutton/Button-Button-Up.webp">
+                    <img src="ipublic/mages/upbutton/Button-Button-Up.jpg" alt="кнопка home на клавиатуре">
+                </picture>
+                <article>
+                    <p class="margin">Ап батон - это кнопка пролистывания на самый верх. Своего рода замена кнопке “Home” на клавиатуре или кнопки “Page Up”. Кнопка Up Button служит лишь для того чтобы быстро пролистнуться на самый верх. В amp версиях страниц, для быстроты и упрощенности. Кнопку up button заменили на якорь с решеткой  <a href=#>В_верх.</a>  в адресной строке появится решетка после нажатия на такую ссылку и страница мгновенно пролестнется на самый верх. <- Ооо... нодо же, как гениально! :-D
+                    </p>
+                </article>
+
+
+
+                <article>
+
+                    <p class="margin">Принцип работы кнопки ап батон очень прост. Айдишнику назначается стиль через скрипт. Который появляется при прокрутке страницы дальше чем сто пикселей. И как только скрол будет равен нулю класс для батана исчезает.
+                    </p>
+                    <picture>
+                        <source type="image/webp" srcset="public/images/upbutton/homeButton.webp">
+                        <img src="public/images/upbutton/homeButton.png" alt="реклама">
+                    </picture>
+                    <p class="margin">Этот вариант самый легкий потому что стиль создается как только прослушка окна на скрол “window.addEventListener(‘scroll, function button-vUp);” достигает порога прокрутки в пикселях. </p>
+                </article>
+            </main>
+            <!--vstavka tegov-->
+
+            <code class='bgBlack'>
+                <div class="bgBlack2">
+                                    <span class="textGreen">
+                                    &lt;!-- ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ<br>
+                                    &emsp;&emsp;&emsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUp Button! <br>
+                                    ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ--><br></span>
+                        <div class="textBlue">
+                                &emsp;&lt;div id=<span class="textRed">"buttonUp"</span>>&lt;/div><br>
+                                &emsp;  <span class="textGreen">&lt;!-- class OLd button  --></span><br>
+                            &lt;style><br>
+                            &emsp; .verh_invisible{<br>
+                                &emsp;     display:<span class="textRed">none</span>;<br>
+                                }<br>
+                                &lt;/style><br>
+                                &lt;script> <br>
+                            buttonUp.style.cssText=<span class="textRed">`color: black !important;<br>
+                            &emsp;      background-color: yellow;<br>
+                            &emsp;      text-align: center;<br>
+                            &emsp;      bottom:30px;<br>
+                            &emsp;        position: fixed;<br>
+                            &emsp;      right: 10%;<br>
+                            &emsp;        opacity: 0.7;<br>
+                            &emsp;       border-radius:50%;<br>
+                            &emsp;       border: green solid 2px;<br>
+                            &emsp; `</span>;<br>
+                            window.addEventListener(<span class="textRed">'scroll'</span>, function() {<br>
+                                &emsp; document.getElementById(<span class="textRed">'buttonUp'</span>).innerHTML = <span class="textRed">'^&lt;br> Up Button!'</span> + pageYOffset;<br>
+                                });<br>
+                            window.onload=function(){<br>
+                                &emsp;if(scrollY&lt; 100){<br>
+                                    &emsp;    document.getElementById(<span class="textRed">'buttonUp'</span>).classList.add(<span class="textRed">'verh_invisible'</span>);<br>
+                                    &emsp;  }<br>
+                            }<br>
+                            window.addEventListener(<span class="textRed">'scroll'</span>, function(){ <br>
+                                <br>
+                                &emsp; if(scrollY &lt; 100){<br>
+                                    &emsp;  document.getElementById(<span class="textRed">'buttonUp'</span>).classList.add(<span class="textRed">'verh_invisible'</span>);<br>
+                                }else{<br>
+                                    &emsp;document.getElementById(<span class="textRed">'buttonUp'</span>).classList.remove(<span class="textRed">'verh_invisible'</span>);<br>
+                                <br>
+                                &emsp;document.getElementById(<span class="textRed">"buttonUp"</span>).onclick = function()&emsp;{<br>
+                                    &emsp;     window.scrollTo(0,0);<br>
+                                        &emsp;      } <br>
+                                }<br>
+                            });<br>
+                            &lt;/script><br>
+                        </div>
+
+                    </div>
+            </code>
+            <footer>
+
+            </footer>
+            <!-- tegi -->
+        </div>
+   <!-- ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
+                    Начало меню!
+    ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ-->
+    <div id="menu"></div>
+
+    <noscript>
+    <a href="https://qucu.ru">
+    </noscript>
+    <button class="burg"><span style="font-size:47px;">🍔</span>
+    </button>
+    <noscript>
+    </a>
+    </noscript>
+    <!-- Счетчики -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CTRLNMFNGY');
+    </script>
+
+<script>
+
+    //--------------------------------------------------------------
+    //--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+    //--------------------------------------------------------------
+function run(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", 'public_old/menu/menu.html', true);
+    xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+    document.getElementById("menu").innerHTML = this.responseText;
+        }
+    }
+    xhr.send();
+}
+/*--------------------------------------------------------------------------
+----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+--------------------------------------------------------------------------*/
+                    //setInterval(run, 700);
+                    run();
+</script>
+
+<link rel="stylesheet" href="public_old/menu/style-menu.css">
+<script src="public_old/menu/script-menu.js"></script>
+
+<div class="first">
+  <!--
+   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                          Here commentsBlock!
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  -->
+  <div id="comments"></div>
+  <script>
+          async function loadAssets() {
+          try{
+            // Загружаем CSS
+            const cssResponse = await fetch("https://comments.qucu.ru/style");
+            const cssText = await cssResponse.text();
+            const style = document.createElement("style");
+            style.textContent = cssText;
+            document.head.append(style);
+            // Загружаем JS
+            const jsResponse = await fetch("https://comments.qucu.ru/js/a001");
+            const jsText = await jsResponse.text();
+            const js = document.createElement("script");
+            js.type = "text/javascript";
+            js.textContent = jsText;
+            document.head.append(js);
+            console.log("JS и CSS успешно подгружены!");
+          }catch(err){console.error("Ошибка загрузки:", err)};
+        }
+        loadAssets();
+        </script>
+</div>
+</body>
+</html>

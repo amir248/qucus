@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%=title%></title>
+    <!-- /comments -->
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/registration.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='description' content='<%= description %>'>
+    <link rel="shortcut icon" href="/img/ico.svg">
+
+
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1><%=title%></h1>
+        <p><%=text%></p>
+
+        <!-- <form class="" action="index.html" method="post">
+          <fieldset>
+            <legend>Login:</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>Password:</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>Email:</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>Name:</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>Lastname:</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>Age:</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>floor:</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>blod_type</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>Profession:</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>havindg_children</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>marital_status:</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <fieldset>
+            <legend>education</legend>
+            <input type="text" name="" value="">
+          </fieldset>
+          <button type="button" name="button">Send</button>
+        </form> -->
+        <!-- <form > -->
+        <form id="registrationForm" action="/PHP/registration.php" method="post">
+          <fieldset>
+            <legend>Login</legend>
+            <!-- <label>login</label><br /> -->
+            <input type="text" name="login" placeholder="login" /><br />
+          </fieldset>
+
+          <fieldset>
+            <legend>Password</legend>
+            <!-- <label>password</label><br /> -->
+            <input type="password" name="password" placeholder='enter-password'/><br />
+            <input type="password" name="password2" placeholder="repeat-password"/><br />
+          </fieldset>
+
+          <fieldset>
+            <legend>Email</legend>
+            <label>Почта@</label><br />
+            <input type="email" name="email" placeholder="@mail"/><br /><br />
+          </fieldset>
+
+          <!-- <fieldset>
+            <legend>Name</legend>
+            <label>Имя</label><br />
+            <input type="text" name="Name" placeholder="Name"/><br /><br />
+          </fieldset>
+          <fieldset>
+            <legend>Lastame</legend>
+            <label>Фамилия</label><br />
+            <input type="text" name="Lastname" placeholder="Lastname"/><br /><br />
+          </fieldset>
+          <fieldset>
+            <legend>Age</legend>
+            <label>Возраст</label><br />
+            <input type="number" name="age" placeholder="age" value="000">
+
+          </fieldset>
+
+
+          <fieldset>
+            <legend>gender</legend>
+            <label>пол</label><br />
+          <select type='select' name="gender">
+            <option value="ono">-</option>
+            <option value="man">man</option>
+            <option value="woman">woman</option>
+          </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>blod_type</legend>
+            <label>гр.крови</label><br />
+            <select type="select" name="blod_type">
+            <option value="niznan">niznay</option>
+              <option value="0p">0+</option>
+              <option value="0m">0-</option>
+              <option value="Ap">A+</option>
+              <option value="Am">A-</option>
+              <option value="Bp">B+</option>
+              <option value="Bm">B-</option>
+              <option value="ABp">AB+</option>
+              <option value="ABm">AB-</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>profession</legend>
+            <label>Профессия</label><br />
+            <input type="text" name="profession" placeholder="profession" value='высококвалифицированный оболтус'>
+          </fieldset>
+
+          <fieldset>
+            <legend>having_children</legend>
+            <label>Children</label><br />
+            <input type="text" name="having_children" placeholder="children" value='???'>
+          </fieldset>
+
+          <fieldset>
+            <legend>marital_status</legend>
+            <label>marital_status</label><br />
+            <input type="text" name="marital_status" placeholder="$$$" value="/">
+          </fieldset>
+
+          <fieldset>
+            <legend>hobby</legend>
+            <label>hobby</label><br />
+            <input type="text" name="hobby" placeholder="favourite buisness" value="-">
+          </fieldset>
+
+          <fieldset>
+            <legend>edycation</legend>
+            <label>edycation</label><br />
+            <input type="text" name="edycation" placeholder="schooling" value="school_O_o_LOL_o_SH">
+          </fieldset> -->
+
+          <button type="submit" value="Отправить">Отправить</button>
+          <a href="login" style='font-size:15px;text-decoration:none;float:right;'>
+            <sup>back</sup>
+          </a>
+        </form>
+        <span style="color:red;">*</span>Required fields are marked in <span style='color:rgba(255,0,0,0.3);text-shadow:black 1px 1px;'>red</span>!
+        <ul>
+
+        </ul>
+      </article>
+      <aside>
+        <h3>
+          <a href="/login">Authorization.</a>
+        </h3>
+        <a href="/registration">or registration</a>
+        <a href="/">to exit</a>
+
+      </aside>
+
+    </main>
+  </body>
+  <script>
+    const form = document.getElementById('registrationForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Останавливаем стандартную отправку формы
+
+        const formData = new FormData(form);
+
+        fetch('https://qucu.ru/PHP/registration.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text()) // или response.json(), если PHP возвращает JSON
+        .then(data => {
+            message.innerHTML = data; // выводим результат
+        })
+        .catch(error => {
+            message.innerHTML = 'Ошибка: ' + error;
+        });
+    });
+  </script>
+</html>

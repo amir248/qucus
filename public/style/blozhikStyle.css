@@ -1,0 +1,15 @@
+#date{
+  font-size: 15px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  color:green;
+  text-shadow:1px 1px black;
+}
+#date > date{
+  background: rgba(255,255,255,0.3);
+  margin:1%;
+  border-radius: 7px;
+  border:1px solid black
+}

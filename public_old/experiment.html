@@ -1,0 +1,272 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>сео эксперемент Это просто тестовая страница</title>
+    <meta name="description" content="в каждую из слайдов будет вписан дескрпше текст с тайтлом">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <script data-ad-client="ca-pub-6824659625881284" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+    <!-- Yandex.RTB -->
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
+    </head>
+    <style>
+        *{
+            margin:0; /* убрать рамку на слайдах*/
+            background: lianer-gradient(green,coral);
+        }
+
+        .slides{ /* примерный слайд которым можно ограничеться*/
+            width: 100%; /* ширина */
+            min-height: 100vh;/* минимальная высота */
+            word-wrap: break-word;/* перенос невлезщих слов, елслисамословодлиное*/
+            overflow: auto;/* чтобы весь контент влез в экран слайда*/
+            font-size: 24px;
+            display: flex; /*флекс для простоты центрирования*/
+            justify-content: center; /*для размещения по центру*/
+            align-items: center; /*диагональ центр*/
+            background: linear-gradient(rgb(255, 189, 244),cyan);
+        }
+        .od18n{
+            width: 600px;
+            max-width: 90%;
+            background-color: green;
+            padding: 1%;
+            border: red solid 2px;
+        }
+        .padding{
+            padding: 3%;
+        }
+    </style>
+    <body>
+        <div class="slides"><a href="#"></a>
+            <head>
+                <title>Тестовая страница</title>
+                <meta name="description" content="что делать если хочется верстать, а вертсть больше нечего?">
+            </head>
+            <br><div class="od18n"><span>Пустая страница для теста</span>
+              <!-- Yandex.RTB R-A-4021724-1 -->
+              <div id="yandex_rtb_R-A-4021724-1"></div>
+              <script>
+              window.yaContextCb.push(()=>{
+              	Ya.Context.AdvManager.render({
+              		"blockId": "R-A-4021724-1",
+              		"renderTo": "yandex_rtb_R-A-4021724-1"
+              	})
+              })
+              </script>
+              <script src="https://qucu.ru/images/json/fotoos.json"></script>
+              <main>
+                <article>
+                  <h1>Zagollow</h1>
+                <div class="radio" id='but'>
+                  <fieldset id="uno">
+                      <legend>button</legend>
+                      <label>
+                        <input type='radio' name='ok' value="Go">
+                        <span>Multilanding</span>
+                      </label>
+
+                  </fieldset>
+                  <fieldset id="uno">
+                    <legend>button</legend>
+                    <label>
+                      <input type='radio' name='ok' value="ok">
+                      <span>mySQL+JS</span>
+                    </label>
+                  </fieldset>
+                  <fieldset id="fry">
+                    <legend>button</legend>
+                  <label>
+                    <input type='radio' name='ok' value="777">
+                    <span>Gallery</span>
+                  </label>
+                  </fieldset>
+
+                </div>
+
+                  <!-- <button id='namber'><span id='Up'>7</span></button> -->
+                  <template>
+                    <div id='new'></div>
+                  </template>
+              <p id='yY'></p><div id='iO'></div>
+                </article>
+              </main>
+<script>
+
+let buttoN;
+const ObJectX = {};
+ObJectX.one = 'not-a-menu/ajax/one.html';
+ObJectX.two='not-a-menu/ajax/two.html';
+ObJectX.fry='not-a-menu/ajax/fry.html';
+document.querySelector('#yY').innerHTML=`<span style="font-size:37px;">O_o</span> иногда так бывает... люди подсаживаются на джейэс, пиашпи или просто становятся профессионалами в HtmL coder{OW} !!!<span style='font-size:37px;'>😱</span>`;
+// document.querySelector('button').addEventListener('click',()=>{
+document.querySelector('input[type="radio"][value="Go"]').addEventListener('focus',()=>{
+let tmpl= document.querySelector('template');
+let elem = document.createElement('div');
+// Клонируем содержимое шаблона для того, чтобы переиспользовать его несколько раз
+elem.append(tmpl.content.cloneNode(true));
+document.querySelector('#iO').append(elem);
+console.log(document.querySelector('input[type=radio][value="Go"]').value);
+buttoN= ObJectX.one;
+OkiDoki();
+document.querySelector('#yY').innerHTML=``;
+// window.location.search=='?ok';
+console.log(window.location.pathname);
+console.log(window.location.href);
+
+});
+document.querySelector('input[type="radio"][value="ok"]').addEventListener('focus',()=>{
+console.log(document.querySelector('input[type=radio][value="ok"]').value);
+let tmpl= document.querySelector('template');
+let elem = document.createElement('div');
+// Клонируем содержимое шаблона для того, чтобы переиспользовать его несколько раз
+elem.append(tmpl.content.cloneNode(true));
+document.querySelector('#iO').append(elem);
+
+buttoN= ObJectX.two;
+OkiDoki();
+document.querySelector('#yY').innerHTML=``;
+});
+document.querySelector('input[type="radio"][value="777"]').addEventListener('click',()=>{
+console.log(document.querySelector('input[type=radio][value="777"]').value);
+let tmpl= document.querySelector('template');
+let elem = document.createElement('div');
+// Клонируем содержимое шаблона для того, чтобы переиспользовать его несколько раз
+elem.append(tmpl.content.cloneNode(true));
+document.querySelector('#iO').append(elem);
+
+buttoN= ObJectX.fry;
+
+
+
+OkiDoki();
+document.querySelector('#yY').innerHTML=``;
+  document.querySelector("#worms").addEventListener('click',()=>{
+    console.log("click to id Worms");
+  });
+  document.querySelector('#new').addEventListener('click',()=>{
+  console.log('Yra!!!');
+  });
+  document.querySelector('img').addEventListener('click',()=>{
+  console.log('YraIMG!!!');
+  });
+  document.querySelector('picture').addEventListener('click',()=>{
+    console.log('click to teg picture');
+  });
+
+});
+// OkiDoki();
+// });
+
+
+
+function OkiDoki(){
+let pod = new XMLHttpRequest();
+pod.open('GET', `${buttoN}`);
+pod.send();
+pod.onload = function(){
+  if(pod.status ==200){
+      responseType ="Text";
+      document.querySelector('#new').innerHTML = this.response;
+  }
+}
+}
+</script>
+
+            </div>
+
+        </div>
+        <div id="tydu" class="slides"><a href="#tydu"></a>
+            <head>
+                <title>И еще инопланеняни</title>
+                <meta name="description" content="Ладно хоть инопланеняни все объясняют их же можно винить абсолютно во всех грехах, всего человечества. Но и когда планета в опасности, то только инопланетяни могут её спасти.">
+            </head>
+        <p class="od18n">И еще инопланетяни... Не одна история не будет полноценной и завершенной. Без сторонников палеолеконтакта. И все становиться не просто так, сразу видно что все делается на общее благо. Есть к чему стремиться. И даже можно насщупать место для шага вперед...</p>
+        </div>
+        <div id="free" class="slides"><a href="#free"></a>
+            <head>
+                <title>Что можно сделать что бы поднять поизиции из поиска?</title>
+                <meta name="description" content="Что если страница одна, но подразделена на несколько подстраниц с заголовком и дескрипшином.">
+            </head>
+            <p class="od18n">Позиции вырастут с качественным и хорошим контентом.</p>
+
+        </div>
+<section>
+  <div id="comments" style="width:100%;max-width:100%"></div>
+     <a href="https://qucu.ru/comments/" style="font-size: 17px;">https://qucu.ru/comments/</a>
+     <script type="text/javascript">
+         const importantBag={id:"test",site:window.location};
+         const script =document.createElement('script');
+         const url ='https://comments.qucu.ru/allow-cors';
+         async function goComments(){
+           await fetch(url,{
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            referrerPolicy: "origin-when-cross-origin",
+            mode:"cors",
+            credentials: "include",
+            cache: "no-store",
+           }).then(response=>response.text()).then(result=>{
+             document.querySelector('#comments').append(script);
+             let oK = document.querySelector('#comments > script');
+             oK.innerHTML=result;
+           });
+         }
+         setTimeout(()=>goComments(),3000);
+     </script>
+</section>
+
+        <!-- ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ
+                        Начало меню!
+        ХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХХ-->
+        <div id="menu"></div>
+        <noscript>
+        <a href="https://qucu.ru">
+        </noscript>
+        <button class="burg"><span style="font-size:45px;">🍔</span>
+        </button>
+        <noscript>
+        </a>
+        </noscript>
+        <script>
+
+            //--------------------------------------------------------------
+            //--------ОТПРАВИТЬ ЗАПРОС ЧТОБЫ ПОЛУЧИТЬ МЕНЮ------------------
+            //--------------------------------------------------------------
+        function run(){
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", 'menu/menu.html', true);
+            xhr.onreadystatechange = function() {//Вызывает функцию при смене состояния.
+            if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+            document.getElementById("menu").innerHTML = this.responseText;
+                }
+            }
+            xhr.send();
+        }
+        /*--------------------------------------------------------------------------
+        ----------------ТУТ_ПРОИСХОДИТ_ОБНОВЛЕНИЕ_МЕНЮШКИ!--------------------------
+        --------------------------------------------------------------------------*/
+                            //setInterval(run, 700);
+                            run();
+        </script>
+
+        <link rel="stylesheet" href="menu/style-menu.css">
+        <script src="menu/script-menu.js"></script>
+
+
+
+        <!-- Счетчики -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTRLNMFNGY"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-CTRLNMFNGY');
+        </script>
+
+</body>
+</html>

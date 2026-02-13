@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%=title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="/public/style.css" type='text/css' rel="stylesheet"> -->
+    <link href="https://qucu.ru/blozhik/style.css" rel="stylesheet">
+    <link rel="icon" href="https://qucu.ru/images/js.svg">
+    <meta name="robots" content="noindex, nofollow" />
+    </head>
+    <body>
+    <main>
+      <article>
+        <h1><%= title %></h1>
+        <p><%= text%></p>
+        <form action="/blozhik/add-news-post" method="post">
+          <fieldset>
+            <legend>article</legend>
+            <textarea name="title" placeholder="title" cols='28' onchange='toggleButton()'></textarea><br>
+          </fieldset>
+          <fieldset>
+            <legend>description</legend>
+            <textarea cols='28' name="description" placeholder="description"></textarea><br>
+          </fieldset>
+          <fieldset>
+            <legend>text</legend>
+            <textarea cols='28' rows='10' name="text" placeholder="text" onchange='toggleButton()'></textarea><br>
+          </fieldset>
+          <fieldset>
+            <legend>url</legend>
+            <textarea cols='28' name="url" placeholder="url"></textarea><br>
+          </fieldset>
+          <fieldset>
+            <legend>autor</legend>
+            <input type="text" name="autor" placeholder="autor"><br>
+          </fieldset>
+          <fieldset>
+            <legend>JSON</legend>
+            <input type="text" name="JSON" placeholder="JSON"><br>
+          </fieldset>
+          <button type="submit" name="button">go</button> <button type="button" name="button">autorization</button>
+        </form>
+      </article>
+      <aside>
+        <!-- <a href="https://fozzy.com/aff.php?aff=16418">
+          <picture>
+            <img src="https://nasobe.ru/images/fozzy/ssd-480x320.png" alt="фози быстрее быстрого">
+          </picture>
+        </a> -->
+        <ul>
+          <li><a href='/blozhik/'>BlozHik</a></li>
+          <li><a href='/blozhik/about'>about</a></li>
+          <li><a href="https://qucu.ru/">Home</a></li>
+          <li><a href='/blozhik/contact'>contact</a></li>
+
+          <!-- <li><a href='/blozhik/contact'>contact</a></li>
+          <li><a href='/blozhik/list'>список постов</a></li> -->
+        </ul>
+      </aside>
+
+    </main>
+    </body>
+    <script type="text/javascript">
+    function toggleButton(){
+        let article = document.querySelector('body > main:nth-child(1) > article:nth-child(1) > form:nth-child(3) > fieldset:nth-child(1) > textarea:nth-child(2)').value;
+        let description = document.querySelector('body > main:nth-child(1) > article:nth-child(1) > form:nth-child(3) > fieldset:nth-child(2) > textarea:nth-child(2)').value;
+        let text = document.querySelector('body > main:nth-child(1) > article:nth-child(1) > form:nth-child(3) > fieldset:nth-child(3) > textarea:nth-child(2)').value;
+        console.log(description);
+        console.log(article);
+        console.log(text.length)
+        if(article.length>3&&description.length>10&&text.length>130){
+          document.querySelector('body > main:nth-child(1) > article:nth-child(1) > form:nth-child(3) > button:nth-child(7)').disabled=false;
+          document.querySelector('body > main:nth-child(1) > article:nth-child(1) > form:nth-child(3) > button:nth-child(7)').disabled=false;
+        }else{
+          document.querySelector('body > main:nth-child(1) > article:nth-child(1) > form:nth-child(3) > button:nth-child(7)').disabled=true;
+          document.querySelector('body > main:nth-child(1) > article:nth-child(1) > form:nth-child(3) > button:nth-child(7)').disabled=true;
+        }
+    }
+    document.addEventListener('DOMContentLoaded',()=>{
+      toggleButton();
+    });
+    </script>
+    <!-- <script type="text/javascript" src='site/script.js'></script> -->
+</html>

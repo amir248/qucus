@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%=title%></title>
+    <!-- /comments -->
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/registration.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='description' content='<%= description %>'>
+    <link rel="shortcut icon" href="/img/ico.svg">
+
+
+  </head>
+  <body>
+    <main>
+      <article id="cab">
+          <h1><%=title%></h1>
+          <p><%=text%></p>
+          <!-- <fieldset>
+            <img src="/uploads/#" alt="photo profile">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+              <label>Файл</label><br>
+              <input type="file" name="filedata" /><br><br>
+              <input type="submit" value="Send" />
+        </form>
+          </fieldset> -->
+          <fieldset>
+            <h3>Login: </h3>
+          <p><%= login %></p>
+          </fieldset>
+          <form action="/cabinUpdateEmail" method="post">
+            <fieldset>
+              <h3>Email: </h3>
+              <input type="email" name="email" value="<%=email%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=email%></p>
+            </fieldset>
+
+          </form>
+          <form action="/cabinUpdateName" method="post">
+            <fieldset>
+              <h3>Name</h3>
+              <input type="text" name="Name" value="<%=name%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=name%></p>
+            </fieldset>
+          </form>
+          <form action="/cabinUpdateLastname" method="post">
+            <fieldset>
+              <h3>Lastname</h3>
+              <input type="text" name="Lastname" value="<%=lastname%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=lastname%></p>
+            </fieldset>
+          </form>
+          <form action="/cabinUpdateGender" method="post">
+            <fieldset>
+              <h3>gender</h3>
+              <input type="text" name="gender" value="<%=gender%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=gender%></p>
+            </fieldset>
+          </form>
+          <form action="/cabinUpdateAge" method="post">
+            <fieldset>
+              <h3>age</h3>
+              <input type="text" name="age" value="<%=age%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=age%></p>
+            </fieldset>
+          </form>
+          <form action="/cabinUpdateBlodType" method="post">
+            <fieldset>
+              <h3>blod_type</h3>
+              <input type="text" name="blod_type" value="<%=blod_type%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=blod_type%></p>
+            </fieldset>
+          </form>
+          <form action="/cabinUpdateProfession" method="post">
+            <fieldset>
+              <h3>profession</h3>
+              <input type="text" name="profession" value="<%=profession%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=profession%></p>
+            </fieldset>
+          </form>
+          <form action="/cabinUpdateHavingChildren" method="post">
+            <fieldset>
+              <h3>having_children</h3>
+              <input type="text" name="having_children" value="<%=having_children%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=having_children%></p>
+            </fieldset>
+          </form>
+          <form action="/cabinUpdateMaritalStatus" method="post">
+            <fieldset>
+              <h3>marital_status</h3>
+              <input type="text" name="marital_status" value="<%=marital_status%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=marital_status%></p>
+            </fieldset>
+          </form>
+          <form action="/cabinUpdateHobby" method="post">
+            <fieldset>
+              <h3>hobby</h3>
+              <input type="text" name="hobby" value="<%=hobby%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=hobby%></p>
+            </fieldset>
+          </form>
+          <form action="/cabinUpdateEducation" method="post">
+            <fieldset>
+              <h3>education</h3>
+              <input type="text" name="education" value="<%=education%>">
+              <button type="submit" name="button">Update</button>
+              <p><%=education%></p>
+            </fieldset>
+
+          </form>
+        </form>
+        <ul>
+
+        </ul>
+      </article>
+      <aside>
+        <!-- <h3>Autorization:</h3> -->
+          <form action="https://qucu.ru/login" method="post">
+            <!-- <input type="text" name="login" value="" placeholder="login"> -->
+            <!-- <input type="password" name="password" value="" placeholder='password'> -->
+          </form>
+        <!-- <ul>
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+        </ul> -->
+        <strong>Hi, <%= name %></strong>
+        <ul>
+          <a href="/home"><li>home</li></a>
+          <a href="/cabin"><li>cabin >^_^<</li></a>
+          <a href="/script"><li>script</li></a>
+          <a href="/exit"><li>exit</li></a>
+          <a href="/login"><li>login</li></a>
+        </ul>
+      </aside>
+
+    </main>
+  </body>
+</html>
