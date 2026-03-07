@@ -64,12 +64,13 @@ body > header > nav > ol > label{
   text-decoration: none;
   font-size: 25px;
   color:transparent;
+  transition: all 3s ease-out;
 }
 header > nav > ol > a{
   text-decoration: none;
   font-size: 25px;
   color:transparent;
-
+  transition: all 3s ease-out;
 }
 header > nav > ol > li{
   margin-right: 7px;
@@ -84,11 +85,12 @@ header > nav > ol > li{
   color:none;
   z-index: 9;
 }
-header > nav > ol > li{
+header > nav > ol > li:hover{
+  background:yellow;
   text-decoration: none;
   font-size: 25px;
   color:transparent;
-
+  transition: all 3s ease-out;
 }
 body > header > nav > ol > a:nth-child(1) > li:after{
   content: 'home';
@@ -257,12 +259,14 @@ body > header > nav > ol > label > li:hover:after{
   text-shadow: 1px 1px black;
   transition: all 1s ease-out;
   transform:rotate(360deg)skew(-0.07turn, 0deg);
+  background:yellow;
 }
 header > nav > ol > a > li:hover{
   background: yellow;
   color:black;
   transform:skew(0,07turn,0deg);
   color:transparent;
+  transition: all 3s ease-out;
 }
 header > nav > .menu > span{
   width:30px;
@@ -299,6 +303,7 @@ header > nav > ol > a > li:hover{
   color:black;
   transform:skew(0,07turn,0deg);
   color:transparent;
+  transition: all 3s ease-out;
 }
 header > nav > .menu > span{
   width:30px;
@@ -401,6 +406,7 @@ body > header > section > a > p{
   text-decoration: none;
   color:transparent;
   font-size: 33px;
+  transition: all 1s ease-out;
 }
 /* transform: skew(0.07turn, 0deg); */
 /* padding: 7px; */
