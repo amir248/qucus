@@ -251,6 +251,9 @@ body > header > nav > ol > label > li:after{
   transition: all 1s ease-out;
   transform:rotate(0deg)skew(-0.07turn, 0deg);
 }
+body > header > nav > ol > label:hover{
+  background:yellow;
+}
 body > header > nav > ol > label > li:hover:after{
   content: 'Rus';
   right:27px;
@@ -259,7 +262,6 @@ body > header > nav > ol > label > li:hover:after{
   text-shadow: 1px 1px black;
   transition: all 1s ease-out;
   transform:rotate(360deg)skew(-0.07turn, 0deg);
-  background:yellow;
 }
 header > nav > ol > a > li:hover{
   background: yellow;
